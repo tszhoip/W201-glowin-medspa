@@ -1,0 +1,25 @@
+## PAGE_TITLE
+Visit Glowin Medspa
+
+## PAGE_SUBTITLE
+Los Angeles, CA
+
+## ADDRESS_LABEL
+Address
+
+## HOURS_LABEL
+Hours
+
+## HOURS_BODY
+Mon - Fri: 9:00 AM - 6:00 PM
+Sat: 10:00 AM - 4:00 PM
+Sun: Closed
+
+## PARKING_LABEL
+Parking
+
+## PARKING_BODY
+Complimentary parking available behind the building.
+
+## PHONE_LABEL
+Phone

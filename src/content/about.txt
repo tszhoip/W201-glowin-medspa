@@ -1,0 +1,44 @@
+## PAGE_TITLE
+About Glowin Medspa
+
+## PAGE_SUBTITLE
+A modern medspa built on clinical care, honest guidance, and results you can see.
+
+## STORY_TITLE
+Our Story
+
+## STORY_BODY
+Glowin Medspa was founded to close the gap between clinical-grade skincare and a genuinely welcoming experience. Every treatment plan starts with listening, not a sales pitch.
+
+## DISCIPLINE_1_NAME
+Streamlined System
+
+## DISCIPLINE_1_DESC
+Consultations, treatments, and follow-ups run on one clear plan.
+
+## DISCIPLINE_2_NAME
+Highly Trained Providers
+
+## DISCIPLINE_2_DESC
+Licensed, experienced clinicians for every treatment we offer.
+
+## DISCIPLINE_3_NAME
+Efficient
+
+## DISCIPLINE_3_DESC
+Respecting your time without rushing your care.
+
+## DISCIPLINE_4_NAME
+Science-Based Protocols
+
+## DISCIPLINE_4_DESC
+Treatments backed by research, not trends.
+
+## TEAM_TITLE
+Meet Our Team
+
+## TEAM_BODY
+Our providers bring years of clinical and aesthetic experience, trained on the latest technology and techniques so your results are safe, consistent, and natural.
+
+## VOICE_TITLE
+Your Voice Matters Here

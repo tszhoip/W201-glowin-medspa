@@ -1,0 +1,82 @@
+## EYEBROW
+Lifting
+
+## PAGE_TITLE
+Lifting
+
+## PAGE_SUBTITLE
+A non-invasive, clinically-backed lifting treatment for firmer, more youthful-looking skin — with no downtime.
+
+## HERO_CTA
+Book Now
+
+## PRICE_1_NAME
+RF Lifting - Full Face
+
+## PRICE_1_VALUE
+$399
+
+## PRICE_2_NAME
+RF Lifting - Face + Neck
+
+## PRICE_2_VALUE
+$549
+
+## HOW_TITLE
+How It Works
+
+## HOW_BODY
+RF energy heats deep skin layers to trigger natural collagen production, gradually tightening and lifting over several weeks.
+
+## RESULTS_TITLE
+Expected Results
+
+## RESULT_1_LABEL
+01
+## RESULT_1_NAME
+Visible tightening
+
+## RESULT_1_DESC
+Noticeable firming after the first 48 hours.
+
+## RESULT_2_LABEL
+02
+## RESULT_2_NAME
+Improved texture
+
+## RESULT_2_DESC
+Smoother tone building over 2-3 weeks.
+
+## RESULT_3_LABEL
+03
+## RESULT_3_NAME
+Long-term lift
+
+## RESULT_3_DESC
+Full collagen results at 8-12 weeks, lasting 6-12 months.
+
+## BEFORE_AFTER_TITLE
+Before & After
+
+## PRECAUTIONS_TITLE
+Precautions & Aftercare
+
+## PRECAUTIONS_BODY
+- Mild redness or warmth is common for a few hours after treatment
+- Avoid direct sun exposure and saunas for 48 hours
+- Use gentle, non-active skincare for the first week
+
+## FAQ_TITLE
+FAQ
+
+## FAQ_1_Q
+What will I see right away?
+
+## FAQ_1_A
+Immediate tightening in some clients, with results building over several weeks as collagen production increases.
+
+## FAQ_2_Q
+How long does it last?
+
+## FAQ_2_A
+Most clients maintain results for 6-12 months with a touch-up recommended annually.

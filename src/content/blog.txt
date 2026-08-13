@@ -1,0 +1,23 @@
+## PAGE_TITLE
+Explore the Glowin Blog
+
+## PAGE_SUBTITLE
+Skin science, treatment guides, and news from our team.
+
+## POST_1_TITLE
+What Actually Happens During a Microneedling Session
+
+## POST_1_EXCERPT
+A step-by-step look at what to expect, from numbing to downtime.
+
+## POST_2_TITLE
+Lifting Treatments Compared: RF vs. Ultrasound
+
+## POST_2_EXCERPT
+Which non-invasive lifting technology fits your goals.
+
+## POST_3_TITLE
+Building a Skincare Routine After Laser Treatment
+
+## POST_3_EXCERPT
+Protect your results with the right at-home routine.

@@ -1,0 +1,86 @@
+## BUSINESS_NAME
+Glowin Medspa
+
+## BUSINESS_LOCATION
+Los Angeles
+
+## NAV_HOME
+Home
+
+## NAV_ABOUT
+About
+
+## NAV_SERVICES
+Services
+
+## NAV_CONTACT
+Contact
+
+## CTA_BOOK
+Book Now
+
+## FOOTER_TAGLINE
+Modern medspa care, rooted in clinical results.
+
+## FOOTER_PHONE
+(310) 555-0100
+
+## FOOTER_EMAIL
+hello@glowinmedspa.com
+
+## FOOTER_ADDRESS
+123 Glow Ave, Los Angeles, CA 90001
+
+## FOOTER_HOURS
+Mon - Sat: 9:00 AM - 6:00 PM
+
+## FOOTER_SERVICES_TITLE
+Services
+
+## FOOTER_COMPANY_TITLE
+Company
+
+## FOOTER_SUPPORT_TITLE
+Support
+
+## FOOTER_LINK_LIFTING
+Lifting
+
+## FOOTER_LINK_MICRONEEDLING
+Microneedling
+
+## FOOTER_LINK_LASER
+Laser
+
+## FOOTER_LINK_INJECTABLES
+Injectables
+
+## FOOTER_LINK_ABOUT
+About
+
+## FOOTER_LINK_OURSTORY
+Our Story
+
+## FOOTER_LINK_REVIEWS
+Reviews
+
+## FOOTER_LINK_CONTACT
+Contact
+
+## FOOTER_LINK_FAQ
+FAQ
+
+## FOOTER_LINK_PRIVACY
+Privacy
+
+## COPYRIGHT
+© 2026 Glowin Medspa. All rights reserved.
+
+## TAWK_PROPERTY_ID
+REPLACE_WITH_TAWKTO_PROPERTY_ID
+
+## TAWK_WIDGET_ID
+REPLACE_WITH_TAWKTO_WIDGET_ID
+
+## FORMSPREE_FORM_ID
+REPLACE_WITH_FORMSPREE_FORM_ID

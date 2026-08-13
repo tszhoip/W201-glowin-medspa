@@ -1,0 +1,71 @@
+## HERO_EYEBROW
+Los Angeles Medspa
+
+## HERO_TITLE
+Modern Medspa Innovation, Rooted in Clinical Care
+
+## HERO_SUBTITLE
+Feel confident in your skin. Personalized, science-based treatments delivered by licensed providers.
+
+## HERO_CTA
+Book Now
+
+## INTRO_TITLE
+Radiant skin, expert care
+
+## INTRO_BODY
+The best treatments start with an honest consultation. We combine clinical-grade technology with a calm, welcoming space so every visit feels considered, not rushed.
+
+## INTRO_CTA
+Book a Consultation
+
+## SERVICES_TITLE
+Our Services
+
+## SERVICE_1_NAME
+Lifting
+
+## SERVICE_1_DESC
+Non-invasive skin tightening for a firmer, lifted look.
+
+## SERVICE_2_NAME
+Microneedling
+
+## SERVICE_2_DESC
+Stimulate collagen for smoother, more even texture.
+
+## SERVICE_3_NAME
+Laser
+
+## SERVICE_3_DESC
+Targeted laser treatments for tone, texture, and hair removal.
+
+## SERVICE_4_NAME
+Skincare
+
+## SERVICE_4_DESC
+Custom facials and skincare plans for lasting results.
+
+## PROMO_TITLE
+New Client Facial Package
+
+## PROMO_BODY
+First-time clients get a complimentary skin consultation with any facial booking.
+
+## PROMO_CTA
+Learn More
+
+## VOICE_TITLE
+Your Voice Matters Here
+
+## TESTIMONIAL_1_QUOTE
+Warm, precise, and welcoming. I finally found a medspa that explains everything before treating.
+
+## TESTIMONIAL_1_AUTHOR
+J. Rivera
+
+## TESTIMONIAL_2_QUOTE
+Best facial experience I've had. Results after just one session.
+
+## TESTIMONIAL_2_AUTHOR
+M. Patel
