@@ -56,9 +56,10 @@ Typography uses a system that combines serif headings for warmth with clean sans
 
 ### Font Family
 - **Display**: Serif font stack (`Georgia, serif`, or system serif) — used for hero titles and treatment names. Warm, professional, approachable for medical context
-- **Text/UI**: System sans-serif stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`) — used for navigation, body copy, buttons, and all UI text. Optimized for legibility and clinical clarity
+- **Text/UI**: **Switzer Medium** (500) from Fontshare — used for navigation, body copy, buttons, and all UI text. Clean geometric sans-serif optimized for medical/professional clarity. Single weight: 500 (Medium) only
+- **Weight Lock**: Only Medium (500) is used across the entire site. No light, no bold, no weight variation
 - **No OpenType features** — typography is completely unembellished
-- **No italic variants** observed in primary site navigation
+- **No italic variants** used in primary site navigation
 
 ### Hierarchy
 
@@ -83,10 +84,10 @@ Typography uses a system that combines serif headings for warmth with clean sans
 ## 4. Component Stylings
 
 ### Buttons
-All buttons use barely-rounded rectangles (4px border-radius) — creating a sharp, professional aesthetic that mirrors the precision of medical practice.
+All buttons use subtly-rounded rectangles (6px border-radius) — creating a refined, professional aesthetic that mirrors the precision of medical practice.
 
 **Primary CTA** — The main action button:
-- Default: bg `#e8b294` (Peach), text `#2b2a28` (Ink), fontSize 14px, fontWeight 500, padding 4px with inner content centering, borderRadius 4px, minHeight 40px, width 200px
+- Default: bg `#e8b294` (Peach), text `#2b2a28` (Ink), fontSize 14px, fontWeight 500, padding 4px with inner content centering, borderRadius 6px, minHeight 40px, width 200px
 - Border: 3px solid transparent (reserves space for focus/active border animation)
 - Box Shadow: `rgba(0,0,0,0) 0px 0px 0px 2px inset` (invisible at rest, animates to visible on focus)
 - Transition: `background-color 0.33s, color 0.33s, box-shadow 0.25s`
@@ -99,7 +100,7 @@ All buttons use barely-rounded rectangles (4px border-radius) — creating a sha
 - Used for: "Learn More" alongside primary CTA
 
 **Nav Button** — Top navigation items:
-- Default: bg transparent, text `#2b2a28` (Ink), fontSize 14px, fontWeight 500, borderRadius 4px, padding 4px 16px, minHeight 32px
+- Default: bg transparent, text `#2b2a28` (Ink), fontSize 14px, fontWeight 500, borderRadius 6px, padding 4px 16px, minHeight 32px
 - Transition: `color 0.33s, background-color 0.33s`
 - Active/expanded: subtle background highlight with cream-dark
 - Used for: "Home", "About", "Services", "Contact", "Blog"
@@ -187,7 +188,7 @@ Glowin uses whitespace as a professional and luxury signal. The generous vertica
 | Value | Context |
 |-------|---------|
 | 0px | Most elements — sharp edges are the default |
-| 4px | Buttons (primary, secondary, nav items) — barely perceptible rounding |
+| 6px | Buttons (primary, secondary, nav items) — subtle but refined rounding |
 | 12px | Treatment cards and result cards — noticeable but restrained rounding on larger surfaces |
 | 50% | Chat/input focus states and decorative elements — perfect circles |
 
@@ -218,7 +219,7 @@ Glowin's approach to elevation is essentially "none." The site avoids box-shadow
 - Use Peach (#e8b294) exclusively for primary CTAs — never for decorative purposes
 - Maintain viewport-height sections for major content blocks — one message per screen
 - Keep typography at weight 400-500 only — no bold, no light, no extremes
-- Use 4px border-radius for all interactive elements — precision over playfulness
+- Use 6px border-radius for all interactive elements — refined precision over playfulness
 - Trust whitespace as a professional signal — never fill available space just because it's empty
 - Keep all transitions at 0.33s — consistency in motion is as important as consistency in color
 - Use professional photography on cream backgrounds for treatment showcases
@@ -233,7 +234,7 @@ Glowin's approach to elevation is essentially "none." The site avoids box-shadow
 - Use text larger than 40px on the web — the typography is deliberately restrained even at hero scale
 - Add borders to cards or containers — separation is achieved through spacing, not lines
 - Use uppercase text transforms in primary navigation — professionalism is expressed through lowercase calm
-- Introduce rounded-pill buttons or large border-radii — the 4px radius is deliberate and precise
+- Introduce rounded-pill buttons or large border-radii — the 6px radius is deliberate and refined
 - Override the font system with other typefaces — cross-platform clarity is a core value
 - Add hover animations with scale/translate transforms — interactions are color-only (background and border transitions)
 - Clutter the viewport with multiple CTAs — every screen should have at most two action buttons

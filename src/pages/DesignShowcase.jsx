@@ -57,8 +57,8 @@ export default function DesignShowcase() {
               </p>
               <div className="flex gap-4 justify-center">
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300"
-                  style={{ backgroundColor: '#e8b294', color: '#2b2a28' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all duration-300"
+                  style={{ backgroundColor: '#e8b294', color: '#2b2a28', borderRadius: '6px' }}
                   onMouseEnter={() => setButtonHover('primary')}
                   onMouseLeave={() => setButtonHover(null)}
                   onMouseOver={(e) => {
@@ -73,8 +73,8 @@ export default function DesignShowcase() {
                   Book Now
                 </button>
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300"
-                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all duration-300"
+                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df', borderRadius: '6px' }}
                 >
                   Learn More
                 </button>
@@ -113,20 +113,20 @@ export default function DesignShowcase() {
               <h3 className="text-lg font-medium text-ink mb-4">Primary CTA</h3>
               <div className="space-y-4">
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#e8b294', color: '#2b2a28' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all"
+                  style={{ backgroundColor: '#e8b294', color: '#2b2a28', borderRadius: '6px' }}
                 >
                   Default
                 </button>
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#d99872', color: '#2b2a28' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all"
+                  style={{ backgroundColor: '#d99872', color: '#2b2a28', borderRadius: '6px' }}
                 >
                   Hover
                 </button>
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium opacity-60"
-                  style={{ backgroundColor: '#e8b294', color: '#2b2a28' }}
+                  className="px-6 py-2.5 text-sm font-medium opacity-60"
+                  style={{ backgroundColor: '#e8b294', color: '#2b2a28', borderRadius: '6px' }}
                 >
                   Disabled
                 </button>
@@ -138,20 +138,20 @@ export default function DesignShowcase() {
               <h3 className="text-lg font-medium text-ink mb-4">Secondary CTA</h3>
               <div className="space-y-4">
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all"
+                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df', borderRadius: '6px' }}
                 >
                   Default
                 </button>
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#f1e9df', color: '#2b2a28' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all"
+                  style={{ backgroundColor: '#f1e9df', color: '#2b2a28', borderRadius: '6px' }}
                 >
                   Hover
                 </button>
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-medium opacity-60"
-                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df' }}
+                  className="px-6 py-2.5 text-sm font-medium opacity-60"
+                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df', borderRadius: '6px' }}
                 >
                   Disabled
                 </button>
@@ -282,8 +282,8 @@ export default function DesignShowcase() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-full px-6 py-2.5 text-sm font-medium text-ink transition-all"
-                style={{ backgroundColor: '#e8b294' }}
+                className="w-full px-6 py-2.5 text-sm font-medium text-ink transition-all"
+                style={{ backgroundColor: '#e8b294', borderRadius: '6px' }}
                 onMouseOver={(e) => (e.target.style.backgroundColor = '#d99872')}
                 onMouseOut={(e) => (e.target.style.backgroundColor = '#e8b294')}
               >

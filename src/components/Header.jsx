@@ -41,7 +41,8 @@ export default function Header() {
           {/* CTA Button */}
           <Link
             to="/contact"
-            className="rounded-full bg-peach px-5 py-2 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
+            className="bg-peach px-5 py-2 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
+            style={{ borderRadius: '6px' }}
           >
             {g.CTA_BOOK}
           </Link>
