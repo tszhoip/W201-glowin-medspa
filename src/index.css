@@ -1,4 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=switzer@500&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -13,10 +13,14 @@
 
 html {
   scroll-behavior: smooth;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 body {
   background-color: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }

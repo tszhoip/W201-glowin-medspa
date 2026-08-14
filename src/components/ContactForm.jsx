@@ -132,8 +132,20 @@ export default function ContactForm({
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="bg-peach px-6 py-2.5 text-sm font-medium text-ink hover:bg-peach-dark transition-colors disabled:opacity-60"
-        style={{ borderRadius: '6px' }}
+        className="px-6 py-2.5 text-sm font-medium text-ink transition-all"
+        style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(232, 178, 148, 0.5)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = 'none'
+        }}
+        onDisabled={(e) => {
+          if (status === 'sending') {
+            e.currentTarget.style.color = '#6b6560'
+            e.currentTarget.style.opacity = '0.6'
+          }
+        }}
       >
         {status === 'sending' ? 'Sending...' : ctaLabel}
       </button>

@@ -14,34 +14,44 @@ export default function Home() {
 
   return (
     <div className="bg-cream">
-      {/* Hero Section */}
-      <section className="mx-auto max-w-6xl px-6 pt-12 pb-16">
-        {/* Hero Image */}
-        <div className="rounded-2xl overflow-hidden mb-8" style={{ backgroundColor: '#e8b294', minHeight: '300px' }}>
-          <div className="w-full h-80 flex items-center justify-center text-cream font-medium">
-            [Hero photo — clinic interior]
-          </div>
-        </div>
+      {/* Hero Section - Full Width Background Image */}
+      <section className="relative w-full h-screen md:h-96">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: '#e8b294',
+            backgroundImage: 'url(/src/assets/images/hero/hero-placeholder.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
 
-        {/* Hero Content */}
-        <div className="text-center mb-12">
-          <p className="text-xs text-ink-soft mb-4">hero photo — clinic interior</p>
-          <h1 className="text-4xl md:text-5xl font-medium text-ink mb-3 max-w-3xl mx-auto">
-            {c.HERO_HEADLINE || 'Radiant skin, expert care'}
-          </h1>
-          <p className="text-lg text-ink-soft mb-8 max-w-xl mx-auto">
-            {c.HERO_SUBHEADLINE || 'Med-spa treatments tailored to you'}
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium text-ink transition-all"
-            style={{ backgroundColor: '#e8b294', borderRadius: '6px' }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#d99872')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#e8b294')}
-          >
-            {c.HERO_CTA || 'Book a Consultation'}
-            <span>→</span>
-          </Link>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        {/* Centered Content */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center text-white px-6 max-w-3xl">
+            <h1 className="text-3xl md:text-5xl font-medium mb-4">
+              Modern Medspa Innovation, Rooted in Clinical Care
+            </h1>
+
+            {/* CTA Button - Secondary Style */}
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-3 text-sm font-medium text-ink transition-all"
+              style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(232, 178, 148, 0.5)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
+              BOOK NOW
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -6,7 +6,7 @@ Glowin's website is an exercise in clinical clarity and healing warmth — a dig
 
 The color philosophy is restrained and purposeful: a single peach (#e8b294) for primary calls to action, three shades of neutral ink for text hierarchy, and cream for everything else. The entire emotional weight is carried by photography — lifestyle shots of relaxed patients, close-up clinical imagery showing expertise, serene treatment room compositions that instill confidence. The UI chrome dissolves into the imagery. The navigation bar floats above the hero with no visible background, border, or shadow — the Glowin logotype and navigation labels simply exist in the space, trusting the professional content beneath them to provide sufficient contrast and credibility.
 
-Typography uses a unified system of **Switzer Medium** across all text — from hero headlines to body copy — creating a cohesive, professional voice across the website and mobile experience. Switzer's geometric precision pairs perfectly with the clinical yet approachable aesthetic. All text is rendered in Switzer Medium (500 weight) including hero titles at 40px, treatment names at 17px, and body copy at 14px. The font carries precision without coldness, sophistication without clinical sterility — exactly matching Glowin's brand identity of advanced medical technology delivered with human warmth. There are no text shadows, no text gradients, no decorative type treatments. Every letterform earns its place through clarity and professionalism alone.
+Typography uses a unified system of **Switzer Regular** with enhanced letter-spacing across all text — from hero headlines to body copy — creating a cohesive, professional voice across the website and mobile experience. Switzer's geometric precision pairs perfectly with the clinical yet approachable aesthetic, while the increased spacing (0.02em/+2%) adds refinement and clarity. All text is rendered in Switzer Regular (400 weight) including hero titles at 40px, treatment names at 17px, and body copy at 14px, with consistent +2% letter-spacing throughout. The font carries precision without coldness, sophistication without clinical sterility — exactly matching Glowin's brand identity of advanced medical technology delivered with human warmth. There are no text shadows, no text gradients, no decorative type treatments. Every letterform earns its place through clarity and professionalism alone.
 
 **Key Characteristics:**
 - Full-viewport hero sections (100vh) dominated by beautiful treatment/results photography with minimal overlay UI
@@ -55,8 +55,9 @@ Typography uses a unified system of **Switzer Medium** across all text — from 
 ## 3. Typography Rules
 
 ### Font Family
-- **All Text**: **Switzer Medium** (500) from Fontshare — used for ALL text including hero titles, treatment names, navigation, body copy, buttons, and all UI text. Clean geometric sans-serif optimized for medical/professional clarity. Single typeface, single weight across the entire site for maximum coherence
-- **Weight Lock**: Only Medium (500) is used everywhere. No light, no bold, no weight variation, no serif alternatives
+- **All Text**: **Switzer Regular** (400) from Fontshare — used for ALL text including hero titles, treatment names, navigation, body copy, buttons, and all UI text. Clean geometric sans-serif optimized for medical/professional clarity. Single typeface, single weight across the entire site for maximum coherence
+- **Weight Lock**: Only Regular (400) is used everywhere. No light, no bold, no weight variation, no serif alternatives
+- **Letter Spacing**: Global +2% (0.02em) applied to all text for enhanced clarity and refined spacing
 - **No OpenType features** — typography is completely unembellished
 - **No italic variants** used anywhere in the site
 
@@ -64,20 +65,21 @@ Typography uses a unified system of **Switzer Medium** across all text — from 
 
 | Role | Size | Weight | Line Height | Letter Spacing | Notes |
 |------|------|--------|-------------|----------------|-------|
-| Hero Title | 40px (2.50rem) | 500 | 48px (1.20) | normal | Switzer Medium, cream text on professional imagery |
-| Treatment Name | 17px (1.06rem) | 500 | 20px (1.18) | normal | Switzer Medium, treatment names in nav panel and cards |
-| Nav Item | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Switzer Medium, primary navigation labels |
-| Body Text | 14px (0.88rem) | 400 | 20px (1.43) | normal | Switzer Medium (note: appears lighter than 500 due to geometric design) |
-| Button Label | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Switzer Medium, CTA button text |
-| Sub-link | 14px (0.88rem) | 400 | 20px (1.43) | normal | Tertiary links (Learn, Details, View Results) |
-| Promo Text | 22px (1.38rem) | 400 | 20px (0.91) | normal | Cream/white promotional text on hero ("New Treatment Available") |
-| Category Label | 16px (est.) | 500 | — | normal | Cream text labels on treatment cards ("Non-Invasive Lifting") |
+| Hero Title | 40px (2.50rem) | 400 | 48px (1.20) | +2% (0.02em) | Switzer Regular, cream text on professional imagery |
+| Treatment Name | 17px (1.06rem) | 400 | 20px (1.18) | +2% (0.02em) | Switzer Regular, treatment names in nav panel and cards |
+| Nav Item | 14px (0.88rem) | 400 | 16.8px (1.20) | +2% (0.02em) | Switzer Regular, primary navigation labels |
+| Body Text | 14px (0.88rem) | 400 | 20px (1.43) | +2% (0.02em) | Switzer Regular with enhanced letter-spacing |
+| Button Label | 14px (0.88rem) | 400 | 16.8px (1.20) | +2% (0.02em) | Switzer Regular, CTA button text |
+| Sub-link | 14px (0.88rem) | 400 | 20px (1.43) | +2% (0.02em) | Tertiary links (Learn, Details, View Results) |
+| Promo Text | 22px (1.38rem) | 400 | 20px (0.91) | +2% (0.02em) | Cream/white promotional text on hero |
+| Category Label | 16px (est.) | 400 | — | +2% (0.02em) | Cream text labels on treatment cards |
 
 ### Principles
-- **"Normal" letter-spacing everywhere**: Unlike most modern brands that use negative tracking, Glowin uses default letter-spacing at every level. This reflects professional confidence — the typeface speaks for itself without manipulation
-- **Weight restraint**: Only one weight is used everywhere — 500 (Medium) throughout. The single weight creates maximum clarity and eliminates visual hierarchy clutter. Hierarchy is achieved through size only, not weight variation
+- **Enhanced letter-spacing**: Glowin adds +2% letter-spacing globally for a refined, spacious feel that enhances readability and creates a luxury aesthetic
+- **Weight simplicity**: Single weight (400 Regular) creates maximum clarity and eliminates visual hierarchy clutter. Hierarchy is achieved through size only, not weight variation
 - **Unified font sizing**: Most UI text clusters at 14px with only hero titles (40px) and promo text (22px) breaking away. This extreme uniformity creates a sense of engineered precision
-- **Single typeface unity**: One font (Switzer Medium) across all text — headlines, body, buttons, navigation. No serif alternatives, no style switching. This creates a coherent, professional voice from headline to footnote
+- **Single typeface unity**: One font (Switzer Regular) across all text — headlines, body, buttons, navigation. No serif alternatives, no style switching. This creates a coherent, professional voice from headline to footnote
+- **Openness**: The combination of regular weight + increased letter-spacing creates an open, breathing aesthetic that conveys confidence and professionalism
 - **No text transforms**: No uppercase text appears in the main navigation or CTAs — the lowercase approach reinforces professionalism and approachability
 
 ## 4. Component Stylings
