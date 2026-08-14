@@ -139,19 +139,25 @@ export default function DesignShowcase() {
               <div className="space-y-4">
                 <button
                   className="px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df', borderRadius: '6px' }}
+                  style={{ backgroundColor: '#f5f5f5', color: '#2b2a28', border: '1px solid #f5f5f5', borderRadius: '6px' }}
                 >
                   Default
                 </button>
                 <button
-                  className="px-6 py-2.5 text-sm font-medium transition-all"
-                  style={{ backgroundColor: '#f1e9df', color: '#2b2a28', borderRadius: '6px' }}
+                  className="px-6 py-2.5 text-sm font-medium transition-all relative"
+                  style={{ backgroundColor: '#f5f5f5', color: '#2b2a28', border: '1px solid #f5f5f5', borderRadius: '6px' }}
+                  onMouseOver={(e) => {
+                    e.target.style.boxShadow = 'inset 0 0 0 100px rgba(232, 178, 148, 0.5)'
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.boxShadow = 'none'
+                  }}
                 >
-                  Hover
+                  Hover (with Peach overlay)
                 </button>
                 <button
-                  className="px-6 py-2.5 text-sm font-medium opacity-60"
-                  style={{ backgroundColor: '#ffffff', color: '#2b2a28', border: '1px solid #f1e9df', borderRadius: '6px' }}
+                  className="px-6 py-2.5 text-sm font-medium"
+                  style={{ backgroundColor: '#f5f5f5', color: '#6b6560', border: '1px solid #f5f5f5', borderRadius: '6px', opacity: '0.6' }}
                 >
                   Disabled
                 </button>
@@ -244,34 +250,27 @@ export default function DesignShowcase() {
           <div className="max-w-2xl mx-auto p-8 rounded-lg border border-cream-dark bg-white">
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
-                  Full Name <span className="text-peach">*</span>
-                </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 rounded text-sm text-ink"
-                  style={{ borderColor: '#f1e9df', border: '1px solid #f1e9df' }}
-                  placeholder="Your name"
+                  className="w-full px-4 py-2 text-sm text-ink"
+                  style={{ backgroundColor: '#f5f5f5', border: '1px solid #f5f5f5', borderRadius: '6px' }}
+                  placeholder="Full Name *"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
-                  Email <span className="text-peach">*</span>
-                </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 rounded text-sm text-ink"
-                  style={{ borderColor: '#f1e9df', border: '1px solid #f1e9df' }}
-                  placeholder="your@email.com"
+                  className="w-full px-4 py-2 text-sm text-ink"
+                  style={{ backgroundColor: '#f5f5f5', border: '1px solid #f5f5f5', borderRadius: '6px' }}
+                  placeholder="Email *"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">Message</label>
                 <textarea
-                  className="w-full px-4 py-2 rounded text-sm text-ink"
+                  className="w-full px-4 py-2 text-sm text-ink"
                   rows="4"
-                  style={{ borderColor: '#f1e9df', border: '1px solid #f1e9df' }}
-                  placeholder="Tell us about your interests"
+                  style={{ backgroundColor: '#f5f5f5', border: '1px solid #f5f5f5', borderRadius: '6px' }}
+                  placeholder="Message"
                 />
               </div>
               <div className="flex items-start gap-3">

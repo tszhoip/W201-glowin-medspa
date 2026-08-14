@@ -77,48 +77,44 @@ export default function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="name">
-          {nameLabel} <span className="text-peach">*</span>
-        </label>
         <input
           id="name"
           name="name"
           required
-          className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
+          placeholder={nameLabel}
+          className="w-full rounded-lg border border-gray-200 bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
+          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px' }}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="email">
-          {emailLabel} <span className="text-peach">*</span>
-        </label>
         <input
           id="email"
           name="email"
           type="email"
           required
-          className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
+          placeholder={emailLabel}
+          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
+          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="phone">
-          {phoneLabel} <span className="text-peach">*</span>
-        </label>
         <input
           id="phone"
           name="phone"
           required
-          className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
+          placeholder={phoneLabel}
+          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
+          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="message">
-          {messageLabel}
-        </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
+          placeholder={messageLabel}
+          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
+          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
         />
       </div>
       <div className="flex items-start gap-3">

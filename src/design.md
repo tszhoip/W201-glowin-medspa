@@ -94,8 +94,10 @@ All buttons use subtly-rounded rectangles (6px border-radius) — creating a ref
 - Used for: "Book Now", "Schedule Consultation", "Get Started"
 
 **Secondary CTA** — The alternative action button:
-- Default: bg `#ffffff`, text `#2b2a28` (Ink), same dimensions and border pattern as primary
-- Transition: identical timing to primary (0.33s)
+- Default: bg `#f5f5f5` (Light Grey), text `#2b2a28` (Ink), borderRadius 6px
+- Hover: bg `#f5f5f5` with overlay `rgba(232, 178, 148, 0.5)` (Peach 50% opacity)
+- Disabled: bg `#f5f5f5`, text `#6b6560` (Ink-Soft), reduced opacity
+- Transition: 0.33s
 - Used for: "Learn More" alongside primary CTA
 
 **Nav Button** — Top navigation items:
@@ -136,13 +138,17 @@ All buttons use subtly-rounded rectangles (6px border-radius) — creating a ref
 - Spacing: generous padding (16-24px) to reflect medical professionalism
 
 ### Inputs & Forms
-- Background: transparent or `#ffffff` (white)
+- Background: `#f5f5f5` (Light Grey) — clean, subtle alternate to cream
 - Text color: `#2b2a28` (Ink)
 - Placeholder color: `rgba(107, 101, 96, 0.5)` (Ink-Soft 50%)
-- Border: minimal 1px `#f1e9df` (Cream-Dark)
-- Font: sans-serif, 14px
+- Border: 1px `#f5f5f5` (subtle, matches background)
+- Border-radius: 6px — matches button styling
+- Font: Switzer Medium, 14px
+- **No visible labels** — all field hints via placeholder text only
+- Focus state: subtle outline in `#e8b294` (Peach) optional
+- Error state: 1px or 2px red border `#dc2626` + red helper text `#dc2626`
 - Contact form and booking inputs maintain this clean, focused aesthetic
-- The Tawk.to chat input bar sits at the viewport bottom with a clean cream background and subtle border
+- The Tawk.to chat input bar sits at the viewport bottom with clean background
 
 ### Navigation
 - **Desktop**: Centered horizontal nav with Glowin logotype on the left, navigation buttons center-aligned (Home, About, Services, Contact, Blog, Machines), and icons on the right
