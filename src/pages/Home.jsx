@@ -3,6 +3,7 @@ import raw from '../content/home.txt?raw'
 import { parseContent } from '../lib/loadContent'
 import TestimonialsSection from '../components/TestimonialsSection'
 import InstagramSection from '../components/InstagramSection'
+import heroBanner from '../assets/images/hero/banner-01.png'
 
 const c = parseContent(raw)
 
@@ -19,14 +20,10 @@ export default function Home() {
       {/* Hero Section - Full Width Background Image */}
       <section className="relative w-full h-screen md:h-96">
         {/* Background Image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundColor: '#e8b294',
-            backgroundImage: 'url(/src/assets/images/hero/hero-placeholder.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        <img
+          src={heroBanner}
+          alt="Modern Medspa Innovation"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Dark Overlay */}
