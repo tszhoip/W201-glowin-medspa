@@ -18,7 +18,7 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-cream-dark">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="font-serif text-lg font-semibold tracking-tight">
+          <Link to="/" className="text-lg font-semibold tracking-tight">
             {g.BUSINESS_NAME}
           </Link>
 

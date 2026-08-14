@@ -6,7 +6,7 @@ Glowin's website is an exercise in clinical clarity and healing warmth — a dig
 
 The color philosophy is restrained and purposeful: a single peach (#e8b294) for primary calls to action, three shades of neutral ink for text hierarchy, and cream for everything else. The entire emotional weight is carried by photography — lifestyle shots of relaxed patients, close-up clinical imagery showing expertise, serene treatment room compositions that instill confidence. The UI chrome dissolves into the imagery. The navigation bar floats above the hero with no visible background, border, or shadow — the Glowin logotype and navigation labels simply exist in the space, trusting the professional content beneath them to provide sufficient contrast and credibility.
 
-Typography uses a system that combines serif headings for warmth with clean sans-serif for clarity — unifying the website and mobile experience into a single professional voice. Display headings render treatment titles at 40px weight 500, while body/UI text handles everything from navigation (14px/500) to body copy (14px/400). The font selection carries precision without coldness, sophistication without clinical sterility — exactly matching Glowin's brand identity of advanced medical technology delivered with human warmth. There are no text shadows, no text gradients, no decorative type treatments. Every letterform earns its place through clarity and professionalism alone.
+Typography uses a unified system of **Switzer Medium** across all text — from hero headlines to body copy — creating a cohesive, professional voice across the website and mobile experience. Switzer's geometric precision pairs perfectly with the clinical yet approachable aesthetic. All text is rendered in Switzer Medium (500 weight) including hero titles at 40px, treatment names at 17px, and body copy at 14px. The font carries precision without coldness, sophistication without clinical sterility — exactly matching Glowin's brand identity of advanced medical technology delivered with human warmth. There are no text shadows, no text gradients, no decorative type treatments. Every letterform earns its place through clarity and professionalism alone.
 
 **Key Characteristics:**
 - Full-viewport hero sections (100vh) dominated by beautiful treatment/results photography with minimal overlay UI
@@ -55,30 +55,29 @@ Typography uses a system that combines serif headings for warmth with clean sans
 ## 3. Typography Rules
 
 ### Font Family
-- **Display**: Serif font stack (`Georgia, serif`, or system serif) — used for hero titles and treatment names. Warm, professional, approachable for medical context
-- **Text/UI**: **Switzer Medium** (500) from Fontshare — used for navigation, body copy, buttons, and all UI text. Clean geometric sans-serif optimized for medical/professional clarity. Single weight: 500 (Medium) only
-- **Weight Lock**: Only Medium (500) is used across the entire site. No light, no bold, no weight variation
+- **All Text**: **Switzer Medium** (500) from Fontshare — used for ALL text including hero titles, treatment names, navigation, body copy, buttons, and all UI text. Clean geometric sans-serif optimized for medical/professional clarity. Single typeface, single weight across the entire site for maximum coherence
+- **Weight Lock**: Only Medium (500) is used everywhere. No light, no bold, no weight variation, no serif alternatives
 - **No OpenType features** — typography is completely unembellished
-- **No italic variants** used in primary site navigation
+- **No italic variants** used anywhere in the site
 
 ### Hierarchy
 
 | Role | Size | Weight | Line Height | Letter Spacing | Notes |
 |------|------|--------|-------------|----------------|-------|
-| Hero Title | 40px (2.50rem) | 500 | 48px (1.20) | normal | Display serif, cream text on professional imagery |
-| Treatment Name | 17px (1.06rem) | 500 | 20px (1.18) | normal | Text sans-serif, treatment names in nav panel and cards |
-| Nav Item | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Text sans-serif, primary navigation labels |
-| Body Text | 14px (0.88rem) | 400 | 20px (1.43) | normal | Text sans-serif, paragraph and descriptive content |
-| Button Label | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Text sans-serif, CTA button text |
+| Hero Title | 40px (2.50rem) | 500 | 48px (1.20) | normal | Switzer Medium, cream text on professional imagery |
+| Treatment Name | 17px (1.06rem) | 500 | 20px (1.18) | normal | Switzer Medium, treatment names in nav panel and cards |
+| Nav Item | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Switzer Medium, primary navigation labels |
+| Body Text | 14px (0.88rem) | 400 | 20px (1.43) | normal | Switzer Medium (note: appears lighter than 500 due to geometric design) |
+| Button Label | 14px (0.88rem) | 500 | 16.8px (1.20) | normal | Switzer Medium, CTA button text |
 | Sub-link | 14px (0.88rem) | 400 | 20px (1.43) | normal | Tertiary links (Learn, Details, View Results) |
 | Promo Text | 22px (1.38rem) | 400 | 20px (0.91) | normal | Cream/white promotional text on hero ("New Treatment Available") |
 | Category Label | 16px (est.) | 500 | — | normal | Cream text labels on treatment cards ("Non-Invasive Lifting") |
 
 ### Principles
-- **"Normal" letter-spacing everywhere**: Unlike most modern brands that use negative tracking, Glowin uses default letter-spacing at every level. This reflects professional confidence — the typefaces speak for themselves without manipulation
-- **Weight restraint**: Only two weights appear — 500 (medium) for headings/UI and 400 (regular) for body. No bold (700), no light (300). The system avoids typographic drama in favor of clinical clarity
+- **"Normal" letter-spacing everywhere**: Unlike most modern brands that use negative tracking, Glowin uses default letter-spacing at every level. This reflects professional confidence — the typeface speaks for itself without manipulation
+- **Weight restraint**: Only one weight is used everywhere — 500 (Medium) throughout. The single weight creates maximum clarity and eliminates visual hierarchy clutter. Hierarchy is achieved through size only, not weight variation
 - **Unified font sizing**: Most UI text clusters at 14px with only hero titles (40px) and promo text (22px) breaking away. This extreme uniformity creates a sense of engineered precision
-- **Display vs Text split**: Two-variant system (Display serif for hero, Text sans-serif for UI) creates subtle optical correction without visible stylistic difference — they appear as a coordinated system at different sizes
+- **Single typeface unity**: One font (Switzer Medium) across all text — headlines, body, buttons, navigation. No serif alternatives, no style switching. This creates a coherent, professional voice from headline to footnote
 - **No text transforms**: No uppercase text appears in the main navigation or CTAs — the lowercase approach reinforces professionalism and approachability
 
 ## 4. Component Stylings

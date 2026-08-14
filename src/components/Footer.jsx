@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 
         {/* Business Name */}
-        <div className="font-serif text-lg font-semibold mb-6">
+        <div className="text-lg font-semibold mb-6">
           {g.BUSINESS_NAME}
         </div>
 
@@ -30,7 +30,8 @@ export default function Footer() {
         {/* CTA Button */}
         <Link
           to="/contact"
-          className="inline-block mb-12 rounded-full bg-peach px-6 py-2.5 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
+          className="inline-block mb-12 bg-peach px-6 py-2.5 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
+          style={{ borderRadius: '6px' }}
         >
           {g.CTA_BOOK}
         </Link>

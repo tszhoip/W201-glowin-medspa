@@ -18,7 +18,7 @@ export default function DesignShowcase() {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-cream-dark">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          <h1 className="font-serif text-lg font-semibold text-ink">
+          <h1 className="text-lg font-semibold text-ink">
             Glowin Design System
           </h1>
           <nav className="hidden md:flex items-center gap-8">
@@ -49,7 +49,7 @@ export default function DesignShowcase() {
         <section className="mb-20">
           <div className="rounded-lg overflow-hidden" style={{ backgroundColor: '#2b2a28', minHeight: '300px' }}>
             <div className="p-12 text-center">
-              <h2 className="text-4xl font-serif font-medium text-cream mb-4">
+              <h2 className="text-4xl font-medium text-cream mb-4">
                 Treatment Showcase
               </h2>
               <p className="text-lg text-cream/80 mb-8 max-w-2xl mx-auto">
@@ -85,7 +85,7 @@ export default function DesignShowcase() {
 
         {/* Color Palette Section */}
         <section id="colors" className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Color Palette</h2>
+          <h2 className="text-3xl font-medium text-ink mb-8">Color Palette</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {colors.map((color) => (
               <div key={color.hex} className="rounded-lg border border-cream-dark overflow-hidden">
@@ -105,7 +105,7 @@ export default function DesignShowcase() {
 
         {/* Buttons Section */}
         <section id="buttons" className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Button States</h2>
+          <h2 className="text-3xl  font-medium text-ink mb-8">Button States</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Primary Button */}
@@ -162,11 +162,11 @@ export default function DesignShowcase() {
 
         {/* Text Hierarchy Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Text Hierarchy</h2>
+          <h2 className="text-3xl  font-medium text-ink mb-8">Text Hierarchy</h2>
           <div className="space-y-6 p-8 rounded-lg border border-cream-dark bg-white">
             <div>
               <p className="text-xs uppercase tracking-wide text-ink-soft mb-2">Heading (40px, weight 500)</p>
-              <h1 className="text-4xl font-serif font-medium text-ink">Lifting Treatment</h1>
+              <h1 className="text-4xl  font-medium text-ink">Lifting Treatment</h1>
             </div>
             <div>
               <p className="text-xs uppercase tracking-wide text-ink-soft mb-2">Treatment Name (17px, weight 500)</p>
@@ -199,7 +199,7 @@ export default function DesignShowcase() {
 
         {/* Treatment Cards Section */}
         <section id="cards" className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Treatment Cards</h2>
+          <h2 className="text-3xl  font-medium text-ink mb-8">Treatment Cards</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {['Lifting', 'Microneedling', 'Laser'].map((treatment) => (
               <div key={treatment} className="rounded-lg overflow-hidden border border-cream-dark">
@@ -227,7 +227,7 @@ export default function DesignShowcase() {
 
         {/* Before/After Results Card */}
         <section className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Results Card</h2>
+          <h2 className="text-3xl  font-medium text-ink mb-8">Results Card</h2>
           <div className="rounded-lg overflow-hidden" style={{ backgroundColor: '#2b2a28' }}>
             <div className="h-48 flex items-center justify-center text-cream font-medium">
               [Before/After Results Image]
@@ -240,7 +240,7 @@ export default function DesignShowcase() {
 
         {/* Forms Section */}
         <section id="forms" className="mb-20">
-          <h2 className="text-3xl font-serif font-medium text-ink mb-8">Contact Form</h2>
+          <h2 className="text-3xl  font-medium text-ink mb-8">Contact Form</h2>
           <div className="max-w-2xl mx-auto p-8 rounded-lg border border-cream-dark bg-white">
             <form className="space-y-6">
               <div>
@@ -296,7 +296,7 @@ export default function DesignShowcase() {
         {/* Footer */}
         <section className="border-t border-cream-dark pt-16 mt-20">
           <div className="mb-12">
-            <h3 className="font-serif text-lg font-semibold text-ink mb-4">Glowin Medspa</h3>
+            <h3 className=" text-lg font-semibold text-ink mb-4">Glowin Medspa</h3>
             <div className="text-sm text-ink-soft space-y-1 mb-4">
               <p>123 Glow Ave, Los Angeles, CA 90001</p>
               <p>(310) 555-0100</p>
