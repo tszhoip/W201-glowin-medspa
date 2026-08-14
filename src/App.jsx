@@ -10,6 +10,7 @@ import Location from './pages/Location'
 import Machines from './pages/Machines'
 import Blog from './pages/Blog'
 import TreatmentDetail from './pages/TreatmentDetail'
+import DesignShowcase from './pages/DesignShowcase'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/machines" element={<Machines />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/treatments/lifting" element={<TreatmentDetail />} />
+          <Route path="/design-showcase" element={<DesignShowcase />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
