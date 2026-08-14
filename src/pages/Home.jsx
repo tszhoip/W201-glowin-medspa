@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import raw from '../content/home.txt?raw'
 import { parseContent } from '../lib/loadContent'
+import TestimonialsSection from '../components/TestimonialsSection'
+import InstagramSection from '../components/InstagramSection'
 
 const c = parseContent(raw)
 
@@ -99,6 +101,12 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
+      {/* Instagram Section */}
+      <InstagramSection />
     </div>
   )
 }
