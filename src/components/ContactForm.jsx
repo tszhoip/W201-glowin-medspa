@@ -1,52 +1,75 @@
 import { useState } from 'react'
-import globalRaw from '../content/global.txt?raw'
-import { parseContent } from '../lib/loadContent'
 
-const g = parseContent(globalRaw)
-
-// Sends submissions to Formspree (https://formspree.io) — no backend needed.
-// Set FORMSPREE_FORM_ID in src/content/global.txt with the ID from your Formspree form.
+// Sends submissions to Vercel API route (/api/contact)
+// Email delivered via Gmail SMTP
 export default function ContactForm({
-  nameLabel = 'Name',
+  nameLabel = 'Full Name',
   emailLabel = 'Email',
   phoneLabel = 'Phone',
-  messageLabel = 'Message',
-  ctaLabel = 'Submit',
+  messageLabel = 'Your Message',
+  ctaLabel = 'SEND',
 }) {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
-  const formId = g.FORMSPREE_FORM_ID
-  const isConfigured = formId && !formId.startsWith('REPLACE_')
+  const [errorMsg, setErrorMsg] = useState('')
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!isConfigured) {
+    setStatus('sending')
+    setErrorMsg('')
+
+    const form = e.target
+    const name = form.name.value.trim()
+    const email = form.email.value.trim()
+    const phone = form.phone.value.trim()
+    const message = form.message.value.trim()
+    const consent = form.consent.checked
+
+    // Validation
+    if (!name || !email || !phone) {
       setStatus('error')
+      setErrorMsg('Please fill in all required fields.')
       return
     }
-    setStatus('sending')
-    const form = e.target
-    const data = new FormData(form)
+
+    if (!consent) {
+      setStatus('error')
+      setErrorMsg('Please agree to receive communication.')
+      return
+    }
+
     try {
-      const res = await fetch(`https://formspree.io/f/${formId}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          consent,
+        }),
       })
-      if (res.ok) {
+
+      const data = await res.json()
+
+      if (res.ok && data.success) {
         setStatus('sent')
         form.reset()
       } else {
         setStatus('error')
+        setErrorMsg(data.message || 'Something went wrong. Please try again.')
       }
-    } catch {
+    } catch (err) {
       setStatus('error')
+      setErrorMsg('Network error. Please try again.')
+      console.error('Form submission error:', err)
     }
   }
 
   if (status === 'sent') {
     return (
       <div className="rounded-2xl border border-cream-dark bg-white/60 p-6 text-sm text-ink">
-        Thanks — we received your request and will follow up shortly.
+        Thank you! We've received your message. We'll be in touch soon.
       </div>
     )
   }
@@ -55,7 +78,7 @@ export default function ContactForm({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label className="block text-sm font-medium mb-1" htmlFor="name">
-          {nameLabel}
+          {nameLabel} <span className="text-peach">*</span>
         </label>
         <input
           id="name"
@@ -66,7 +89,7 @@ export default function ContactForm({
       </div>
       <div>
         <label className="block text-sm font-medium mb-1" htmlFor="email">
-          {emailLabel}
+          {emailLabel} <span className="text-peach">*</span>
         </label>
         <input
           id="email"
@@ -78,11 +101,12 @@ export default function ContactForm({
       </div>
       <div>
         <label className="block text-sm font-medium mb-1" htmlFor="phone">
-          {phoneLabel}
+          {phoneLabel} <span className="text-peach">*</span>
         </label>
         <input
           id="phone"
           name="phone"
+          required
           className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
         />
       </div>
@@ -97,6 +121,18 @@ export default function ContactForm({
           className="w-full rounded-lg border border-cream-dark bg-white px-4 py-2 text-sm outline-none focus:border-peach"
         />
       </div>
+      <div className="flex items-start gap-3">
+        <input
+          id="consent"
+          name="consent"
+          type="checkbox"
+          required
+          className="mt-1 w-4 h-4 rounded border border-cream-dark accent-peach cursor-pointer"
+        />
+        <label htmlFor="consent" className="text-xs text-ink-soft leading-relaxed cursor-pointer">
+          I agree to receive SMS or e-mails for the provided number/email above.
+        </label>
+      </div>
       <button
         type="submit"
         disabled={status === 'sending'}
@@ -104,13 +140,8 @@ export default function ContactForm({
       >
         {status === 'sending' ? 'Sending...' : ctaLabel}
       </button>
-      {status === 'error' && !isConfigured && (
-        <p className="text-xs text-ink-soft">
-          Form not connected yet — add your Formspree form ID to src/content/global.txt.
-        </p>
-      )}
-      {status === 'error' && isConfigured && (
-        <p className="text-xs text-red-600">Something went wrong. Please try again.</p>
+      {status === 'error' && (
+        <p className="text-xs text-red-600">{errorMsg}</p>
       )}
     </form>
   )
