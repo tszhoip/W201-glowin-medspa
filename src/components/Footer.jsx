@@ -7,40 +7,76 @@ const g = parseContent(globalRaw)
 export default function Footer() {
   return (
     <footer className="border-t border-cream-dark bg-cream">
-      <div className="mx-auto max-w-6xl px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div className="col-span-2">
-          <div className="font-serif text-lg font-semibold">{g.BUSINESS_NAME}</div>
-          <p className="mt-2 text-sm text-ink-soft max-w-xs">{g.FOOTER_TAGLINE}</p>
-          <p className="mt-4 text-sm text-ink-soft">{g.FOOTER_ADDRESS}</p>
-          <p className="text-sm text-ink-soft">{g.FOOTER_PHONE}</p>
-          <p className="text-sm text-ink-soft">{g.FOOTER_EMAIL}</p>
-          <p className="mt-2 text-sm text-ink-soft">{g.FOOTER_HOURS}</p>
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+
+        {/* Business Name */}
+        <div className="font-serif text-lg font-semibold mb-6">
+          {g.BUSINESS_NAME}
         </div>
-        <div>
-          <div className="text-sm font-medium mb-3">{g.FOOTER_SERVICES_TITLE}</div>
-          <ul className="space-y-2 text-sm text-ink-soft">
-            <li>{g.FOOTER_LINK_LIFTING}</li>
-            <li>{g.FOOTER_LINK_MICRONEEDLING}</li>
-            <li>{g.FOOTER_LINK_LASER}</li>
-            <li>{g.FOOTER_LINK_INJECTABLES}</li>
-          </ul>
+
+        {/* Contact Info Block */}
+        <div className="mb-8 text-sm text-ink-soft space-y-1">
+          <p>{g.FOOTER_ADDRESS}</p>
+          <p>{g.FOOTER_PHONE}</p>
+          <p>{g.FOOTER_EMAIL}</p>
+          <p className="text-xs mt-3">{g.FOOTER_HOURS}</p>
         </div>
-        <div>
-          <div className="text-sm font-medium mb-3">{g.FOOTER_COMPANY_TITLE}</div>
-          <ul className="space-y-2 text-sm text-ink-soft">
-            <li>
-              <Link to="/about">{g.FOOTER_LINK_ABOUT}</Link>
-            </li>
-            <li>{g.FOOTER_LINK_OURSTORY}</li>
-            <li>{g.FOOTER_LINK_REVIEWS}</li>
-            <li>
-              <Link to="/contact">{g.FOOTER_LINK_CONTACT}</Link>
-            </li>
-          </ul>
+
+        {/* Tagline */}
+        <p className="mb-8 text-sm text-ink-soft max-w-md leading-relaxed">
+          {g.FOOTER_TAGLINE}
+        </p>
+
+        {/* CTA Button */}
+        <Link
+          to="/contact"
+          className="inline-block mb-12 rounded-full bg-peach px-6 py-2.5 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
+        >
+          {g.CTA_BOOK}
+        </Link>
+
+        {/* Divider */}
+        <div className="my-12 border-t border-cream-dark" />
+
+        {/* Links Row */}
+        <div className="flex flex-wrap gap-4 md:gap-8 text-xs text-ink-soft">
+          {/* Internal Navigation */}
+          <Link to="/" className="hover:text-ink transition-colors">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-ink transition-colors">
+            {g.FOOTER_LINK_ABOUT}
+          </Link>
+          <Link to="/services" className="hover:text-ink transition-colors">
+            {g.FOOTER_SERVICES_TITLE}
+          </Link>
+          <Link to="/contact" className="hover:text-ink transition-colors">
+            {g.FOOTER_LINK_CONTACT}
+          </Link>
+
+          {/* Social Links (Placeholders) */}
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ink transition-colors"
+          >
+            Instagram
+          </a>
+
+          {/* Legal Links (Placeholders) */}
+          <a href="#" className="hover:text-ink transition-colors">
+            Privacy
+          </a>
+          <a href="#" className="hover:text-ink transition-colors">
+            Terms
+          </a>
         </div>
-      </div>
-      <div className="border-t border-cream-dark">
-        <div className="mx-auto max-w-6xl px-6 py-4 text-xs text-ink-soft">{g.COPYRIGHT}</div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-cream-dark text-xs text-ink-soft">
+          {g.COPYRIGHT}
+        </div>
       </div>
     </footer>
   )
