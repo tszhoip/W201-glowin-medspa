@@ -37,6 +37,24 @@ Body
 ## CATEGORY_9_NAME
 Skincare
 
+## CATEGORY_10_NAME
+Skincare RF
+
+## CATEGORY_11_NAME
+HydraFacial
+
+## CATEGORY_12_NAME
+Dermapen
+
+## CATEGORY_13_NAME
+Ultherapy
+
+## CATEGORY_14_NAME
+Botox / Dysport
+
+## CATEGORY_15_NAME
+Dermal Fillers
+
 ## PROMO_TITLE
 New Intake Offer for Skin & Body
 

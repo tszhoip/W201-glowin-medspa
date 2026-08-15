@@ -7,7 +7,7 @@ const categories = Object.keys(c)
   .filter((k) => /^CATEGORY_\d+_NAME$/.test(k))
   .map((k) => c[k])
 
-// Map service names to slugs for URLs
+// Map service/machine names to slugs for URLs
 const serviceMap = {
   'Lifting': 'lifting',
   'Microneedling': 'microneedling',
@@ -18,6 +18,12 @@ const serviceMap = {
   'Hair Removal': 'hair-removal',
   'Body': 'body',
   'Skincare': 'skincare',
+  'Skincare RF': 'skincare-rf',
+  'HydraFacial': 'hydrafacial',
+  'Dermapen': 'dermapen',
+  'Ultherapy': 'ultherapy',
+  'Botox / Dysport': 'botox-dysport',
+  'Dermal Fillers': 'dermal-fillers',
 }
 
 export default function Services() {
