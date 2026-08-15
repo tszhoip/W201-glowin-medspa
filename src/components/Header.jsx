@@ -23,19 +23,13 @@ export default function Header() {
             {g.BUSINESS_NAME}
           </Link>
 
-          {/* Desktop Navigation - Right Aligned */}
+          {/* Desktop Navigation - Simplified: Home | Services */}
           <nav className="hidden md:flex items-center gap-8">
             <NavLink to="/" end className={navLinkClass}>
               {g.NAV_HOME}
             </NavLink>
-            <NavLink to="/about" className={navLinkClass}>
-              {g.NAV_ABOUT}
-            </NavLink>
             <NavLink to="/services" className={navLinkClass}>
               {g.NAV_SERVICES}
-            </NavLink>
-            <NavLink to="/contact" className={navLinkClass}>
-              {g.NAV_CONTACT}
             </NavLink>
           </nav>
 

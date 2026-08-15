@@ -47,12 +47,6 @@ export default function Footer() {
                 </Link>
               </div>
               <div>
-                <p className="text-xs opacity-75 mb-2">Company</p>
-                <Link to="/about" className="hover:opacity-75 transition-opacity">
-                  {g.FOOTER_LINK_ABOUT}
-                </Link>
-              </div>
-              <div>
                 <p className="text-xs opacity-75 mb-2">Support</p>
                 <Link to="/contact" className="hover:opacity-75 transition-opacity">
                   {g.FOOTER_LINK_CONTACT}
