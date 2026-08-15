@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 import raw from '../content/home.txt?raw'
-import { parseContent } from '../lib/loadContent'
+import aboutRaw from '../content/about.txt?raw'
+import { parseContent, collectGroup } from '../lib/loadContent'
 import TestimonialsSection from '../components/TestimonialsSection'
 import InstagramSection from '../components/InstagramSection'
 import heroBanner from '../assets/images/hero/banner-01.png'
 
 const c = parseContent(raw)
+const about = parseContent(aboutRaw)
+const disciplines = collectGroup(about, 'DISCIPLINE', ['NAME', 'DESC'])
 
 export default function Home() {
   const services = [
@@ -54,8 +57,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Story Section - From About */}
+      <section className="mx-auto max-w-3xl px-6 py-16 text-center border-t border-cream-dark">
+        <h2 className="text-3xl font-medium text-ink mb-6">
+          {about.STORY_TITLE || 'Our Story'}
+        </h2>
+        <p className="text-lg text-ink-soft leading-relaxed">
+          {about.STORY_BODY || 'Glowin Medspa was founded to close the gap between clinical-grade skincare and a genuinely welcoming experience.'}
+        </p>
+      </section>
+
+      {/* Disciplines Section - From About */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
+        <h2 className="text-3xl font-medium text-ink mb-10 text-center">
+          Why Choose Glowin
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {disciplines.map((d) => (
+            <div key={d.name} className="rounded-2xl bg-white/50 border border-cream-dark p-6 hover:border-peach transition-colors">
+              <h3 className="font-medium text-ink mb-2">{d.name}</h3>
+              <p className="text-sm text-ink-soft leading-relaxed">{d.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark md:mt-0">
         <h2 className="text-3xl font-medium text-ink mb-10">
           {c.SERVICES_TITLE || 'Our Services'}
         </h2>
