@@ -35,53 +35,26 @@ export default function MobileMenu({ isOpen, onClose }) {
             Home
           </NavLink>
           <NavLink
-            to="/about"
-            onClick={onClose}
-            className={navLinkClass}
-          >
-            About
-          </NavLink>
-          <NavLink
             to="/services"
             onClick={onClose}
             className={navLinkClass}
           >
             Services
           </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={onClose}
-            className={navLinkClass}
-          >
-            Contact
-          </NavLink>
         </nav>
 
         {/* Divider */}
         <div className="my-4 border-t border-cream-dark" />
 
-        {/* Additional Links */}
-        <div className="px-4 space-y-3 text-sm">
+        {/* CTA Button */}
+        <div className="px-4 mb-4">
           <Link
-            to="/location"
+            to="/contact"
             onClick={onClose}
-            className="block text-ink-soft hover:text-ink transition-colors"
+            className="block w-full bg-peach px-4 py-3 text-sm font-medium text-ink text-center hover:bg-peach-dark transition-colors rounded"
+            style={{ borderRadius: '6px' }}
           >
-            Location
-          </Link>
-          <Link
-            to="/machines"
-            onClick={onClose}
-            className="block text-ink-soft hover:text-ink transition-colors"
-          >
-            Machines
-          </Link>
-          <Link
-            to="/blog"
-            onClick={onClose}
-            className="block text-ink-soft hover:text-ink transition-colors"
-          >
-            Blog
+            Book Now
           </Link>
         </div>
       </div>

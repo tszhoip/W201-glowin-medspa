@@ -21,7 +21,7 @@ export default function InstagramSection() {
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="rounded-2xl border border-cream-dark"
+            className="rounded-2xl border border-cream-dark hover:border-peach hover:shadow-md transition-all duration-300"
             style={{
               backgroundColor: '#efefef',
               minHeight: '200px',
