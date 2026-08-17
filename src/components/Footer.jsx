@@ -44,9 +44,9 @@ export default function Footer() {
           <div className="grid grid-cols-4 gap-12 mb-16">
             {/* Column 1: First set of treatment links */}
             <div className="space-y-2 text-sm">
-              {col1Links.map((link) => (
+              {col1Links.map((link, idx) => (
                 <Link
-                  key={link.label}
+                  key={`col1-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -57,9 +57,9 @@ export default function Footer() {
 
             {/* Column 2: Second set of treatment links */}
             <div className="space-y-2 text-sm">
-              {col2Links.map((link) => (
+              {col2Links.map((link, idx) => (
                 <Link
-                  key={link.label + link.href}
+                  key={`col2-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -73,9 +73,9 @@ export default function Footer() {
 
             {/* Column 4: Legal links */}
             <div className="space-y-2 text-sm text-right">
-              {legalLinks.map((link) => (
+              {legalLinks.map((link, idx) => (
                 <Link
-                  key={link.label}
+                  key={`legal-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -116,9 +116,9 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-6 mb-12">
             {/* Column 1 */}
             <div className="space-y-2 text-sm">
-              {col1Links.map((link) => (
+              {col1Links.map((link, idx) => (
                 <Link
-                  key={link.label}
+                  key={`mobile-col1-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -129,9 +129,9 @@ export default function Footer() {
 
             {/* Column 2 - includes overflow from column 2 links + legal links */}
             <div className="space-y-2 text-sm">
-              {col2Links.map((link) => (
+              {col2Links.map((link, idx) => (
                 <Link
-                  key={link.label + link.href}
+                  key={`mobile-col2-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -141,9 +141,9 @@ export default function Footer() {
 
               {/* Legal links at end of column 2 */}
               <div className="border-t border-white/30 pt-2 mt-4">
-                {legalLinks.map((link) => (
+                {legalLinks.map((link, idx) => (
                   <Link
-                    key={link.label}
+                    key={`mobile-legal-${idx}`}
                     to={link.href}
                     className="block hover:underline"
                   >
