@@ -29,7 +29,7 @@ export default function Header() {
             <img
               src={logoImg}
               alt="Glowin Medspa"
-              className="h-12 md:h-16 w-auto"
+              style={{ height: '48px', width: 'auto' }}
             />
           </Link>
 
