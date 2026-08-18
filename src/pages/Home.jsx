@@ -8,8 +8,8 @@ import catFace from '../assets/images/home/cat-face.png'
 export default function Home() {
   return (
     <div className="bg-cream">
-      {/* Hero Section - account for fixed header (64px) */}
-      <section className="relative w-full" style={{ height: '80vh', minHeight: '600px', maxHeight: '1000px', marginTop: '64px' }}>
+      {/* Hero Section - account for fixed header (56px) */}
+      <section className="relative w-full" style={{ height: '80vh', minHeight: '600px', maxHeight: '1000px', marginTop: '56px' }}>
         <img
           src={heroBanner}
           alt="Rooted in Clinical Care"

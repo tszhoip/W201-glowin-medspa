@@ -12,8 +12,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '64px' }}>
-        <div className="mx-auto max-w-7xl px-6 h-full flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '56px' }}>
+        <div className="h-full px-6 flex items-center justify-between">
           {/* Left: Circle + Services */}
           <div className="flex items-center gap-4">
             <div className="w-4 h-4 rounded-full bg-black flex-shrink-0 hidden md:block"></div>
@@ -30,7 +30,7 @@ export default function Header() {
             <img
               src={logoSvg}
               alt="Glowin Medspa"
-              style={{ height: '36px', width: 'auto' }}
+              style={{ height: '29px', width: 'auto' }}
             />
           </Link>
 
