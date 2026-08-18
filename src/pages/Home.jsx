@@ -1,11 +1,48 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
 import heroBanner from '../assets/images/home/banner-01.png'
 import co2 from '../assets/images/home/Co2.jpg'
 import miimLaser from '../assets/images/home/Miin Laser.jpg'
 import pdoThreads from '../assets/images/home/PDO Threads.jpg'
 import catFace from '../assets/images/home/cat-face.png'
 
+const serviceItems = [
+  { id: 'face', label: 'Face', image: catFace },
+  { id: 'injectable', label: 'Injectable', image: catFace },
+  { id: 'skincare', label: 'Skin Care', image: catFace }
+]
+
 export default function Home() {
+  const [activeService, setActiveService] = useState('face')
+  const itemRefs = useRef({})
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    }
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveService(entry.target.dataset.id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, options)
+
+    serviceItems.forEach((item) => {
+      if (itemRefs.current[item.id]) {
+        observer.observe(itemRefs.current[item.id])
+      }
+    })
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
   return (
     <div className="bg-cream">
       {/* Hero Section - account for fixed header (56px) */}
@@ -93,25 +130,30 @@ export default function Home() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left: Service Links */}
-          <div className="space-y-4">
-            <Link to="/services" className="block text-lg font-medium text-ink hover:text-peach transition-colors">
-              Face •
-            </Link>
-            <Link to="/services" className="block text-lg font-medium text-ink hover:text-peach transition-colors">
-              Injectable •
-            </Link>
-            <Link to="/services" className="block text-lg font-medium text-ink hover:text-peach transition-colors">
-              Skin Care
-            </Link>
+          {/* Left: Service Links - Scrollable */}
+          <div className="space-y-4 h-80 overflow-y-auto" style={{ scrollBehavior: 'smooth' }}>
+            {serviceItems.map((service) => (
+              <div
+                key={service.id}
+                ref={(el) => (itemRefs.current[service.id] = el)}
+                data-id={service.id}
+                className={`block text-lg font-medium transition-colors py-8 ${
+                  activeService === service.id ? 'text-peach' : 'text-ink hover:text-peach'
+                }`}
+              >
+                <Link to="/services" className="no-underline">
+                  {service.label} •
+                </Link>
+              </div>
+            ))}
           </div>
 
-          {/* Right: Featured Image */}
-          <div className="rounded-lg overflow-hidden">
+          {/* Right: Featured Image - Sticky */}
+          <div className="sticky top-20 h-80 rounded-lg overflow-hidden">
             <img
-              src={catFace}
-              alt="Skin Care Treatment"
-              className="w-full h-80 object-cover"
+              src={serviceItems.find((s) => s.id === activeService)?.image || catFace}
+              alt={activeService}
+              className="w-full h-full object-cover transition-opacity duration-300"
             />
           </div>
         </div>
