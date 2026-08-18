@@ -18,13 +18,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Rooted in Clinical Care
             </h1>
             <Link
               to="/contact"
-              className="inline-block px-6 py-2 text-xs font-medium text-ink transition-all"
-              style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
+              className="inline-block font-medium text-ink transition-all"
+              style={{ padding: '12px', fontSize: '14pt', borderRadius: '6px', backgroundColor: '#f5f5f5' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(203, 174, 148, 0.5)'
               }}
@@ -48,7 +48,7 @@ export default function Home() {
       {/* Top Seller Section */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink">
+          <h2 className="text-2xl md:text-3xl font-light text-ink">
             Top Seller
           </h2>
           <Link to="/services" className="text-ink-soft hover:text-ink transition-colors text-sm">
@@ -56,32 +56,32 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link to="/treatments/co2" className="group">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <Link to="/treatments/co2" className="group relative">
             <img
               src={co2}
               alt="Co2"
               className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
             />
-            <p className="text-sm font-medium text-ink mt-3">Co2</p>
+            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>Co2</p>
           </Link>
 
-          <Link to="/treatments/miim-laser" className="group">
+          <Link to="/treatments/miim-laser" className="group relative">
             <img
               src={miimLaser}
               alt="Miim Laser"
               className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
             />
-            <p className="text-sm font-medium text-ink mt-3">Miim Laser</p>
+            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>Miim Laser</p>
           </Link>
 
-          <Link to="/treatments/pdo-threads" className="group">
+          <Link to="/treatments/pdo-threads" className="group relative">
             <img
               src={pdoThreads}
               alt="PDO Threads"
               className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
             />
-            <p className="text-sm font-medium text-ink mt-3">PDO Threads</p>
+            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>PDO Threads</p>
           </Link>
         </div>
       </section>

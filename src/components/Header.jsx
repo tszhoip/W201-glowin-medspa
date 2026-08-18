@@ -19,8 +19,8 @@ export default function Header() {
             <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
             <Link
               to="/services"
-              className="text-base font-medium hover:text-peach transition-colors hidden md:block"
-              style={{ color: '#2D2D2D' }}
+              className="font-medium hover:text-peach transition-colors hidden md:block"
+              style={{ color: '#2D2D2D', fontSize: '14pt' }}
             >
               {g.NAV_SERVICES}
             </Link>
@@ -40,8 +40,8 @@ export default function Header() {
             {/* Desktop: Book Now */}
             <Link
               to="/contact"
-              className="hidden md:inline-block text-base font-medium hover:text-peach transition-colors"
-              style={{ color: '#2D2D2D' }}
+              className="hidden md:inline-block font-medium hover:text-peach transition-colors"
+              style={{ color: '#2D2D2D', fontSize: '14pt' }}
             >
               {g.CTA_BOOK}
             </Link>
