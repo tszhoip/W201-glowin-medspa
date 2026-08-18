@@ -13,35 +13,35 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '56px' }}>
-        <div className="h-full px-6 flex items-center justify-between">
-          {/* Left: Circle + Services */}
-          <div className="flex items-center gap-1">
-            <div className="w-6 h-6 rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
+        <div className="h-full flex items-center justify-between relative">
+          {/* Left: Circle (16px from edge) + Services */}
+          <div className="flex items-center" style={{ marginLeft: '16px', gap: '4px' }}>
+            <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
             <Link
               to="/services"
               className="text-base font-medium hover:text-peach transition-colors hidden md:block"
-              style={{ color: '#2D2D2D', marginLeft: '4px' }}
+              style={{ color: '#2D2D2D' }}
             >
               {g.NAV_SERVICES}
             </Link>
           </div>
 
           {/* Center: Logo (Home) */}
-          <Link to="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0 absolute left-1/2" style={{ transform: 'translateX(-50%)' }}>
             <img
               src={logoSvg}
               alt="Glowin Medspa"
-              style={{ height: '29px', width: 'auto', filter: 'brightness(0) saturate(100%) invert(9%) sepia(3%) saturate(1429%) hue-rotate(190deg)' }}
+              style={{ height: '29px', width: 'auto' }}
             />
           </Link>
 
-          {/* Right: Book Now + Circle + Mobile Menu */}
-          <div className="flex items-center gap-1">
+          {/* Right: Book Now + Circle (16px from edge) + Mobile Menu */}
+          <div className="flex items-center" style={{ marginRight: '16px', gap: '4px' }}>
             {/* Desktop: Book Now */}
             <Link
               to="/contact"
               className="hidden md:inline-block text-base font-medium hover:text-peach transition-colors"
-              style={{ color: '#2D2D2D', marginRight: '4px' }}
+              style={{ color: '#2D2D2D' }}
             >
               {g.CTA_BOOK}
             </Link>
