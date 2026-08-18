@@ -48,10 +48,10 @@ export default function Home() {
       {/* Top Seller Section */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-light text-ink">
-            Top Seller
+          <h2 className="font-medium text-ink" style={{ fontSize: '14px' }}>
+            Face Treatments
           </h2>
-          <Link to="/services" className="text-ink-soft hover:text-ink transition-colors text-sm">
+          <Link to="/services" className="text-ink-soft hover:text-ink transition-colors font-medium" style={{ fontSize: '14px' }}>
             See All →
           </Link>
         </div>
