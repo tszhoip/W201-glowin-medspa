@@ -15,11 +15,12 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '56px' }}>
         <div className="h-full px-6 flex items-center justify-between">
           {/* Left: Circle + Services */}
-          <div className="flex items-center gap-4">
-            <div className="w-4 h-4 rounded-full bg-black flex-shrink-0 hidden md:block"></div>
+          <div className="flex items-center gap-1">
+            <div className="w-6 h-6 rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
             <Link
               to="/services"
-              className="text-base font-medium text-black hover:text-peach transition-colors hidden md:block"
+              className="text-base font-medium hover:text-peach transition-colors hidden md:block"
+              style={{ color: '#2D2D2D', marginLeft: '4px' }}
             >
               {g.NAV_SERVICES}
             </Link>
@@ -30,27 +31,29 @@ export default function Header() {
             <img
               src={logoSvg}
               alt="Glowin Medspa"
-              style={{ height: '29px', width: 'auto' }}
+              style={{ height: '29px', width: 'auto', filter: 'brightness(0) saturate(100%) invert(9%) sepia(3%) saturate(1429%) hue-rotate(190deg)' }}
             />
           </Link>
 
           {/* Right: Book Now + Circle + Mobile Menu */}
-          <div className="flex items-center gap-4 md:gap-4">
+          <div className="flex items-center gap-1">
             {/* Desktop: Book Now */}
             <Link
               to="/contact"
-              className="hidden md:inline-block text-base font-medium text-black hover:text-peach transition-colors"
+              className="hidden md:inline-block text-base font-medium hover:text-peach transition-colors"
+              style={{ color: '#2D2D2D', marginRight: '4px' }}
             >
               {g.CTA_BOOK}
             </Link>
 
             {/* Right Circle */}
-            <div className="w-4 h-4 rounded-full bg-black flex-shrink-0 hidden md:block"></div>
+            <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
 
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-black hover:text-peach transition-colors"
+              className="md:hidden p-2 hover:text-peach transition-colors"
+              style={{ color: '#2D2D2D' }}
               aria-label="Toggle menu"
             >
               <svg
