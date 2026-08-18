@@ -5,11 +5,14 @@ import co2 from '../assets/images/home/Co2.jpg'
 import miimLaser from '../assets/images/home/Miin Laser.jpg'
 import pdoThreads from '../assets/images/home/PDO Threads.jpg'
 import catFace from '../assets/images/home/cat-face.png'
+import faceImg from '../assets/images/services/face.png'
+import injectableImg from '../assets/images/services/in.png'
+import skinImg from '../assets/images/services/skin.png'
 
 const serviceItems = [
-  { id: 'face', label: 'Face', image: catFace },
-  { id: 'injectable', label: 'Injectable', image: catFace },
-  { id: 'skincare', label: 'Skin Care', image: catFace }
+  { id: 'face', label: 'Face', image: faceImg },
+  { id: 'injectable', label: 'Injectable', image: injectableImg },
+  { id: 'skincare', label: 'Skin Care', image: skinImg }
 ]
 
 export default function Home() {
