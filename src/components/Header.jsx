@@ -8,7 +8,7 @@ const g = parseContent(globalRaw)
 
 const navLinkClass = ({ isActive }) =>
   `text-sm transition-colors ${
-    isActive ? 'text-ink font-medium' : 'text-ink-soft hover:text-ink'
+    isActive ? 'text-white font-medium' : 'text-white/80 hover:text-white'
   }`
 
 export default function Header() {
@@ -16,10 +16,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-cream-dark">
+      <header className="sticky top-0 z-40 bg-black/30 backdrop-blur">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-lg font-semibold tracking-tight">
+          <Link to="/" className="text-lg font-semibold tracking-tight text-white">
             {g.BUSINESS_NAME}
           </Link>
 
@@ -47,7 +47,7 @@ export default function Header() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-ink hover:text-peach transition-colors"
+              className="md:hidden p-2 text-white hover:text-peach transition-colors"
               aria-label="Toggle menu"
             >
               <svg
