@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-black/30 backdrop-blur">
+      <header className="fixed top-0 left-0 right-0 z-40 hover:bg-black/30 hover:backdrop-blur transition-all">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-lg font-semibold tracking-tight text-white">

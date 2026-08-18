@@ -23,7 +23,7 @@ export default function Home() {
             </h1>
             <Link
               to="/contact"
-              className="inline-block px-8 py-3 text-sm font-medium text-ink transition-all"
+              className="inline-block px-6 py-2 text-xs font-medium text-ink transition-all"
               style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(203, 174, 148, 0.5)'
