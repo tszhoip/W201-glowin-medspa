@@ -1,45 +1,39 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import globalRaw from '../content/global.txt?raw'
 import { parseContent } from '../lib/loadContent'
 import MobileMenu from './MobileMenu'
 
 const g = parseContent(globalRaw)
 
-const navLinkClass = ({ isActive }) =>
-  `text-sm transition-colors ${
-    isActive ? 'text-white font-medium' : 'text-white/80 hover:text-white'
-  }`
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 hover:bg-black/30 hover:backdrop-blur transition-all">
-        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="text-lg font-semibold tracking-tight text-white">
+      <header className="fixed top-0 left-0 right-0 z-40" style={{
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)'
+      }}>
+        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
+          {/* Left: Services */}
+          <Link
+            to="/services"
+            className="text-base md:text-lg font-medium text-white hover:text-peach transition-colors hidden md:block"
+          >
+            {g.NAV_SERVICES}
+          </Link>
+
+          {/* Center: Logo (Home) */}
+          <Link to="/" className="text-xl md:text-2xl font-semibold tracking-tight text-white">
             {g.BUSINESS_NAME}
           </Link>
 
-          {/* Desktop Navigation - Simplified: Home | Services */}
-          <nav className="hidden md:flex items-center gap-8">
-            <NavLink to="/" end className={navLinkClass}>
-              {g.NAV_HOME}
-            </NavLink>
-            <NavLink to="/services" className={navLinkClass}>
-              {g.NAV_SERVICES}
-            </NavLink>
-          </nav>
-
-          {/* Right Section: CTA + Mobile Menu */}
-          <div className="flex items-center gap-4">
-            {/* CTA Button */}
+          {/* Right Section: Book Now + Mobile Menu */}
+          <div className="flex items-center gap-4 md:gap-0">
+            {/* Desktop: Book Now */}
             <Link
               to="/contact"
-              className="hidden md:inline-block bg-peach px-5 py-2 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
-              style={{ borderRadius: '6px' }}
+              className="hidden md:inline-block text-base font-medium text-white hover:text-peach transition-colors"
             >
               {g.CTA_BOOK}
             </Link>

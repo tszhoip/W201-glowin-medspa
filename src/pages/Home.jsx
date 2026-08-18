@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <div className="bg-cream">
       {/* Hero Section */}
-      <section className="relative w-full h-screen md:h-96">
+      <section className="relative w-full" style={{ height: '80vh', minHeight: '600px', maxHeight: '1000px' }}>
         <img
           src={heroBanner}
           alt="Rooted in Clinical Care"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
