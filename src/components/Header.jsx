@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import globalRaw from '../content/global.txt?raw'
 import { parseContent } from '../lib/loadContent'
 import MobileMenu from './MobileMenu'
-import logoImg from '../assets/images/home/logo.png'
+import logoSvg from '../assets/images/home/logo.svg'
 
 const g = parseContent(globalRaw)
 
@@ -12,41 +12,45 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40" style={{
-        background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)'
-      }}>
-        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          {/* Left: Services */}
-          <Link
-            to="/services"
-            className="text-base font-medium text-white hover:text-peach transition-colors hidden md:block"
-          >
-            {g.NAV_SERVICES}
-          </Link>
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '64px' }}>
+        <div className="mx-auto max-w-7xl px-6 h-full flex items-center justify-between">
+          {/* Left: Circle + Services */}
+          <div className="flex items-center gap-4">
+            <div className="w-4 h-4 rounded-full bg-black flex-shrink-0 hidden md:block"></div>
+            <Link
+              to="/services"
+              className="text-base font-medium text-black hover:text-peach transition-colors hidden md:block"
+            >
+              {g.NAV_SERVICES}
+            </Link>
+          </div>
 
           {/* Center: Logo (Home) */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src={logoImg}
+              src={logoSvg}
               alt="Glowin Medspa"
-              style={{ height: '48px', width: 'auto' }}
+              style={{ height: '36px', width: 'auto' }}
             />
           </Link>
 
-          {/* Right Section: Book Now + Mobile Menu */}
-          <div className="flex items-center gap-4 md:gap-0">
+          {/* Right: Book Now + Circle + Mobile Menu */}
+          <div className="flex items-center gap-4 md:gap-4">
             {/* Desktop: Book Now */}
             <Link
               to="/contact"
-              className="hidden md:inline-block text-base font-medium text-white hover:text-peach transition-colors"
+              className="hidden md:inline-block text-base font-medium text-black hover:text-peach transition-colors"
             >
               {g.CTA_BOOK}
             </Link>
 
+            {/* Right Circle */}
+            <div className="w-4 h-4 rounded-full bg-black flex-shrink-0 hidden md:block"></div>
+
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-white hover:text-peach transition-colors"
+              className="md:hidden p-2 text-black hover:text-peach transition-colors"
               aria-label="Toggle menu"
             >
               <svg
