@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import globalRaw from '../content/global.txt?raw'
 import { parseContent } from '../lib/loadContent'
 import MobileMenu from './MobileMenu'
+import logoImg from '../assets/images/home/logo.png'
 
 const g = parseContent(globalRaw)
 
@@ -14,18 +15,22 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-40" style={{
         background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)'
       }}>
-        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           {/* Left: Services */}
           <Link
             to="/services"
-            className="text-base md:text-lg font-medium text-white hover:text-peach transition-colors hidden md:block"
+            className="text-base font-medium text-white hover:text-peach transition-colors hidden md:block"
           >
             {g.NAV_SERVICES}
           </Link>
 
           {/* Center: Logo (Home) */}
-          <Link to="/" className="text-xl md:text-2xl font-semibold tracking-tight text-white">
-            {g.BUSINESS_NAME}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src={logoImg}
+              alt="Glowin Medspa"
+              className="h-12 md:h-16 w-auto"
+            />
           </Link>
 
           {/* Right Section: Book Now + Mobile Menu */}
