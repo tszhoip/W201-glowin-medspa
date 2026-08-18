@@ -56,7 +56,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '12px' }}>
           <Link to="/treatments/co2" className="group relative">
             <img
               src={co2}
