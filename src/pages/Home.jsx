@@ -79,14 +79,14 @@ export default function Home() {
       </section>
 
       {/* Story Section */}
-      <section className="mx-auto max-w-3xl px-6 py-16 text-center border-t border-cream-dark">
+      <section className="mx-auto max-w-3xl px-6 py-16 text-center">
         <p className="text-base md:text-lg text-ink-soft leading-relaxed">
           Founded by board-certified providers, Glowin began with a simple question: why should advanced skincare be hard to access? We built streamlined systems, trained providers, and science-backed protocols so results feel natural — never confusing, rushed, or overpriced.
         </p>
       </section>
 
       {/* Top Seller Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex justify-between items-center mb-10">
           <h2 className="font-medium text-ink" style={{ fontSize: '14px' }}>
             Face Treatments
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="font-medium text-ink mb-10" style={{ fontSize: '14px' }}>
           Services
         </h2>
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* Your Voice Matters Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="font-medium text-ink mb-10" style={{ fontSize: '14px' }}>
           Your Voice Matters
         </h2>
@@ -187,7 +187,7 @@ export default function Home() {
       {/* Instagram Section - Hidden for now */}
 
       {/* Location/Direction Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="text-sm text-ink-soft space-y-2">
