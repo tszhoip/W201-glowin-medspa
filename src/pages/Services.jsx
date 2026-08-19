@@ -29,7 +29,7 @@ const serviceMap = {
 
 export default function Services() {
   return (
-    <div className="bg-cream">
+    <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Page Header */}
       <section className="mx-auto max-w-4xl px-6 py-16 text-center border-b border-cream-dark">
         <h1 className="text-4xl md:text-5xl font-medium text-ink mb-4">

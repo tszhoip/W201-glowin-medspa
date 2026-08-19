@@ -47,7 +47,7 @@ export default function Home() {
     }
   }, [])
   return (
-    <div className="bg-cream">
+    <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Hero Section - account for fixed header (56px) */}
       <section className="relative w-full" style={{ height: '80vh', minHeight: '600px', maxHeight: '1000px', marginTop: '56px' }}>
         <img

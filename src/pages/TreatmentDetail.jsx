@@ -13,7 +13,7 @@ const faqs = collectGroup(c, 'FAQ', ['Q', 'A'])
 
 export default function TreatmentDetail() {
   return (
-    <div className="bg-cream">
+    <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Hero Section */}
       <section className="mx-auto max-w-4xl px-6 py-16 text-center border-b border-cream-dark">
         <p className="text-sm font-medium text-peach-dark">{c.EYEBROW || 'Treatment'}</p>

@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
+  background-color: #f5f5f5;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-weight: 400;
