@@ -165,16 +165,11 @@ export default function Home() {
 
       {/* Your Voice Matters Section */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="font-medium text-ink" style={{ fontSize: '14px' }}>
-            Your Voice Matters
-          </h2>
-          <Link to="#" className="text-ink-soft hover:text-ink transition-colors font-medium" style={{ fontSize: '14px' }}>
-            All →
-          </Link>
-        </div>
+        <h2 className="font-medium text-ink mb-10" style={{ fontSize: '14px' }}>
+          Your Voice Matters
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '12px' }}>
           {[1, 2, 3].map((i) => (
             <div
               key={i}
@@ -195,9 +190,6 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
-              Location
-            </h2>
             <div className="text-sm text-ink-soft space-y-2">
               <p>123 Glowin Ave, Suite 200</p>
               <p>Los Angeles, CA 90001</p>
@@ -210,9 +202,6 @@ export default function Home() {
           </div>
 
           <div>
-            <h2 className="text-2xl md:text-3xl font-medium text-ink mb-6">
-              Direction
-            </h2>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-118.2437!3d34.0522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27d49b%3A0xce0d0a63ae5b0efd!2s123%20Glowin%20Ave%20Suite%20200%20Los%20Angeles%20CA%2090001!5e0!3m2!1sen!2sus!4v1234567890"
               width="100%"
