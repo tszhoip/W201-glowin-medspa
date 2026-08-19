@@ -166,10 +166,10 @@ export default function Home() {
       {/* Your Voice Matters Section */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-medium text-ink">
+          <h2 className="font-medium text-ink" style={{ fontSize: '14px' }}>
             Your Voice Matters
           </h2>
-          <Link to="#" className="text-ink-soft hover:text-ink transition-colors text-sm">
+          <Link to="#" className="text-ink-soft hover:text-ink transition-colors font-medium" style={{ fontSize: '14px' }}>
             All →
           </Link>
         </div>
