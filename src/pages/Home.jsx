@@ -140,9 +140,10 @@ export default function Home() {
                 key={service.id}
                 ref={(el) => (itemRefs.current[service.id] = el)}
                 data-id={service.id}
-                className={`block text-lg font-medium transition-colors py-8 ${
+                className={`block font-medium transition-colors py-8 ${
                   activeService === service.id ? 'text-peach' : 'text-ink hover:text-peach'
                 }`}
+                style={{ fontSize: '16px' }}
               >
                 <Link to="/services" className="no-underline">
                   {service.label} •
