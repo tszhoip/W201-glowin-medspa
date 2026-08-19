@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import TawkChat from './components/TawkChat'
+// import TawkChat from './components/TawkChat'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
@@ -24,7 +24,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <TawkChat />
+      {/* <TawkChat /> */}
     </div>
   )
 }
