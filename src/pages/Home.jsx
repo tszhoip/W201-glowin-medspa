@@ -128,7 +128,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
-        <h2 className="text-2xl md:text-3xl font-medium text-ink mb-10">
+        <h2 className="font-medium text-ink mb-10" style={{ fontSize: '14px' }}>
           Services
         </h2>
 
@@ -143,7 +143,7 @@ export default function Home() {
                 className={`block font-medium transition-colors py-8 ${
                   activeService === service.id ? 'text-peach' : 'text-ink hover:text-peach'
                 }`}
-                style={{ fontSize: '16px' }}
+                style={{ fontSize: '32px' }}
               >
                 <Link to="/services" className="no-underline">
                   {service.label} •

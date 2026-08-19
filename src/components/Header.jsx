@@ -20,7 +20,7 @@ export default function Header() {
             <Link
               to="/services"
               className="font-medium hover:text-peach transition-colors hidden md:block"
-              style={{ color: '#2D2D2D', fontSize: '32px' }}
+              style={{ color: '#2D2D2D', fontSize: '14pt' }}
             >
               {g.NAV_SERVICES}
             </Link>
@@ -41,7 +41,7 @@ export default function Header() {
             <Link
               to="/contact"
               className="hidden md:inline-block font-medium hover:text-peach transition-colors"
-              style={{ color: '#2D2D2D', fontSize: '32px' }}
+              style={{ color: '#2D2D2D', fontSize: '14pt' }}
             >
               {g.CTA_BOOK}
             </Link>
