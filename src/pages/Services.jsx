@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import raw from '../content/services.txt?raw'
 import { parseContent } from '../lib/loadContent'
+import dummyImg from '../assets/images/services-page/dummy-image.png'
 
 const c = parseContent(raw)
 const categories = Object.keys(c)
@@ -50,12 +51,11 @@ export default function Services() {
                 to={`/treatments/${slug}`}
                 className="group rounded-2xl overflow-hidden border border-cream-dark hover:border-peach transition-colors"
               >
-                <div
-                  className="w-full h-48 flex items-center justify-center text-cream font-medium mb-3 group-hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: '#e8b294' }}
-                >
-                  [Treatment image]
-                </div>
+                <img
+                  src={dummyImg}
+                  alt={name}
+                  className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity"
+                />
                 <div className="p-4 bg-white/50">
                   <h3 className="font-medium text-ink text-center group-hover:text-peach-dark transition-colors">
                     {name}
