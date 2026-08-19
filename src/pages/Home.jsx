@@ -143,7 +143,7 @@ export default function Home() {
                 className={`block font-medium transition-colors ${
                   activeService === service.id ? 'text-peach' : 'text-ink'
                 }`}
-                style={{ fontSize: '32px', marginBottom: '4pt' }}
+                style={{ fontSize: '32px', marginBottom: '0' }}
               >
                 <Link to="/services" className="no-underline">
                   {service.label} {activeService === service.id ? '•' : ''}
