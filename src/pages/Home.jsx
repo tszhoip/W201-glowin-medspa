@@ -5,9 +5,9 @@ import co2 from '../assets/images/home/Co2.jpg'
 import miimLaser from '../assets/images/home/Miin Laser.jpg'
 import pdoThreads from '../assets/images/home/PDO Threads.jpg'
 import catFace from '../assets/images/home/cat-face.png'
-import faceImg from '../assets/images/services/face.png'
-import injectableImg from '../assets/images/services/in.png'
-import skinImg from '../assets/images/services/skin.png'
+import faceImg from '../assets/images/home/F.png'
+import injectableImg from '../assets/images/home/I.png'
+import skinImg from '../assets/images/home/SC.png'
 
 const serviceItems = [
   { id: 'face', label: 'Face', image: faceImg },

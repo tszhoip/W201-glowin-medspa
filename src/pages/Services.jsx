@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
-import dummyImg from '../assets/images/services-page/dummy-image.png'
+import facialImg from '../assets/images/services-page/FACIAL.jpg'
+import injectablesImg from '../assets/images/services-page/INJECTABLES.jpg'
+import laserImg from '../assets/images/services-page/LASER.jpg'
+import wellnessImg from '../assets/images/services-page/WELLNESS.jpg'
 
 // Service categories with their services
 const categories = [
   {
     name: 'FACIAL & PEELING',
-    image: dummyImg,
+    image: facialImg,
     services: [
       'HydraFacial',
       'Ulta Peel',
@@ -17,7 +20,7 @@ const categories = [
   },
   {
     name: 'INJECTABLES & REGENERATIVE',
-    image: dummyImg,
+    image: injectablesImg,
     services: [
       'Neurotoxin',
       'Dermal Filler',
@@ -31,7 +34,7 @@ const categories = [
   },
   {
     name: 'LASER & ENERGY',
-    image: dummyImg,
+    image: laserImg,
     services: [
       'UltiMAX PRIME®',
       'Thermage FLX®',
@@ -46,7 +49,7 @@ const categories = [
   },
   {
     name: 'WELLNESS',
-    image: dummyImg,
+    image: wellnessImg,
     services: [
       'Medical Weight Management',
       'IV Therapy',
