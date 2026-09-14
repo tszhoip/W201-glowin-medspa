@@ -1,98 +1,167 @@
 import { Link } from 'react-router-dom'
-import raw from '../content/services.txt?raw'
-import { parseContent } from '../lib/loadContent'
 import dummyImg from '../assets/images/services-page/dummy-image.png'
 
-const c = parseContent(raw)
-const categories = Object.keys(c)
-  .filter((k) => /^CATEGORY_\d+_NAME$/.test(k))
-  .map((k) => c[k])
+// Service categories with their services
+const categories = [
+  {
+    name: 'FACIAL & PEELING',
+    image: dummyImg,
+    services: [
+      'HydraFacial',
+      'Ulta Peel',
+      'Enzyme Peel',
+      '24K Gold Therapy',
+      'Acne Care Facial',
+      'Lymphatic Facial'
+    ]
+  },
+  {
+    name: 'INJECTABLES & REGENERATIVE',
+    image: dummyImg,
+    services: [
+      'Neurotoxin',
+      'Dermal Filler',
+      'Collagen Biostimulators',
+      'Thread Lift',
+      'Skin Booster',
+      'PRP (Platelet-Rich Plasma)',
+      'Regenerative Skin Therapy',
+      'Fat Dissolving Injection'
+    ]
+  },
+  {
+    name: 'LASER & ENERGY',
+    image: dummyImg,
+    services: [
+      'UltiMAX PRIME®',
+      'Thermage FLX®',
+      'InMode SkinFX / Body4 / Formal',
+      'Quanta Pro',
+      'Eve Titan',
+      'Fractional RF Microneedling',
+      'Picosure® Pro',
+      'XSRF (RF)',
+      'Plasma'
+    ]
+  },
+  {
+    name: 'WELLNESS',
+    image: dummyImg,
+    services: [
+      'Medical Weight Management',
+      'IV Therapy',
+      'Hair Restoration',
+      'Hormone & Men\'s Wellness',
+      'Joint PRP / PRF'
+    ]
+  }
+]
 
-// Map service/machine names to slugs for URLs
+// Map service names to slugs for URLs
 const serviceMap = {
-  'Lifting': 'lifting',
-  'Microneedling': 'microneedling',
-  'Rejuvenation Injection': 'rejuvenation',
-  'Fractional Laser': 'laser',
-  'Pigment Laser': 'pigment-laser',
-  'Injectable': 'injectables',
-  'Hair Removal': 'hair-removal',
-  'Body': 'body',
-  'Skincare': 'skincare',
-  'Skincare RF': 'skincare-rf',
   'HydraFacial': 'hydrafacial',
-  'Dermapen': 'dermapen',
-  'Ultherapy': 'ultherapy',
-  'Botox / Dysport': 'botox-dysport',
-  'Dermal Fillers': 'dermal-fillers',
+  'Ulta Peel': 'ulta-peel',
+  'Enzyme Peel': 'enzyme-peel',
+  '24K Gold Therapy': 'gold-therapy',
+  'Acne Care Facial': 'acne-care-facial',
+  'Lymphatic Facial': 'lymphatic-facial',
+  'Neurotoxin': 'neurotoxin',
+  'Dermal Filler': 'dermal-filler',
+  'Collagen Biostimulators': 'collagen-biostimulators',
+  'Thread Lift': 'thread-lift',
+  'Skin Booster': 'skin-booster',
+  'PRP (Platelet-Rich Plasma)': 'prp',
+  'Regenerative Skin Therapy': 'regenerative-skin-therapy',
+  'Fat Dissolving Injection': 'fat-dissolving-injection',
+  'UltiMAX PRIME®': 'ultimax-prime',
+  'Thermage FLX®': 'thermage-flx',
+  'InMode SkinFX / Body4 / Formal': 'inmode-skinf',
+  'Quanta Pro': 'quanta-pro',
+  'Eve Titan': 'eve-titan',
+  'Fractional RF Microneedling': 'fractional-rf',
+  'Picosure® Pro': 'picosure-pro',
+  'XSRF (RF)': 'xsrf',
+  'Plasma': 'plasma',
+  'Medical Weight Management': 'medical-weight-management',
+  'IV Therapy': 'iv-therapy',
+  'Hair Restoration': 'hair-restoration',
+  'Hormone & Men\'s Wellness': 'mens-wellness',
+  'Joint PRP / PRF': 'joint-prp'
 }
 
 export default function Services() {
   return (
     <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Page Header */}
-      <section className="mx-auto max-w-4xl px-6 py-16 text-center border-b border-cream-dark">
+      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
         <h1 className="text-4xl md:text-5xl font-medium text-ink mb-4">
-          {c.PAGE_TITLE || 'Services'}
+          Services
         </h1>
-        <p className="text-lg text-ink-soft max-w-2xl mx-auto">
-          {c.PAGE_SUBTITLE || 'Personalized treatments guided by clinical expertise.'}
+        <p className="text-lg text-ink-soft max-w-2xl mx-auto mb-6">
+          Personalized treatments guided by clinical expertise. Explore our full menu of skincare, injectables, lasers, and wellness services to build a plan around your goals.
         </p>
+        <Link
+          to="/contact"
+          className="inline-block font-medium text-ink transition-all"
+          style={{ padding: '12px 24px', fontSize: '14px', borderRadius: '6px', backgroundColor: '#cbae94', color: '#fff' }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#b89678'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#cbae94'
+          }}
+        >
+          Book a consultation
+        </Link>
       </section>
 
-      {/* Services Grid */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {categories.map((name) => {
-            const slug = serviceMap[name] || name.toLowerCase().replace(/\s+/g, '-')
-            return (
-              <Link
-                key={name}
-                to={`/treatments/${slug}`}
-                className="group rounded-2xl overflow-hidden border border-cream-dark hover:border-peach transition-colors"
-              >
-                <img
-                  src={dummyImg}
-                  alt={name}
-                  className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity"
-                />
-                <div className="p-4 bg-white/50">
-                  <h3 className="font-medium text-ink text-center group-hover:text-peach-dark transition-colors">
-                    {name}
-                  </h3>
-                </div>
-              </Link>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* Promo Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-cream-dark">
-        <div className="rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6" style={{ backgroundColor: '#e8b294' }}>
-          <div>
-            <h3 className="text-xl font-medium text-ink mb-2">
-              {c.PROMO_TITLE || 'New Intake Offer'}
-            </h3>
-            <p className="text-sm text-ink-soft max-w-md">
-              {c.PROMO_BODY || 'Bundle any two treatments this month and save.'}
-            </p>
+      {/* Category Sections */}
+      {categories.map((category, idx) => (
+        <section key={idx} className="w-full">
+          {/* Category Image with Title */}
+          <div className="relative w-full h-64 md:h-80">
+            <img
+              src={category.image}
+              alt={category.name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <h2 className="text-3xl md:text-4xl font-medium text-white text-center">
+                {category.name}
+              </h2>
+            </div>
           </div>
-          <Link
-            to="/contact"
-            className="whitespace-nowrap px-6 py-2.5 text-sm font-medium text-ink transition-all"
-            style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(232, 178, 148, 0.5)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none'
-            }}
-          >
-            {c.PROMO_CTA || 'Book Now'}
-          </Link>
-        </div>
-      </section>
+
+          {/* Services Grid */}
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {category.services.map((service) => {
+                const slug = serviceMap[service] || service.toLowerCase().replace(/\s+/g, '-').replace(/[®™]/g, '')
+                return (
+                  <Link
+                    key={service}
+                    to={`/treatments/${slug}`}
+                    className="px-4 py-3 text-center font-medium rounded-lg transition-all"
+                    style={{
+                      backgroundColor: '#5c4a42',
+                      color: '#fff',
+                      textDecoration: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#4a3a32'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#5c4a42'
+                    }}
+                  >
+                    {service}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+      ))}
     </div>
   )
 }
