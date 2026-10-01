@@ -14,8 +14,8 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '56px' }}>
         <div className="h-full flex items-center justify-between relative">
-          {/* Left: Circle (16px from edge) + Services */}
-          <div className="flex items-center" style={{ marginLeft: '16px', gap: '4px' }}>
+          {/* Left: Circle (16px from edge) + Services + Contact */}
+          <div className="flex items-center" style={{ marginLeft: '16px', gap: '12px' }}>
             <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
             <Link
               to="/services"
@@ -23,6 +23,13 @@ export default function Header() {
               style={{ color: '#2D2D2D', fontSize: '14px' }}
             >
               {g.NAV_SERVICES}
+            </Link>
+            <Link
+              to="/contact"
+              className="font-medium hover:text-peach transition-colors hidden md:block"
+              style={{ color: '#2D2D2D', fontSize: '14px' }}
+            >
+              Contact
             </Link>
           </div>
 

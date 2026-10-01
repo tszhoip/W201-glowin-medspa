@@ -41,6 +41,13 @@ export default function MobileMenu({ isOpen, onClose }) {
           >
             Services
           </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={onClose}
+            className={navLinkClass}
+          >
+            Contact
+          </NavLink>
         </nav>
 
         {/* Divider */}
