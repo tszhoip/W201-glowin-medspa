@@ -99,7 +99,6 @@ export default function Services() {
     <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Page Header */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm text-ink-soft mb-6">Services / Facial & Peeling</p>
         <h1 className="text-4xl md:text-5xl font-medium text-ink mb-4">
           Treatments
         </h1>
