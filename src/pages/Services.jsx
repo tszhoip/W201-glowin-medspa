@@ -14,7 +14,7 @@ const categories = [
       'Ulta Peel',
       'Enzyme Peel',
       '24K Gold Therapy',
-      'Acne Care Facial',
+      'Acne Facial',
       'Lymphatic Facial'
     ]
   },
@@ -39,6 +39,7 @@ const categories = [
       'UltiMAX PRIME®',
       'Thermage FLX®',
       'InMode SkinFX / Body4 / Formal',
+      'InMode – Mini FX & Body FX / Forma',
       'Quanta Pro',
       'Eve Titan',
       'Fractional RF Microneedling',
