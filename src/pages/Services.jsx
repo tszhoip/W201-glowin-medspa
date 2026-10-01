@@ -121,43 +121,50 @@ export default function Services() {
       </section>
 
       {/* Category Sections - Left Text, Right Image */}
-      {categories.map((category, idx) => (
-        <section key={idx} className="mx-auto max-w-6xl px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Left: Title and Service List */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-medium text-ink mb-8">
-                {category.name}
-              </h2>
-              <div className="space-y-3">
-                {category.services.map((service) => {
-                  const slug = serviceMap[service] || service.toLowerCase().replace(/\s+/g, '-').replace(/[®™]/g, '')
-                  return (
-                    <Link
-                      key={service}
-                      to={`/treatments/${slug}`}
-                      className="flex items-center text-ink hover:text-peach transition-colors group"
-                      style={{ textDecoration: 'none' }}
-                    >
-                      <span className="font-medium">{service}</span>
-                      <span className="ml-2 group-hover:translate-x-1 transition-transform">↷</span>
-                    </Link>
-                  )
-                })}
+      {categories.map((category, idx) => {
+        // Alternate layout on desktop: odd sections (0, 2) = content left, even sections (1, 3) = content right
+        const isAlternate = idx % 2 === 1
+
+        return (
+          <section key={idx} className="mx-auto max-w-6xl px-6 py-16">
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch ${isAlternate ? 'md:flex-row-reverse' : ''}`}>
+              {/* Content: Title and Service List */}
+              <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-medium text-ink mb-8">
+                    {category.name}
+                  </h2>
+                </div>
+                <div className="space-y-3">
+                  {category.services.map((service) => {
+                    const slug = serviceMap[service] || service.toLowerCase().replace(/\s+/g, '-').replace(/[®™]/g, '')
+                    return (
+                      <Link
+                        key={service}
+                        to={`/treatments/${slug}`}
+                        className="flex items-center text-ink hover:text-peach transition-colors group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <span className="font-medium">{service}</span>
+                        <span className="ml-2 group-hover:translate-x-1 transition-transform">↷</span>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className={`h-96 md:h-[500px] rounded-lg overflow-hidden ${isAlternate ? 'md:order-1' : ''}`}>
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
-
-            {/* Right: Category Image */}
-            <div className="h-96 md:h-[500px] rounded-lg overflow-hidden">
-              <img
-                src={category.image}
-                alt={category.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
     </div>
   )
 }
