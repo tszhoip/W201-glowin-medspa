@@ -22,7 +22,7 @@ export default function Contact() {
       {/* Form & Contact Info Grid */}
       <div className="mx-auto max-w-5xl px-6 py-16 grid md:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <div>
+        <div className="rounded-2xl bg-white/50 border border-cream-dark p-8">
           <h2 className="text-2xl font-medium text-ink mb-6">Get in Touch</h2>
           <ContactForm
             nameLabel={c.FORM_NAME_LABEL || 'Full Name'}
