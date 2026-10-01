@@ -78,13 +78,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="mx-auto max-w-3xl px-6 py-16 text-center">
-        <p className="text-base md:text-lg text-ink-soft leading-relaxed">
-          Founded by board-certified providers, Glowin began with a simple question: why should advanced skincare be hard to access? We built streamlined systems, trained providers, and science-backed protocols so results feel natural — never confusing, rushed, or overpriced.
-        </p>
-      </section>
-
       {/* Top Seller Section */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex justify-between items-center mb-10">
