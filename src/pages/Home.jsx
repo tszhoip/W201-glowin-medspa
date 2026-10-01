@@ -59,7 +59,7 @@ export default function Home() {
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Rooted in Clinical Care
+              Where your timeless glow begins
             </h1>
             <Link
               to="/contact"
