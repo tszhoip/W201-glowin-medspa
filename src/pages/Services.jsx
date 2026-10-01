@@ -11,10 +11,10 @@ const categories = [
     image: facialImg,
     services: [
       'HydraFacial',
-      'Ulta Peel',
+      'Lhala Peel',
       'Enzyme Peel',
       '24K Gold Therapy',
-      'Acne Facial',
+      'Acne Care Facial',
       'Lymphatic Facial'
     ]
   },
@@ -24,10 +24,11 @@ const categories = [
     services: [
       'Neurotoxin',
       'Dermal Filler',
-      'Collagen Biostimulators',
+      'Sculptra® • Radiesse®',
       'Thread Lift',
       'Skin Booster',
       'PRP (Platelet-Rich Plasma)',
+      'Cell Factor',
       'Regenerative Skin Therapy',
       'Fat Dissolving Injection'
     ]
@@ -36,15 +37,14 @@ const categories = [
     name: 'LASER & ENERGY',
     image: laserImg,
     services: [
-      'UltiMAX PRIME®',
+      'Ultherapy PRIME®',
       'Thermage FLX®',
-      'InMode SkinFX / Body4 / Formal',
-      'InMode – Mini FX & Body FX / Forma',
-      'Quanta Pro',
+      'InMode (MiniFX / BodyFX / Forma)',
+      'Onda Pro',
       'Eve Titan',
-      'Fractional RF Microneedling',
-      'Picosure® Pro',
-      'XSRF (RF)',
+      'Potenza® RF Microneedling',
+      'PicoSure® Pro',
+      'XERF (Sérf)',
       'Plasma'
     ]
   },
@@ -55,7 +55,6 @@ const categories = [
       'Medical Weight Management',
       'IV Therapy',
       'Hair Restoration',
-      'Hormone & Men\'s Wellness',
       'Joint PRP / PRF'
     ]
   }
@@ -64,33 +63,32 @@ const categories = [
 // Map service names to slugs for URLs
 const serviceMap = {
   'HydraFacial': 'hydrafacial',
-  'Ulta Peel': 'ulta-peel',
+  'Lhala Peel': 'lhala-peel',
   'Enzyme Peel': 'enzyme-peel',
   '24K Gold Therapy': 'gold-therapy',
-  'Acne Facial': 'acne-facial',
+  'Acne Care Facial': 'acne-care-facial',
   'Lymphatic Facial': 'lymphatic-facial',
   'Neurotoxin': 'neurotoxin',
   'Dermal Filler': 'dermal-filler',
-  'Collagen Biostimulators': 'collagen-biostimulators',
+  'Sculptra® • Radiesse®': 'sculptra-radiesse',
   'Thread Lift': 'thread-lift',
   'Skin Booster': 'skin-booster',
   'PRP (Platelet-Rich Plasma)': 'prp',
+  'Cell Factor': 'cell-factor',
   'Regenerative Skin Therapy': 'regenerative-skin-therapy',
   'Fat Dissolving Injection': 'fat-dissolving-injection',
-  'UltiMAX PRIME®': 'ultimax-prime',
+  'Ultherapy PRIME®': 'ultherapy-prime',
   'Thermage FLX®': 'thermage-flx',
-  'InMode SkinFX / Body4 / Formal': 'inmode-skinf',
-  'InMode – Mini FX & Body FX / Forma': 'inmode-mini-fx',
-  'Quanta Pro': 'quanta-pro',
+  'InMode (MiniFX / BodyFX / Forma)': 'inmode-minifx',
+  'Onda Pro': 'onda-pro',
   'Eve Titan': 'eve-titan',
-  'Fractional RF Microneedling': 'fractional-rf',
-  'Picosure® Pro': 'picosure-pro',
-  'XSRF (RF)': 'xsrf',
+  'Potenza® RF Microneedling': 'potenza-rf',
+  'PicoSure® Pro': 'picosure-pro',
+  'XERF (Sérf)': 'xerf',
   'Plasma': 'plasma',
   'Medical Weight Management': 'medical-weight-management',
   'IV Therapy': 'iv-therapy',
   'Hair Restoration': 'hair-restoration',
-  'Hormone & Men\'s Wellness': 'mens-wellness',
   'Joint PRP / PRF': 'joint-prp'
 }
 
