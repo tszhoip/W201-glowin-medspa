@@ -164,8 +164,10 @@ async function build() {
   const warnings = []
   const errors = []
 
-  const yws = wb.getWorksheet('Treatment Types')
-  const tws = wb.getWorksheet('Treatments')
+  // Numbers can export sheet names like "Treatments - Table 1", so match on the start of the name.
+  const sheet = (name) => wb.worksheets.find((w) => w.name.trim().toLowerCase().startsWith(name))
+  const yws = sheet('treatment types')
+  const tws = sheet('treatments')
   if (!yws || !tws) throw new Error('treatments.xlsx must have sheets "Treatments" and "Treatment Types".')
 
   const types = []

@@ -25,3 +25,6 @@ dist-ssr
 
 # local scratch
 _to_delete/
+
+# Working copy of the treatments sheet (the .xlsx is the source of truth)
+src/content/*.numbers
