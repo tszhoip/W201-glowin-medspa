@@ -14,10 +14,11 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method not allowed' })
   }
 
-  const { name, email, phone, message, consent } = req.body
+  const { name, email, phone, message, consent, treatment } = req.body
 
   // Validation
-  if (!name || !email || !phone || !consent) {
+  // Phone is optional (the treatment-page form doesn't ask for it)
+  if (!name || !email || !consent) {
     return res
       .status(400)
       .json({ success: false, message: 'Missing required fields' })
@@ -46,8 +47,8 @@ Thank you for reaching out to Glowin Medspa. We've received your message and wil
 Your submission:
 Name: ${name}
 Email: ${email}
-Phone: ${phone}
-Message: ${message || '(no message)'}
+Phone: ${phone || '(not provided)'}
+${treatment ? `Treatment: ${treatment}\n` : ''}Message: ${message || '(no message)'}
 Consent: Yes, I agree to receive SMS or e-mails
 Date: ${timestamp}
 
@@ -63,8 +64,8 @@ New Contact Form Submission
 
 Name: ${name}
 Email: ${email}
-Phone: ${phone}
-Message: ${message || '(no message)'}
+Phone: ${phone || '(not provided)'}
+${treatment ? `Treatment: ${treatment}\n` : ''}Message: ${message || '(no message)'}
 Consent (SMS/Email): Yes
 Date: ${timestamp}
 

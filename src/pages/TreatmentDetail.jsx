@@ -1,9 +1,17 @@
 import { Link, useParams } from 'react-router-dom'
-import { findTreatment, treatmentImage } from '../lib/treatments'
+import { findTreatment, sections, treatmentImage } from '../lib/treatments'
+import { parseContent } from '../lib/loadContent'
+import raw from '../content/treatment-detail.txt?raw'
+import ConsultationForm from '../components/ConsultationForm'
 import NotFound from './NotFound'
 
-// Template for every /treatments/:slug page. Content comes from
-// src/content/treatments.xlsx (see the "Instructions" sheet in that file).
+const c = parseContent(raw)
+
+// Template for every /treatments/:slug page. Treatment data comes from
+// src/content/treatments.xlsx; page copy comes from src/content/treatment-detail.txt.
+const label = 'text-[13px] uppercase tracking-[0.12em] text-ink-soft'
+const rule = 'border-t border-black/10'
+
 export default function TreatmentDetail() {
   const { id } = useParams()
   const t = findTreatment(id)
@@ -11,60 +19,99 @@ export default function TreatmentDetail() {
   if (!t) return <NotFound />
 
   const intro = treatmentImage(t.intro)
-  const image = treatmentImage(t.image)
+  const beforeAfter = treatmentImage(t.image)
+  const type = sections.find((s) => s.name === t.type)
+
+  // Optional cards: only the filled ones show, numbered in order.
+  const cards = [
+    { title: c.CARD_HOW_TITLE, html: t.howHtml },
+    { title: c.CARD_TREATS_TITLE, text: t.treats },
+    { title: c.CARD_BENEFIT_TITLE, text: t.benefit },
+  ].filter((card) => card.html || card.text)
 
   return (
     <div style={{ backgroundColor: '#f5f5f5' }}>
-      {/* Title, blurb, CTA */}
-      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
-        <h1 className="text-4xl md:text-5xl font-medium text-ink mb-4">{t.title}</h1>
-        {t.blurb && <p className="text-lg text-ink-soft max-w-xl mx-auto mb-8">{t.blurb}</p>}
-        <Link
-          to="/contact"
-          className="inline-block font-medium transition-all"
-          style={{ padding: '12px 24px', fontSize: '14px', borderRadius: '6px', backgroundColor: '#cbae94', color: '#fff' }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#b89678')}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#cbae94')}
-        >
-          Book Now
-        </Link>
+      {/* Hero: label + title block on one row, intro image underneath on the left */}
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
+          <div>
+            <Link to={type ? `/services#${type.anchor}` : '/services'} className={`${label} hover:text-ink transition-colors`}>
+              {t.type}
+            </Link>
+          </div>
+
+          <div className="md:row-start-1 md:col-start-2">
+            <h1 className="font-normal text-ink" style={{ fontSize: 'clamp(40px, 4.2vw, 58px)', lineHeight: 1.1 }}>
+              {t.title}
+            </h1>
+            {t.blurb && <p className="mt-6 text-lg leading-relaxed text-ink-soft max-w-xl">{t.blurb}</p>}
+            <a
+              href="#book"
+              className="mt-6 inline-block rounded-xl bg-cta hover:bg-cta-dark text-ink font-medium transition-colors"
+              style={{ padding: '15px 30px', fontSize: '16px' }}
+            >
+              {c.HERO_CTA}
+            </a>
+          </div>
+
+          {intro && (
+            <div className="md:col-start-1 md:row-start-2 overflow-hidden rounded-md bg-cream-dark" style={{ aspectRatio: '688 / 464' }}>
+              <img src={intro} alt={t.title} className="w-full h-full object-cover" />
+            </div>
+          )}
+        </div>
       </section>
 
-      {/* Optional: intro image */}
-      {intro && (
-        <section className="mx-auto max-w-4xl px-6 pb-16">
-          <img src={intro} alt={t.title} className="w-full h-72 md:h-[420px] object-cover rounded-lg" />
+      {/* Numbered cards */}
+      {cards.length > 0 && (
+        <section className={rule}>
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '16px' }}>
+              {cards.map((card, i) => (
+                <div key={card.title} className="rounded-md bg-white/70 p-6">
+                  <p className="text-2xl text-cta">{String(i + 1).padStart(2, '0')}</p>
+                  <h2 className="mt-5 text-xl font-medium text-ink">{card.title}</h2>
+                  {card.html ? (
+                    <div
+                      className="mt-4 text-[15px] leading-relaxed text-ink-soft space-y-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_a]:underline [&_strong]:text-ink"
+                      dangerouslySetInnerHTML={{ __html: card.html }}
+                    />
+                  ) : (
+                    <p className="mt-4 text-[15px] leading-relaxed text-ink-soft whitespace-pre-line">{card.text}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
-      {/* Optional: before & after (one combined image) */}
-      {image && (
-        <section className="mx-auto max-w-4xl px-6 pb-16">
-          <img src={image} alt={`${t.title} before and after`} className="w-full h-auto rounded-lg" />
+      {/* Does it work? - before & after */}
+      {beforeAfter && (
+        <section className={rule}>
+          <div className="mx-auto max-w-6xl px-6 py-14 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-8 gap-y-6">
+            <p className={label}>{c.LABEL_DOES_IT_WORK}</p>
+            <figure>
+              <img src={beforeAfter} alt={`${t.title} before and after`} className="w-full h-auto rounded-md" />
+              <figcaption className="mt-3 text-sm text-ink-soft">{c.BEFORE_AFTER_CAPTION}</figcaption>
+            </figure>
+          </div>
         </section>
       )}
 
-      {/* Optional: what it treats / benefit (plain text, line breaks kept) */}
-      {[['What It Treats', t.treats], ['Benefit', t.benefit]].map(
-        ([heading, text]) =>
-          text && (
-            <section key={heading} className="mx-auto max-w-3xl px-6 pb-16">
-              <h2 className="text-2xl font-medium text-ink mb-4">{heading}</h2>
-              <p className="text-ink-soft leading-relaxed whitespace-pre-line">{text}</p>
-            </section>
-          ),
-      )}
-
-      {/* Optional: how it works (rich text, rendered from Markdown at build time) */}
-      {t.howHtml && (
-        <section className="mx-auto max-w-3xl px-6 pb-16">
-          <h2 className="text-2xl font-medium text-ink mb-4">How It Works</h2>
-          <div
-            className="text-ink-soft leading-relaxed space-y-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_a]:underline [&_strong]:text-ink"
-            dangerouslySetInnerHTML={{ __html: t.howHtml }}
-          />
-        </section>
-      )}
+      {/* Book */}
+      <section id="book" className={`${rule} scroll-mt-14`}>
+        <div className="mx-auto max-w-6xl px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[200px_1fr_1fr] gap-x-8 gap-y-6">
+          <p className={`${label} md:col-span-2 lg:col-span-1`}>{c.LABEL_BOOK}</p>
+          <div>
+            <h2 className="uppercase font-normal text-ink" style={{ fontSize: 'clamp(26px, 2.6vw, 36px)', lineHeight: 1.15 }}>
+              {c.BOOK_TITLE}
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed text-ink-soft max-w-md">{c.BOOK_BODY}</p>
+          </div>
+          <ConsultationForm treatment={t.title} copy={c} />
+        </div>
+      </section>
     </div>
   )
 }

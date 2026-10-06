@@ -56,6 +56,12 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   type images in `src/assets/images/treatment-type/`, before/after in
   `src/assets/images/treatments/`. `npm run treatments:seed` regenerates the starting
   file (overwrites edits!).
+- **Treatment detail page** (`src/pages/TreatmentDetail.jsx`): hero (type label, title, blurb,
+  Book Now -> #book, intro image), numbered cards (How It Works / What It Treats / Benefit,
+  hidden when empty), Before & After, then the consultation form
+  (`src/components/ConsultationForm.jsx` -> `/api/contact`, records the treatment, phone
+  optional). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
+  CTA peach is `--color-cta` in `src/index.css` (sampled from the design screenshot).
 
 ## Palette (src/index.css @theme)
 cream `#faf6f1` · cream-dark `#f1e9df` · peach `#e8b294` · peach-dark `#d99872`

@@ -1,0 +1,47 @@
+## CARD_HOW_TITLE
+How does it work
+
+## CARD_TREATS_TITLE
+What It Treats
+
+## CARD_BENEFIT_TITLE
+Benefit
+
+## LABEL_DOES_IT_WORK
+Does it work?
+
+## BEFORE_AFTER_CAPTION
+Before & After
+
+## LABEL_BOOK
+Book
+
+## BOOK_TITLE
+Schedule a consultation
+
+## BOOK_BODY
+We're looking forward to meeting you, hearing what you'd like to change, and building a non-surgical plan around it. The consultation is where we confirm whether this treatment is right for you — and tell you honestly if it isn't.
+
+## HERO_CTA
+Book Now
+
+## FORM_NAME
+First Name
+
+## FORM_EMAIL
+Email
+
+## FORM_MESSAGE
+Message
+
+## FORM_CONSENT
+I agree to the terms & privacy policy
+
+## FORM_CTA
+Submit
+
+## FORM_SENDING
+Sending...
+
+## FORM_THANKS
+Thank you! We've received your request and will be in touch soon.
