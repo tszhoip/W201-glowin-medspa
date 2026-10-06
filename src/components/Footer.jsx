@@ -5,26 +5,26 @@ import medspaImg from '../assets/images/footer/medspa.png'
 // Hardcoded links from design
 const col1Links = [
   { label: 'Home', href: '/' },
-  { label: 'Botos', href: '/treatments/botox-dysport' },
-  { label: 'Dermal Filler', href: '/treatments/dermal-fillers' },
-  { label: 'PRP Injection', href: '/treatments/prp-injections' },
-  { label: 'Sculptra', href: '/treatments/sculptra' },
+  { label: 'Botos', href: '/treatments/neurotoxin' },
+  { label: 'Dermal Filler', href: '/treatments/dermal-filler' },
+  { label: 'PRP Injection', href: '/treatments/prp' },
+  { label: 'Sculptra', href: '/treatments/sculptra-radiesse' },
   { label: 'Agnes', href: '/treatments/agnes' },
   { label: 'C02', href: '/treatments/co2' },
-  { label: 'Ultherpy', href: '/treatments/ultherapy' },
+  { label: 'Ultherpy', href: '/treatments/ultherapy-prime' },
 ]
 
 const col2Links = [
-  { label: 'Inmode', href: '/treatments/inmode' },
+  { label: 'Inmode', href: '/treatments/inmode-minifx' },
   { label: 'Miim Laser', href: '/treatments/miim-laser' },
   { label: 'Noblex', href: '/treatments/noblex' },
   { label: 'PDO Threads', href: '/treatments/pdo-threads' },
   { label: 'Scarlet', href: '/treatments/scarlet' },
   { label: 'Shrink', href: '/treatments/shrink' },
   { label: 'Shrink', href: '/treatments/shrink' },
-  { label: 'Thermage', href: '/treatments/thermage' },
+  { label: 'Thermage', href: '/treatments/thermage-flx' },
   { label: 'V-Zet', href: '/treatments/v-zet' },
-  { label: 'PRP Injections', href: '/treatments/prp-injections' },
+  { label: 'PRP Injections', href: '/treatments/prp' },
 ]
 
 const legalLinks = [

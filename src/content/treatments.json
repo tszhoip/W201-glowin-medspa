@@ -269,6 +269,78 @@
       "before": "",
       "after": "",
       "howHtml": ""
+    },
+    {
+      "title": "Co2",
+      "slug": "co2",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Miim Laser",
+      "slug": "miim-laser",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Agnes",
+      "slug": "agnes",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Noblex",
+      "slug": "noblex",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Scarlet",
+      "slug": "scarlet",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Shrink",
+      "slug": "shrink",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "V-Zet",
+      "slug": "v-zet",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "PDO Threads",
+      "slug": "pdo-threads",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
     }
   ]
 }
