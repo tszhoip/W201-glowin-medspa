@@ -72,6 +72,7 @@ const INSTRUCTIONS = [
   '',
   'Sheet "Treatments" — one row per treatment. Row order = order on the Services page.',
   '  • Title: name shown on the Services page and at the top of the detail page.',
+  '  • Short Name (optional): a shorter label for compact places. Leave blank to use the Title.',
   '  • Intro Image (optional): image file name shown at the top of the detail page, e.g. "hydrafacial-intro.jpg". Files go in src/assets/images/treatments/',
   '  • Top Treatment (optional): 1, 2 or 3 = featured on the Home page, in that order. Leave blank for all other treatments. The featured card uses the treatment\'s Intro Image.',
   '  • Slug: the web address, e.g. "hydrafacial" -> /treatments/hydrafacial. Lowercase letters, numbers and dashes only. Leave blank to auto-generate from the title. Changing a slug breaks old links.',
@@ -122,6 +123,7 @@ async function seed() {
   const tws = wb.addWorksheet('Treatments', { views: [{ state: 'frozen', ySplit: 1 }] })
   tws.columns = [
     { header: 'Title', key: 'title', width: 36 },
+    { header: 'Short Name', key: 'shortName', width: 22 },
     { header: 'Intro Image', key: 'intro', width: 30 },
     { header: 'Slug', key: 'slug', width: 28 },
     { header: 'Treatment Type', key: 'type', width: 30 },
@@ -134,7 +136,7 @@ async function seed() {
   ]
   SEED.forEach(([title, slug, type]) => tws.addRow({ title, slug, type }))
   for (let r = 2; r <= MAX_ROWS; r++) {
-    tws.getCell(`D${r}`).dataValidation = {
+    tws.getCell(`E${r}`).dataValidation = {
       type: 'list',
       allowBlank: false,
       formulae: [`'Treatment Types'!$A$2:$A$30`],
@@ -142,7 +144,7 @@ async function seed() {
       errorTitle: 'Unknown treatment type',
       error: 'Pick a type from the list (edit types on the "Treatment Types" sheet).',
     }
-    tws.getCell(`J${r}`).dataValidation = {
+    tws.getCell(`K${r}`).dataValidation = {
       type: 'list',
       allowBlank: true,
       formulae: ['"1,2,3"'],
@@ -150,7 +152,7 @@ async function seed() {
       errorTitle: 'Top Treatment',
       error: 'Use 1, 2 or 3 (the order on the Home page), or leave blank.',
     }
-    for (const col of ['E', 'G', 'H', 'I']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
+    for (const col of ['F', 'H', 'I', 'J']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
   }
 
   const yws = wb.addWorksheet('Treatment Types', { views: [{ state: 'frozen', ySplit: 1 }] })
@@ -224,7 +226,7 @@ async function build() {
     types.push({ name, shortName, anchor, image })
   })
 
-  const col = requireCols(tws, 'Treatments', ['title', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works', 'top treatment'])
+  const col = requireCols(tws, 'Treatments', ['title', 'short name', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works', 'top treatment'])
   const get = (row, h) => cellText(row.getCell(col[h]))
 
   const treatmentFiles = existsSync(TREATMENT_IMG_DIR) ? readdirSync(TREATMENT_IMG_DIR) : []
@@ -234,6 +236,7 @@ async function build() {
     if (n === 1) return
     const title = get(row, 'title')
     if (!title) return
+    const shortName = get(row, 'short name') || title
     const intro = fileName(get(row, 'intro image'))
     const slug = slugify(get(row, 'slug') || title)
     const type = get(row, 'treatment type')
@@ -260,6 +263,7 @@ async function build() {
 
     treatments.push({
       title,
+      shortName,
       slug,
       type,
       blurb,

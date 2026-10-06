@@ -28,6 +28,7 @@
   "treatments": [
     {
       "title": "HydraFacial",
+      "shortName": "HydraFacial",
       "slug": "hydrafacial",
       "type": "FACIAL & PEELING",
       "blurb": "Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.",
@@ -40,6 +41,7 @@
     },
     {
       "title": "Lhala Peel",
+      "shortName": "Lhala Peel",
       "slug": "lhala-peel",
       "type": "FACIAL & PEELING",
       "blurb": "Do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.",
@@ -52,6 +54,7 @@
     },
     {
       "title": "Enzyme Peel",
+      "shortName": "Enzyme Peel",
       "slug": "enzyme-peel",
       "type": "FACIAL & PEELING",
       "blurb": "Incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
@@ -64,6 +67,7 @@
     },
     {
       "title": "24K Gold Therapy",
+      "shortName": "24K Gold Therapy",
       "slug": "gold-therapy",
       "type": "FACIAL & PEELING",
       "blurb": "Et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis.",
@@ -76,6 +80,7 @@
     },
     {
       "title": "Acne Care Facial",
+      "shortName": "Acne Care Facial",
       "slug": "acne-care-facial",
       "type": "FACIAL & PEELING",
       "blurb": "Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
@@ -88,6 +93,7 @@
     },
     {
       "title": "Lymphatic Facial",
+      "shortName": "Lymphatic Facial",
       "slug": "lymphatic-facial",
       "type": "FACIAL & PEELING",
       "blurb": "Ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.",
@@ -100,6 +106,7 @@
     },
     {
       "title": "Neurotoxin",
+      "shortName": "Neurotoxin",
       "slug": "neurotoxin",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit.",
@@ -112,6 +119,7 @@
     },
     {
       "title": "Dermal Filler",
+      "shortName": "Dermal Filler",
       "slug": "dermal-filler",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor.",
@@ -124,6 +132,7 @@
     },
     {
       "title": "Sculptra® • Radiesse®",
+      "shortName": "Sculptra® • Radiesse®",
       "slug": "sculptra-radiesse",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum.",
@@ -136,6 +145,7 @@
     },
     {
       "title": "Thread Lift",
+      "shortName": "Thread Lift",
       "slug": "thread-lift",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
@@ -148,6 +158,7 @@
     },
     {
       "title": "Skin Booster",
+      "shortName": "Skin Booster",
       "slug": "skin-booster",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.",
@@ -160,6 +171,7 @@
     },
     {
       "title": "PRP (Platelet-Rich Plasma)",
+      "shortName": "PRP (Platelet-Rich Plasma)",
       "slug": "prp",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
@@ -172,6 +184,7 @@
     },
     {
       "title": "Cell Factor",
+      "shortName": "Cell Factor",
       "slug": "cell-factor",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "In voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.",
@@ -184,6 +197,7 @@
     },
     {
       "title": "Regenerative Skin Therapy",
+      "shortName": "Regenerative Skin Therapy",
       "slug": "regenerative-skin-therapy",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -196,6 +210,7 @@
     },
     {
       "title": "Fat Dissolving Injection",
+      "shortName": "Fat Dissolving Injection",
       "slug": "fat-dissolving-injection",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.",
@@ -208,6 +223,7 @@
     },
     {
       "title": "Ultherapy PRIME®",
+      "shortName": "Ultherapy PRIME®",
       "slug": "ultherapy-prime",
       "type": "LASER & ENERGY",
       "blurb": "Pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.",
@@ -220,6 +236,7 @@
     },
     {
       "title": "Thermage FLX®",
+      "shortName": "Thermage FLX®",
       "slug": "thermage-flx",
       "type": "LASER & ENERGY",
       "blurb": "Dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.",
@@ -232,6 +249,7 @@
     },
     {
       "title": "InMode (MiniFX / BodyFX / Forma)",
+      "shortName": "InMode (MiniFX / BodyFX / Forma)",
       "slug": "inmode-minifx",
       "type": "LASER & ENERGY",
       "blurb": "Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.",
@@ -244,6 +262,7 @@
     },
     {
       "title": "Onda Pro",
+      "shortName": "Onda Pro",
       "slug": "onda-pro",
       "type": "LASER & ENERGY",
       "blurb": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -256,6 +275,7 @@
     },
     {
       "title": "Eve Titan",
+      "shortName": "Eve Titan",
       "slug": "eve-titan",
       "type": "LASER & ENERGY",
       "blurb": "Tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
@@ -268,6 +288,7 @@
     },
     {
       "title": "Potenza® RF Microneedling",
+      "shortName": "Potenza® RF Microneedling",
       "slug": "potenza-rf",
       "type": "LASER & ENERGY",
       "blurb": "Labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
@@ -280,6 +301,7 @@
     },
     {
       "title": "PicoSure® Pro",
+      "shortName": "PicoSure® Pro",
       "slug": "picosure-pro",
       "type": "LASER & ENERGY",
       "blurb": "Magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.",
@@ -292,6 +314,7 @@
     },
     {
       "title": "XERF (Sérf)",
+      "shortName": "XERF (Sérf)",
       "slug": "xerf",
       "type": "LASER & ENERGY",
       "blurb": "Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in.",
@@ -304,6 +327,7 @@
     },
     {
       "title": "Plasma",
+      "shortName": "Plasma",
       "slug": "plasma",
       "type": "LASER & ENERGY",
       "blurb": "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
@@ -316,6 +340,7 @@
     },
     {
       "title": "Medical Weight Management",
+      "shortName": "Medical Weight Management",
       "slug": "medical-weight-management",
       "type": "WELLNESS",
       "blurb": "Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -328,6 +353,7 @@
     },
     {
       "title": "IV Therapy",
+      "shortName": "IV Therapy",
       "slug": "iv-therapy",
       "type": "WELLNESS",
       "blurb": "Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
@@ -340,6 +366,7 @@
     },
     {
       "title": "Hair Restoration",
+      "shortName": "Hair Restoration",
       "slug": "hair-restoration",
       "type": "WELLNESS",
       "blurb": "Ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed.",
@@ -352,6 +379,7 @@
     },
     {
       "title": "Joint PRP / PRF",
+      "shortName": "Joint PRP / PRF",
       "slug": "joint-prp",
       "type": "WELLNESS",
       "blurb": "Consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit.",
