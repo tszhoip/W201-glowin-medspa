@@ -72,6 +72,7 @@ const INSTRUCTIONS = [
   '',
   'Sheet "Treatments" — one row per treatment. Row order = order on the Services page.',
   '  • Title: name shown on the Services page and at the top of the detail page.',
+  '  • Intro Image (optional): image file name shown at the top of the detail page, e.g. "hydrafacial-intro.jpg". Files go in src/assets/images/treatments/',
   '  • Slug: the web address, e.g. "hydrafacial" -> /treatments/hydrafacial. Lowercase letters, numbers and dashes only. Leave blank to auto-generate from the title. Changing a slug breaks old links.',
   '  • Treatment Type: pick from the dropdown. The list comes from the "Treatment Types" sheet.',
   '  • Blurb: short description, 50 words max.',
@@ -119,6 +120,7 @@ async function seed() {
   const tws = wb.addWorksheet('Treatments', { views: [{ state: 'frozen', ySplit: 1 }] })
   tws.columns = [
     { header: 'Title', key: 'title', width: 36 },
+    { header: 'Intro Image', key: 'intro', width: 30 },
     { header: 'Slug', key: 'slug', width: 28 },
     { header: 'Treatment Type', key: 'type', width: 30 },
     { header: 'Blurb (max 50 words)', key: 'blurb', width: 60 },
@@ -129,7 +131,7 @@ async function seed() {
   ]
   SEED.forEach(([title, slug, type]) => tws.addRow({ title, slug, type }))
   for (let r = 2; r <= MAX_ROWS; r++) {
-    tws.getCell(`C${r}`).dataValidation = {
+    tws.getCell(`D${r}`).dataValidation = {
       type: 'list',
       allowBlank: false,
       formulae: [`'Treatment Types'!$A$2:$A$30`],
@@ -137,7 +139,7 @@ async function seed() {
       errorTitle: 'Unknown treatment type',
       error: 'Pick a type from the list (edit types on the "Treatment Types" sheet).',
     }
-    for (const col of ['D', 'F', 'G', 'H']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
+    for (const col of ['E', 'G', 'H', 'I']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
   }
 
   const yws = wb.addWorksheet('Treatment Types', { views: [{ state: 'frozen', ySplit: 1 }] })
@@ -189,7 +191,7 @@ async function build() {
   tws.getRow(1).eachCell((cell, c) => {
     col[norm(cellText(cell))] = c
   })
-  const need = ['title', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works']
+  const need = ['title', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works']
   const missing = need.filter((h) => !col[h])
   if (missing.length) {
     console.error(`[treatments] ERROR: Treatments sheet is missing column(s): ${missing.join(', ')}. Don't rename the header row.`)
@@ -197,12 +199,14 @@ async function build() {
   }
   const get = (row, h) => cellText(row.getCell(col[h]))
 
+  const treatmentFiles = existsSync(TREATMENT_IMG_DIR) ? readdirSync(TREATMENT_IMG_DIR) : []
   const treatments = []
   const slugs = new Set()
   tws.eachRow((row, n) => {
     if (n === 1) return
     const title = get(row, 'title')
     if (!title) return
+    const intro = get(row, 'intro image')
     const slug = slugify(get(row, 'slug') || title)
     const type = get(row, 'treatment type')
     const blurb = get(row, 'blurb').replace(/\s+/g, ' ')
@@ -218,14 +222,17 @@ async function build() {
       errors.push(`${where}: Treatment Type "${type}" is not on the Treatment Types sheet.`)
     const words = blurb ? blurb.split(' ').length : 0
     if (words > MAX_BLURB_WORDS) warnings.push(`${where}: blurb is ${words} words (max ${MAX_BLURB_WORDS}).`)
-    if (image && !existsSync(join(TREATMENT_IMG_DIR, image)))
-      warnings.push(`${where}: image "${image}" not found in src/assets/images/treatments/.`)
+    // Exact-case match: macOS ignores case but the Vercel (Linux) build does not.
+    for (const img of [intro, image].filter(Boolean))
+      if (!treatmentFiles.includes(img))
+        warnings.push(`${where}: image "${img}" not found in src/assets/images/treatments/ (names are case-sensitive).`)
 
     treatments.push({
       title,
       slug,
       type,
       blurb,
+      intro,
       image,
       treats,
       benefit,

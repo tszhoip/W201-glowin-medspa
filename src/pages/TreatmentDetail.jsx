@@ -10,6 +10,7 @@ export default function TreatmentDetail() {
 
   if (!t) return <NotFound />
 
+  const intro = treatmentImage(t.intro)
   const image = treatmentImage(t.image)
 
   return (
@@ -28,6 +29,13 @@ export default function TreatmentDetail() {
           Book Now
         </Link>
       </section>
+
+      {/* Optional: intro image */}
+      {intro && (
+        <section className="mx-auto max-w-4xl px-6 pb-16">
+          <img src={intro} alt={t.title} className="w-full h-72 md:h-[420px] object-cover rounded-lg" />
+        </section>
+      )}
 
       {/* Optional: before & after (one combined image) */}
       {image && (

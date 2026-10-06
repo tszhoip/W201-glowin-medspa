@@ -47,7 +47,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   Mindbody / Zenoti) may replace "Book Now" later.
 - **Treatments are spreadsheet-driven.** `src/content/treatments.xlsx` is the source of
   truth for the Services page and every `/treatments/:slug` detail page. Sheets:
-  `Treatments` (title, slug, type dropdown, blurb ≤50 words, optional single before&after image, What It Treats, Benefit (plain text),
+  `Treatments` (title, intro image, slug, type dropdown, blurb ≤50 words, optional single before&after image, What It Treats, Benefit (plain text),
   and optional How It Works in Markdown; columns matched by header name), `Treatment Types` (name + section
   image; feeds the dropdown), `Instructions`. `scripts/treatments.mjs build` converts it
   to `src/content/treatments.json` (runs automatically before `dev`/`build`; fails on
