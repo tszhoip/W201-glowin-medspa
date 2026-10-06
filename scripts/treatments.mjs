@@ -75,8 +75,11 @@ const INSTRUCTIONS = [
   '  • Slug: the web address, e.g. "hydrafacial" -> /treatments/hydrafacial. Lowercase letters, numbers and dashes only. Leave blank to auto-generate from the title. Changing a slug breaks old links.',
   '  • Treatment Type: pick from the dropdown. The list comes from the "Treatment Types" sheet.',
   '  • Blurb: short description, 50 words max.',
-  '  • Before Image / After Image (optional): image file names, e.g. "hydrafacial-before.jpg". Fill in BOTH or neither. Files go in src/assets/images/treatments/',
+  '  • Before & After Image (optional): ONE image file name showing before and after together, e.g. "hydrafacial-before-after.jpg". Files go in src/assets/images/treatments/',
+  '  • What It Treats (optional): plain text. Line breaks are kept (one concern per line works well).',
+  '  • Benefit (optional): plain text. Line breaks are kept.',
   '  • How It Works (optional): text shown under the heading "How It Works". Markdown is supported:',
+  '  • Optional sections are hidden on the page when left empty. Columns are matched by their header names, so you may reorder columns but do not rename the headers.',
   '        **bold**   *italic*   - list item (one per line)   blank line = new paragraph   [link text](https://...)',
   '',
   'Sheet "Treatment Types" — the sections of the Services page.',
@@ -119,8 +122,9 @@ async function seed() {
     { header: 'Slug', key: 'slug', width: 28 },
     { header: 'Treatment Type', key: 'type', width: 30 },
     { header: 'Blurb (max 50 words)', key: 'blurb', width: 60 },
-    { header: 'Before Image', key: 'before', width: 26 },
-    { header: 'After Image', key: 'after', width: 26 },
+    { header: 'Before & After Image', key: 'image', width: 30 },
+    { header: 'What It Treats', key: 'treats', width: 50 },
+    { header: 'Benefit', key: 'benefit', width: 50 },
     { header: 'How It Works (Markdown)', key: 'how', width: 60 },
   ]
   SEED.forEach(([title, slug, type]) => tws.addRow({ title, slug, type }))
@@ -133,7 +137,7 @@ async function seed() {
       errorTitle: 'Unknown treatment type',
       error: 'Pick a type from the list (edit types on the "Treatment Types" sheet).',
     }
-    for (const col of ['D', 'G']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
+    for (const col of ['D', 'F', 'G', 'H']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
   }
 
   const yws = wb.addWorksheet('Treatment Types', { views: [{ state: 'frozen', ySplit: 1 }] })
@@ -177,18 +181,33 @@ async function build() {
     types.push({ name, image })
   })
 
+  // Columns are found by header name (ignoring "(...)" notes and case), so they can be reordered.
+  const norm = (h) => h.replace(/\(.*?\)/g, '').replace(/\s+/g, ' ').trim().toLowerCase()
+  const col = {}
+  tws.getRow(1).eachCell((cell, c) => {
+    col[norm(cellText(cell))] = c
+  })
+  const need = ['title', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works']
+  const missing = need.filter((h) => !col[h])
+  if (missing.length) {
+    console.error(`[treatments] ERROR: Treatments sheet is missing column(s): ${missing.join(', ')}. Don't rename the header row.`)
+    process.exit(1)
+  }
+  const get = (row, h) => cellText(row.getCell(col[h]))
+
   const treatments = []
   const slugs = new Set()
   tws.eachRow((row, n) => {
     if (n === 1) return
-    const title = cellText(row.getCell(1))
+    const title = get(row, 'title')
     if (!title) return
-    const slug = slugify(cellText(row.getCell(2)) || title)
-    const type = cellText(row.getCell(3))
-    const blurb = cellText(row.getCell(4)).replace(/\s+/g, ' ')
-    const before = cellText(row.getCell(5))
-    const after = cellText(row.getCell(6))
-    const how = cellText(row.getCell(7))
+    const slug = slugify(get(row, 'slug') || title)
+    const type = get(row, 'treatment type')
+    const blurb = get(row, 'blurb').replace(/\s+/g, ' ')
+    const image = get(row, 'before & after image')
+    const treats = get(row, 'what it treats')
+    const benefit = get(row, 'benefit')
+    const how = get(row, 'how it works')
     const where = `Treatments row ${n} ("${title}")`
 
     if (slugs.has(slug)) errors.push(`${where}: duplicate slug "${slug}".`)
@@ -197,18 +216,17 @@ async function build() {
       errors.push(`${where}: Treatment Type "${type}" is not on the Treatment Types sheet.`)
     const words = blurb ? blurb.split(' ').length : 0
     if (words > MAX_BLURB_WORDS) warnings.push(`${where}: blurb is ${words} words (max ${MAX_BLURB_WORDS}).`)
-    if (!!before !== !!after) warnings.push(`${where}: Before/After needs both images; neither will be shown.`)
-    for (const img of [before, after].filter(Boolean))
-      if (!existsSync(join(TREATMENT_IMG_DIR, img)))
-        warnings.push(`${where}: image "${img}" not found in src/assets/images/treatments/.`)
+    if (image && !existsSync(join(TREATMENT_IMG_DIR, image)))
+      warnings.push(`${where}: image "${image}" not found in src/assets/images/treatments/.`)
 
     treatments.push({
       title,
       slug,
       type,
       blurb,
-      before: before && after ? before : '',
-      after: before && after ? after : '',
+      image,
+      treats,
+      benefit,
       // Raw HTML typed into the sheet is escaped, not rendered.
       howHtml: how
         ? marked.parse(how, { async: false, renderer: Object.assign(new marked.Renderer(), { html: ({ text }) => text.replace(/</g, '&lt;') }) })

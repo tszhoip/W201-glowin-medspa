@@ -23,8 +23,9 @@
       "slug": "hydrafacial",
       "type": "FACIAL & PEELING",
       "blurb": "Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -32,8 +33,9 @@
       "slug": "lhala-peel",
       "type": "FACIAL & PEELING",
       "blurb": "Do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -41,8 +43,9 @@
       "slug": "enzyme-peel",
       "type": "FACIAL & PEELING",
       "blurb": "Incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -50,8 +53,9 @@
       "slug": "gold-therapy",
       "type": "FACIAL & PEELING",
       "blurb": "Et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -59,8 +63,9 @@
       "slug": "acne-care-facial",
       "type": "FACIAL & PEELING",
       "blurb": "Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -68,8 +73,9 @@
       "slug": "lymphatic-facial",
       "type": "FACIAL & PEELING",
       "blurb": "Ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -77,8 +83,9 @@
       "slug": "neurotoxin",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -86,8 +93,9 @@
       "slug": "dermal-filler",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -95,8 +103,9 @@
       "slug": "sculptra-radiesse",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -104,8 +113,9 @@
       "slug": "thread-lift",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -113,8 +123,9 @@
       "slug": "skin-booster",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -122,8 +133,9 @@
       "slug": "prp",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -131,8 +143,9 @@
       "slug": "cell-factor",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "In voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -140,8 +153,9 @@
       "slug": "regenerative-skin-therapy",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -149,8 +163,9 @@
       "slug": "fat-dissolving-injection",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -158,8 +173,9 @@
       "slug": "ultherapy-prime",
       "type": "LASER & ENERGY",
       "blurb": "Pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -167,8 +183,9 @@
       "slug": "thermage-flx",
       "type": "LASER & ENERGY",
       "blurb": "Dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -176,8 +193,9 @@
       "slug": "inmode-minifx",
       "type": "LASER & ENERGY",
       "blurb": "Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -185,8 +203,9 @@
       "slug": "onda-pro",
       "type": "LASER & ENERGY",
       "blurb": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -194,8 +213,9 @@
       "slug": "eve-titan",
       "type": "LASER & ENERGY",
       "blurb": "Tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -203,8 +223,9 @@
       "slug": "potenza-rf",
       "type": "LASER & ENERGY",
       "blurb": "Labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -212,8 +233,9 @@
       "slug": "picosure-pro",
       "type": "LASER & ENERGY",
       "blurb": "Magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -221,8 +243,9 @@
       "slug": "xerf",
       "type": "LASER & ENERGY",
       "blurb": "Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -230,8 +253,9 @@
       "slug": "plasma",
       "type": "LASER & ENERGY",
       "blurb": "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -239,8 +263,9 @@
       "slug": "medical-weight-management",
       "type": "WELLNESS",
       "blurb": "Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -248,8 +273,9 @@
       "slug": "iv-therapy",
       "type": "WELLNESS",
       "blurb": "Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -257,8 +283,9 @@
       "slug": "hair-restoration",
       "type": "WELLNESS",
       "blurb": "Ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -266,8 +293,9 @@
       "slug": "joint-prp",
       "type": "WELLNESS",
       "blurb": "Consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -275,8 +303,9 @@
       "slug": "co2",
       "type": "LASER & ENERGY",
       "blurb": "Irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -284,8 +313,9 @@
       "slug": "miim-laser",
       "type": "LASER & ENERGY",
       "blurb": "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -293,8 +323,9 @@
       "slug": "agnes",
       "type": "LASER & ENERGY",
       "blurb": "Velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -302,8 +333,9 @@
       "slug": "noblex",
       "type": "LASER & ENERGY",
       "blurb": "Dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -311,8 +343,9 @@
       "slug": "scarlet",
       "type": "LASER & ENERGY",
       "blurb": "Nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -320,8 +353,9 @@
       "slug": "shrink",
       "type": "LASER & ENERGY",
       "blurb": "Ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -329,8 +363,9 @@
       "slug": "v-zet",
       "type": "LASER & ENERGY",
       "blurb": "Amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     },
     {
@@ -338,8 +373,9 @@
       "slug": "pdo-threads",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      "before": "",
-      "after": "",
+      "image": "",
+      "treats": "",
+      "benefit": "",
       "howHtml": ""
     }
   ]

@@ -10,8 +10,7 @@ export default function TreatmentDetail() {
 
   if (!t) return <NotFound />
 
-  const before = treatmentImage(t.before)
-  const after = treatmentImage(t.after)
+  const image = treatmentImage(t.image)
 
   return (
     <div style={{ backgroundColor: '#f5f5f5' }}>
@@ -30,20 +29,22 @@ export default function TreatmentDetail() {
         </Link>
       </section>
 
-      {/* Optional: before & after */}
-      {before && after && (
+      {/* Optional: before & after (one combined image) */}
+      {image && (
         <section className="mx-auto max-w-4xl px-6 pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '12px' }}>
-            <figure>
-              <img src={before} alt={`${t.title} before`} className="w-full h-80 object-cover rounded-lg" />
-              <figcaption className="mt-2 text-sm text-ink-soft">Before</figcaption>
-            </figure>
-            <figure>
-              <img src={after} alt={`${t.title} after`} className="w-full h-80 object-cover rounded-lg" />
-              <figcaption className="mt-2 text-sm text-ink-soft">After</figcaption>
-            </figure>
-          </div>
+          <img src={image} alt={`${t.title} before and after`} className="w-full h-auto rounded-lg" />
         </section>
+      )}
+
+      {/* Optional: what it treats / benefit (plain text, line breaks kept) */}
+      {[['What It Treats', t.treats], ['Benefit', t.benefit]].map(
+        ([heading, text]) =>
+          text && (
+            <section key={heading} className="mx-auto max-w-3xl px-6 pb-16">
+              <h2 className="text-2xl font-medium text-ink mb-4">{heading}</h2>
+              <p className="text-ink-soft leading-relaxed whitespace-pre-line">{text}</p>
+            </section>
+          ),
       )}
 
       {/* Optional: how it works (rich text, rendered from Markdown at build time) */}
