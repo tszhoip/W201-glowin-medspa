@@ -1,7 +1,18 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { sections } from '../lib/treatments'
 
 export default function Services() {
+  const { hash } = useLocation()
+
+  // Jump to #anchor (e.g. /services#laser). Repeats once web fonts load, since they shift the layout.
+  useEffect(() => {
+    if (!hash) return
+    const go = () => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
+    go()
+    document.fonts?.ready.then(go)
+  }, [hash])
+
   return (
     <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Page Header */}
@@ -32,7 +43,7 @@ export default function Services() {
         const isAlternate = idx % 2 === 1
 
         return (
-          <section key={section.name} className="mx-auto max-w-6xl px-6 py-16">
+          <section key={section.name} id={section.anchor} className="mx-auto max-w-6xl px-6 py-16 scroll-mt-14">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
               {/* Content: Title and Treatment List */}
               <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>

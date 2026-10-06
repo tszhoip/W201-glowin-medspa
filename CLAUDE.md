@@ -47,13 +47,13 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   Mindbody / Zenoti) may replace "Book Now" later.
 - **Treatments are spreadsheet-driven.** `src/content/treatments.xlsx` is the source of
   truth for the Services page and every `/treatments/:slug` detail page. Sheets:
-  `Treatments` (title, intro image, slug, type dropdown, blurb ≤50 words, optional single before&after image, What It Treats, Benefit (plain text),
-  and optional How It Works in Markdown; columns matched by header name), `Treatment Types` (name + section
-  image; feeds the dropdown), `Instructions`. `scripts/treatments.mjs build` converts it
+  `Treatments` (title, intro image, slug, type dropdown, blurb ≤50 words, optional single before&after image, What It Treats, Benefit (plain text), Top Treatment 1-3 = featured on Home,
+  and optional How It Works in Markdown; columns matched by header name), `Treatment Types` (name, short name, section
+  image; feeds the dropdown, the Home type list and /services#anchor links), `Instructions`. `scripts/treatments.mjs build` converts it
   to `src/content/treatments.json` (runs automatically before `dev`/`build`; fails on
   unknown type or duplicate slug, warns on long blurbs/missing images). The owner edits
   the xlsx, re-uploads it and leaves a note — don't scan for changes. Images:
-  type images in `src/assets/images/services-page/`, before/after in
+  type images in `src/assets/images/treatment-type/`, before/after in
   `src/assets/images/treatments/`. `npm run treatments:seed` regenerates the starting
   file (overwrites edits!).
 

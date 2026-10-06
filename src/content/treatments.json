@@ -2,19 +2,27 @@
   "types": [
     {
       "name": "FACIAL & PEELING",
-      "image": "FACIAL.jpg"
+      "shortName": "Facial",
+      "anchor": "facial",
+      "image": "F.jpg"
     },
     {
       "name": "INJECTABLES & REGENERATIVE",
-      "image": "INJECTABLES.jpg"
+      "shortName": "Injectables",
+      "anchor": "injectables",
+      "image": "I.jpg"
     },
     {
       "name": "LASER & ENERGY",
-      "image": "LASER.jpg"
+      "shortName": "Laser",
+      "anchor": "laser",
+      "image": "L.jpg"
     },
     {
       "name": "WELLNESS",
-      "image": "WELLNESS.jpg"
+      "shortName": "Wellness",
+      "anchor": "wellness",
+      "image": "W.jpg"
     }
   ],
   "treatments": [
@@ -25,6 +33,7 @@
       "blurb": "Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -36,6 +45,7 @@
       "blurb": "Do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -47,6 +57,7 @@
       "blurb": "Incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -58,6 +69,7 @@
       "blurb": "Et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -69,6 +81,7 @@
       "blurb": "Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -80,6 +93,7 @@
       "blurb": "Ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -91,6 +105,7 @@
       "blurb": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -102,6 +117,7 @@
       "blurb": "Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -113,6 +129,7 @@
       "blurb": "Ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -122,8 +139,9 @@
       "slug": "thread-lift",
       "type": "INJECTABLES & REGENERATIVE",
       "blurb": "Ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
-      "intro": "",
+      "intro": "ThreadLift.jpg",
       "image": "",
+      "top": 3,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -135,6 +153,7 @@
       "blurb": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -146,6 +165,7 @@
       "blurb": "Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -157,6 +177,7 @@
       "blurb": "In voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -168,6 +189,7 @@
       "blurb": "Esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -179,6 +201,7 @@
       "blurb": "Eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -190,6 +213,7 @@
       "blurb": "Pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -199,8 +223,9 @@
       "slug": "thermage-flx",
       "type": "LASER & ENERGY",
       "blurb": "Dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.",
-      "intro": "",
+      "intro": "ThermageFLX.jpg",
       "image": "",
+      "top": 2,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -212,6 +237,7 @@
       "blurb": "Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -223,6 +249,7 @@
       "blurb": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -234,6 +261,7 @@
       "blurb": "Tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -245,6 +273,7 @@
       "blurb": "Labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -256,6 +285,7 @@
       "blurb": "Magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -267,6 +297,7 @@
       "blurb": "Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -278,6 +309,7 @@
       "blurb": "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -289,6 +321,7 @@
       "blurb": "Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -300,6 +333,7 @@
       "blurb": "Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -311,6 +345,7 @@
       "blurb": "Ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -322,6 +357,7 @@
       "blurb": "Consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -332,7 +368,8 @@
       "type": "LASER & ENERGY",
       "blurb": "The effects of CO2 laser include improved skin texture, reduced wrinkles and scars, enhanced skin firmness, and overall skin rejuvenation.",
       "intro": "CO2.png",
-      "image": "",
+      "image": "CO2-ba.png",
+      "top": 1,
       "treats": "It treats wrinkles, fine lines, acne scars, sun damage, and uneven skin tone.",
       "benefit": "Benefits include improved skin texture, reduced wrinkles and scars, skin tightening, and overall rejuvenation.",
       "howHtml": "<p>CO2 laser works by emitting a concentrated beam of carbon dioxide light to vaporize the top layers of skin, promoting collagen production and skin resurfacing.</p>\n"
@@ -344,6 +381,7 @@
       "blurb": "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -355,6 +393,7 @@
       "blurb": "Velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -366,6 +405,7 @@
       "blurb": "Dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -377,6 +417,7 @@
       "blurb": "Nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -388,6 +429,7 @@
       "blurb": "Ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -399,6 +441,7 @@
       "blurb": "Amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""
@@ -410,6 +453,7 @@
       "blurb": "Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
       "intro": "",
       "image": "",
+      "top": null,
       "treats": "",
       "benefit": "",
       "howHtml": ""

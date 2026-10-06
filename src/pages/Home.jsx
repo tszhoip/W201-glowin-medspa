@@ -1,51 +1,30 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import heroBanner from '../assets/images/home/banner-01.png'
-import co2 from '../assets/images/home/Co2.jpg'
-import miimLaser from '../assets/images/home/Miin Laser.jpg'
-import pdoThreads from '../assets/images/home/PDO Threads.jpg'
-import catFace from '../assets/images/home/cat-face.png'
-import faceImg from '../assets/images/home/F.png'
-import injectableImg from '../assets/images/home/I.png'
-import skinImg from '../assets/images/home/SC.png'
-
-const serviceItems = [
-  { id: 'face', label: 'Face', image: faceImg },
-  { id: 'injectable', label: 'Injectable', image: injectableImg },
-  { id: 'skincare', label: 'Skin Care', image: skinImg }
-]
+import { sections, topTreatments } from '../lib/treatments'
 
 export default function Home() {
-  const [activeService, setActiveService] = useState('face')
+  const [activeType, setActiveType] = useState(sections[0]?.anchor)
   const itemRefs = useRef({})
 
+  // Swap the image when a list item crosses the middle of the viewport.
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveType(entry.target.dataset.id)
+        })
+      },
+      { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+    )
 
-    const callback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveService(entry.target.dataset.id)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(callback, options)
-
-    serviceItems.forEach((item) => {
-      if (itemRefs.current[item.id]) {
-        observer.observe(itemRefs.current[item.id])
-      }
+    sections.forEach((section) => {
+      if (itemRefs.current[section.anchor]) observer.observe(itemRefs.current[section.anchor])
     })
 
-    return () => {
-      observer.disconnect()
-    }
+    return () => observer.disconnect()
   }, [])
+
   return (
     <div style={{ backgroundColor: '#f5f5f5' }}>
       {/* Hero Section - account for fixed header (56px) */}
@@ -78,80 +57,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Top Seller Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="font-medium text-ink" style={{ fontSize: '14px' }}>
-            Face Treatments
-          </h2>
-          <Link to="/services" className="text-ink-soft hover:text-ink transition-colors font-medium" style={{ fontSize: '14px' }}>
-            See All →
-          </Link>
-        </div>
+      {/* Top Treatments - featured rows from the spreadsheet ("Top Treatment" column) */}
+      <section className="mx-auto max-w-6xl px-6 pt-16">
+        <h2 className="text-2xl md:text-[32px] font-normal text-ink mb-8">Top Treatments</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '12px' }}>
-          <Link to="/treatments/co2" className="group relative">
-            <img
-              src={co2}
-              alt="Co2"
-              className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-            />
-            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>Co2</p>
-          </Link>
-
-          <Link to="/treatments/miim-laser" className="group relative">
-            <img
-              src={miimLaser}
-              alt="Miim Laser"
-              className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-            />
-            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>Miim Laser</p>
-          </Link>
-
-          <Link to="/treatments/pdo-threads" className="group relative">
-            <img
-              src={pdoThreads}
-              alt="PDO Threads"
-              className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-            />
-            <p className="absolute inset-0 flex items-center justify-center font-medium text-white" style={{ fontSize: '14pt' }}>PDO Threads</p>
-          </Link>
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '16px' }}>
+          {topTreatments.map((t) => (
+            <Link
+              key={t.slug}
+              to={`/treatments/${t.slug}`}
+              className="group relative block overflow-hidden rounded-md bg-cream-dark"
+              style={{ aspectRatio: '417 / 372' }}
+            >
+              {t.introImage && (
+                <img
+                  src={t.introImage}
+                  alt={t.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                />
+              )}
+              <div className="absolute inset-0 bg-black/10" />
+              <p
+                className="absolute inset-0 flex items-center justify-center text-center text-white font-normal px-3"
+                style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1 }}
+              >
+                {t.title}
+              </p>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Treatment types - active item follows scroll; links go to /services#anchor */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="font-medium text-ink mb-10" style={{ fontSize: '14px' }}>
-          Services
-        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div>
+            <div>
+              {sections.map((section) => {
+                const active = activeType === section.anchor
+                return (
+                  <div
+                    key={section.anchor}
+                    ref={(el) => (itemRefs.current[section.anchor] = el)}
+                    data-id={section.anchor}
+                    className={`font-normal transition-colors ${active ? 'text-peach' : 'text-ink'}`}
+                    style={{ fontSize: 'clamp(32px, 3.5vw, 48px)', lineHeight: 1.17 }}
+                  >
+                    <Link to={`/services#${section.anchor}`} className="no-underline">
+                      {section.shortName}
+                      {active ? ' •' : ''}
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left: Service Links - Scrollable */}
-          <div className="space-y-4 h-80 overflow-y-auto" style={{ scrollBehavior: 'smooth' }}>
-            {serviceItems.map((service) => (
-              <div
-                key={service.id}
-                ref={(el) => (itemRefs.current[service.id] = el)}
-                data-id={service.id}
-                className={`block font-medium transition-colors ${
-                  activeService === service.id ? 'text-peach' : 'text-ink'
-                }`}
-                style={{ fontSize: '32px', marginBottom: '0' }}
-              >
-                <Link to="/services" className="no-underline">
-                  {service.label} {activeService === service.id ? '•' : ''}
-                </Link>
-              </div>
-            ))}
+            <Link
+              to="/services"
+              className="inline-block mt-6 font-medium text-ink uppercase transition-colors hover:bg-[#d9d9d9]"
+              style={{ backgroundColor: '#e6e6e6', fontSize: '12px', padding: '8px 12px', borderRadius: '2px' }}
+            >
+              See all
+            </Link>
           </div>
 
-          {/* Right: Featured Image - Sticky */}
-          <div className="sticky top-20 h-80 rounded-lg overflow-hidden">
-            <img
-              src={serviceItems.find((s) => s.id === activeService)?.image || catFace}
-              alt={activeService}
-              className="w-full h-full object-cover transition-opacity duration-300"
-            />
+          <div className="md:sticky md:top-20 overflow-hidden rounded-md bg-cream-dark" style={{ aspectRatio: '622 / 560' }}>
+            {sections.map((section) =>
+              section.image ? (
+                <img
+                  key={section.anchor}
+                  src={section.image}
+                  alt={section.shortName}
+                  className="w-full h-full object-cover transition-opacity duration-300"
+                  style={{ display: activeType === section.anchor ? 'block' : 'none' }}
+                />
+              ) : null
+            )}
           </div>
         </div>
       </section>

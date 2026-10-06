@@ -14,17 +14,17 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const XLSX_PATH = join(root, 'src/content/treatments.xlsx')
 const JSON_PATH = join(root, 'src/content/treatments.json')
-const TYPE_IMG_DIR = join(root, 'src/assets/images/services-page')
+const TYPE_IMG_DIR = join(root, 'src/assets/images/treatment-type')
 const TREATMENT_IMG_DIR = join(root, 'src/assets/images/treatments')
 
 const MAX_BLURB_WORDS = 50
 const MAX_ROWS = 500
 
 const TYPES = [
-  { name: 'FACIAL & PEELING', image: 'FACIAL.jpg' },
-  { name: 'INJECTABLES & REGENERATIVE', image: 'INJECTABLES.jpg' },
-  { name: 'LASER & ENERGY', image: 'LASER.jpg' },
-  { name: 'WELLNESS', image: 'WELLNESS.jpg' },
+  { name: 'FACIAL & PEELING', shortName: 'Facial', image: 'F.jpg' },
+  { name: 'INJECTABLES & REGENERATIVE', shortName: 'Injectables', image: 'I.jpg' },
+  { name: 'LASER & ENERGY', shortName: 'Laser', image: 'L.jpg' },
+  { name: 'WELLNESS', shortName: 'Wellness', image: 'W.jpg' },
 ]
 
 // [title, slug, type]. Slugs match the links already used on the site.
@@ -73,6 +73,7 @@ const INSTRUCTIONS = [
   'Sheet "Treatments" — one row per treatment. Row order = order on the Services page.',
   '  • Title: name shown on the Services page and at the top of the detail page.',
   '  • Intro Image (optional): image file name shown at the top of the detail page, e.g. "hydrafacial-intro.jpg". Files go in src/assets/images/treatments/',
+  '  • Top Treatment (optional): 1, 2 or 3 = featured on the Home page, in that order. Leave blank for all other treatments. The featured card uses the treatment\'s Intro Image.',
   '  • Slug: the web address, e.g. "hydrafacial" -> /treatments/hydrafacial. Lowercase letters, numbers and dashes only. Leave blank to auto-generate from the title. Changing a slug breaks old links.',
   '  • Treatment Type: pick from the dropdown. The list comes from the "Treatment Types" sheet.',
   '  • Blurb: short description, 50 words max.',
@@ -85,7 +86,8 @@ const INSTRUCTIONS = [
   '',
   'Sheet "Treatment Types" — the sections of the Services page.',
   '  • Name: add, rename or remove rows here; the dropdown on the Treatments sheet follows. Row order = section order.',
-  '  • Image: file name of the section image, e.g. "FACIAL.jpg". Files go in src/assets/images/services-page/',
+  '  • Short Name: label used on the Home page list and as the link anchor on the Services page, e.g. "Facial" -> /services#facial.',
+  '  • Image: file name of the section image, e.g. "F.jpg". Files go in src/assets/images/treatment-type/ (used on the Home page and Services page).',
   '  • If you rename or remove a type, update the Treatment Type of the treatments that use it (the build tells you which ones are wrong).',
   '',
   'Every treatment gets a detail page automatically; the Book Now button is always included.',
@@ -128,6 +130,7 @@ async function seed() {
     { header: 'What It Treats', key: 'treats', width: 50 },
     { header: 'Benefit', key: 'benefit', width: 50 },
     { header: 'How It Works (Markdown)', key: 'how', width: 60 },
+    { header: 'Top Treatment (1-3)', key: 'top', width: 20 },
   ]
   SEED.forEach(([title, slug, type]) => tws.addRow({ title, slug, type }))
   for (let r = 2; r <= MAX_ROWS; r++) {
@@ -139,12 +142,21 @@ async function seed() {
       errorTitle: 'Unknown treatment type',
       error: 'Pick a type from the list (edit types on the "Treatment Types" sheet).',
     }
+    tws.getCell(`J${r}`).dataValidation = {
+      type: 'list',
+      allowBlank: true,
+      formulae: ['"1,2,3"'],
+      showErrorMessage: true,
+      errorTitle: 'Top Treatment',
+      error: 'Use 1, 2 or 3 (the order on the Home page), or leave blank.',
+    }
     for (const col of ['E', 'G', 'H', 'I']) tws.getCell(`${col}${r}`).alignment = { wrapText: true, vertical: 'top' }
   }
 
   const yws = wb.addWorksheet('Treatment Types', { views: [{ state: 'frozen', ySplit: 1 }] })
   yws.columns = [
     { header: 'Name', key: 'name', width: 36 },
+    { header: 'Short Name', key: 'shortName', width: 20 },
     { header: 'Image', key: 'image', width: 30 },
   ]
   TYPES.forEach((t) => yws.addRow(t))
@@ -172,33 +184,47 @@ async function build() {
   const tws = sheet('treatments')
   if (!yws || !tws) throw new Error('treatments.xlsx must have sheets "Treatments" and "Treatment Types".')
 
-  const types = []
-  yws.eachRow((row, n) => {
-    if (n === 1) return
-    const name = cellText(row.getCell(1))
-    const image = cellText(row.getCell(2))
-    if (!name) return
-    if (types.some((t) => t.name === name)) return errors.push(`Treatment Types row ${n}: duplicate type "${name}".`)
-    if (!image) warnings.push(`Treatment Types row ${n} ("${name}"): no image set.`)
-    else if (!existsSync(join(TYPE_IMG_DIR, image)))
-      warnings.push(`Treatment Types row ${n} ("${name}"): image "${image}" not found in src/assets/images/services-page/.`)
-    types.push({ name, image })
-  })
-
   // Columns are found by header name (ignoring "(...)" notes and case), so they can be reordered.
   const norm = (h) => h.replace(/\(.*?\)/g, '').replace(/\s+/g, ' ').trim().toLowerCase()
-  const col = {}
-  tws.getRow(1).eachCell((cell, c) => {
-    col[norm(cellText(cell))] = c
-  })
-  const need = ['title', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works']
-  const missing = need.filter((h) => !col[h])
-  if (missing.length) {
-    console.error(`[treatments] ERROR: Treatments sheet is missing column(s): ${missing.join(', ')}. Don't rename the header row.`)
-    process.exit(1)
+  const headers = (ws) => {
+    const m = {}
+    ws.getRow(1).eachCell((cell, c) => {
+      m[norm(cellText(cell))] = c
+    })
+    return m
+  }
+  const requireCols = (ws, label, need) => {
+    const m = headers(ws)
+    const missing = need.filter((h) => !m[h])
+    if (missing.length) {
+      console.error(`[treatments] ERROR: ${label} sheet is missing column(s): ${missing.join(', ')}. Don't rename the header row.`)
+      process.exit(1)
+    }
+    return m
   }
   // Accept a pasted path like "/assets/x/CO2.png" and keep only the file name.
   const fileName = (v) => v.split(/[\\/]/).pop().trim()
+  const slugOf = (v) => slugify(v)
+
+  const tcol = requireCols(yws, 'Treatment Types', ['name', 'short name', 'image'])
+  const typeFiles = existsSync(TYPE_IMG_DIR) ? readdirSync(TYPE_IMG_DIR) : []
+  const types = []
+  yws.eachRow((row, n) => {
+    if (n === 1) return
+    const name = cellText(row.getCell(tcol['name']))
+    const shortName = cellText(row.getCell(tcol['short name'])) || name
+    const image = fileName(cellText(row.getCell(tcol['image'])))
+    if (!name) return
+    if (types.some((t) => t.name === name)) return errors.push(`Treatment Types row ${n}: duplicate type "${name}".`)
+    const anchor = slugOf(shortName)
+    if (types.some((t) => t.anchor === anchor)) errors.push(`Treatment Types row ${n}: Short Name "${shortName}" is used twice.`)
+    if (!image) warnings.push(`Treatment Types row ${n} ("${name}"): no image set.`)
+    else if (!typeFiles.includes(image))
+      warnings.push(`Treatment Types row ${n} ("${name}"): image "${image}" not found in src/assets/images/treatment-type/ (names are case-sensitive).`)
+    types.push({ name, shortName, anchor, image })
+  })
+
+  const col = requireCols(tws, 'Treatments', ['title', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works', 'top treatment'])
   const get = (row, h) => cellText(row.getCell(col[h]))
 
   const treatmentFiles = existsSync(TREATMENT_IMG_DIR) ? readdirSync(TREATMENT_IMG_DIR) : []
@@ -216,6 +242,9 @@ async function build() {
     const treats = get(row, 'what it treats')
     const benefit = get(row, 'benefit')
     const how = get(row, 'how it works')
+    const topRaw = get(row, 'top treatment')
+    const top = topRaw ? (Number.isFinite(Number(topRaw)) ? Number(topRaw) : 99) : null
+    if (topRaw && top === 99) warnings.push(`${where}: Top Treatment should be 1, 2 or 3 (got "${topRaw}").`)
     const where = `Treatments row ${n} ("${title}")`
 
     if (slugs.has(slug)) errors.push(`${where}: duplicate slug "${slug}".`)
@@ -236,6 +265,7 @@ async function build() {
       blurb,
       intro,
       image,
+      top,
       treats,
       benefit,
       // Raw HTML typed into the sheet is escaped, not rendered.
@@ -244,6 +274,9 @@ async function build() {
         : '',
     })
   })
+
+  const topCount = treatments.filter((t) => t.top !== null).length
+  if (topCount !== 3) warnings.push(`Home page shows 3 Top Treatments; ${topCount} are marked (Top Treatment column).`)
 
   warnings.forEach((w) => console.warn(`[treatments] warning: ${w}`))
   if (errors.length) {
