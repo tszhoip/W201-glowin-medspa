@@ -197,6 +197,8 @@ async function build() {
     console.error(`[treatments] ERROR: Treatments sheet is missing column(s): ${missing.join(', ')}. Don't rename the header row.`)
     process.exit(1)
   }
+  // Accept a pasted path like "/assets/x/CO2.png" and keep only the file name.
+  const fileName = (v) => v.split(/[\\/]/).pop().trim()
   const get = (row, h) => cellText(row.getCell(col[h]))
 
   const treatmentFiles = existsSync(TREATMENT_IMG_DIR) ? readdirSync(TREATMENT_IMG_DIR) : []
@@ -206,11 +208,11 @@ async function build() {
     if (n === 1) return
     const title = get(row, 'title')
     if (!title) return
-    const intro = get(row, 'intro image')
+    const intro = fileName(get(row, 'intro image'))
     const slug = slugify(get(row, 'slug') || title)
     const type = get(row, 'treatment type')
     const blurb = get(row, 'blurb').replace(/\s+/g, ' ')
-    const image = get(row, 'before & after image')
+    const image = fileName(get(row, 'before & after image'))
     const treats = get(row, 'what it treats')
     const benefit = get(row, 'benefit')
     const how = get(row, 'how it works')
