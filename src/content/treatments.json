@@ -1,0 +1,274 @@
+{
+  "types": [
+    {
+      "name": "FACIAL & PEELING",
+      "image": "FACIAL.jpg"
+    },
+    {
+      "name": "INJECTABLES & REGENERATIVE",
+      "image": "INJECTABLES.jpg"
+    },
+    {
+      "name": "LASER & ENERGY",
+      "image": "LASER.jpg"
+    },
+    {
+      "name": "WELLNESS",
+      "image": "WELLNESS.jpg"
+    }
+  ],
+  "treatments": [
+    {
+      "title": "HydraFacial",
+      "slug": "hydrafacial",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Lhala Peel",
+      "slug": "lhala-peel",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Enzyme Peel",
+      "slug": "enzyme-peel",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "24K Gold Therapy",
+      "slug": "gold-therapy",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Acne Care Facial",
+      "slug": "acne-care-facial",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Lymphatic Facial",
+      "slug": "lymphatic-facial",
+      "type": "FACIAL & PEELING",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Neurotoxin",
+      "slug": "neurotoxin",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Dermal Filler",
+      "slug": "dermal-filler",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Sculptra® • Radiesse®",
+      "slug": "sculptra-radiesse",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Thread Lift",
+      "slug": "thread-lift",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Skin Booster",
+      "slug": "skin-booster",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "PRP (Platelet-Rich Plasma)",
+      "slug": "prp",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Cell Factor",
+      "slug": "cell-factor",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Regenerative Skin Therapy",
+      "slug": "regenerative-skin-therapy",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Fat Dissolving Injection",
+      "slug": "fat-dissolving-injection",
+      "type": "INJECTABLES & REGENERATIVE",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Ultherapy PRIME®",
+      "slug": "ultherapy-prime",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Thermage FLX®",
+      "slug": "thermage-flx",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "InMode (MiniFX / BodyFX / Forma)",
+      "slug": "inmode-minifx",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Onda Pro",
+      "slug": "onda-pro",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Eve Titan",
+      "slug": "eve-titan",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Potenza® RF Microneedling",
+      "slug": "potenza-rf",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "PicoSure® Pro",
+      "slug": "picosure-pro",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "XERF (Sérf)",
+      "slug": "xerf",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Plasma",
+      "slug": "plasma",
+      "type": "LASER & ENERGY",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Medical Weight Management",
+      "slug": "medical-weight-management",
+      "type": "WELLNESS",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "IV Therapy",
+      "slug": "iv-therapy",
+      "type": "WELLNESS",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Hair Restoration",
+      "slug": "hair-restoration",
+      "type": "WELLNESS",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    },
+    {
+      "title": "Joint PRP / PRF",
+      "slug": "joint-prp",
+      "type": "WELLNESS",
+      "blurb": "",
+      "before": "",
+      "after": "",
+      "howHtml": ""
+    }
+  ]
+}

@@ -1,96 +1,5 @@
 import { Link } from 'react-router-dom'
-import facialImg from '../assets/images/services-page/FACIAL.jpg'
-import injectablesImg from '../assets/images/services-page/INJECTABLES.jpg'
-import laserImg from '../assets/images/services-page/LASER.jpg'
-import wellnessImg from '../assets/images/services-page/WELLNESS.jpg'
-
-// Service categories with their services
-const categories = [
-  {
-    name: 'FACIAL & PEELING',
-    image: facialImg,
-    services: [
-      'HydraFacial',
-      'Lhala Peel',
-      'Enzyme Peel',
-      '24K Gold Therapy',
-      'Acne Care Facial',
-      'Lymphatic Facial'
-    ]
-  },
-  {
-    name: 'INJECTABLES & REGENERATIVE',
-    image: injectablesImg,
-    services: [
-      'Neurotoxin',
-      'Dermal Filler',
-      'Sculptra® • Radiesse®',
-      'Thread Lift',
-      'Skin Booster',
-      'PRP (Platelet-Rich Plasma)',
-      'Cell Factor',
-      'Regenerative Skin Therapy',
-      'Fat Dissolving Injection'
-    ]
-  },
-  {
-    name: 'LASER & ENERGY',
-    image: laserImg,
-    services: [
-      'Ultherapy PRIME®',
-      'Thermage FLX®',
-      'InMode (MiniFX / BodyFX / Forma)',
-      'Onda Pro',
-      'Eve Titan',
-      'Potenza® RF Microneedling',
-      'PicoSure® Pro',
-      'XERF (Sérf)',
-      'Plasma'
-    ]
-  },
-  {
-    name: 'WELLNESS',
-    image: wellnessImg,
-    services: [
-      'Medical Weight Management',
-      'IV Therapy',
-      'Hair Restoration',
-      'Joint PRP / PRF'
-    ]
-  }
-]
-
-// Map service names to slugs for URLs
-const serviceMap = {
-  'HydraFacial': 'hydrafacial',
-  'Lhala Peel': 'lhala-peel',
-  'Enzyme Peel': 'enzyme-peel',
-  '24K Gold Therapy': 'gold-therapy',
-  'Acne Care Facial': 'acne-care-facial',
-  'Lymphatic Facial': 'lymphatic-facial',
-  'Neurotoxin': 'neurotoxin',
-  'Dermal Filler': 'dermal-filler',
-  'Sculptra® • Radiesse®': 'sculptra-radiesse',
-  'Thread Lift': 'thread-lift',
-  'Skin Booster': 'skin-booster',
-  'PRP (Platelet-Rich Plasma)': 'prp',
-  'Cell Factor': 'cell-factor',
-  'Regenerative Skin Therapy': 'regenerative-skin-therapy',
-  'Fat Dissolving Injection': 'fat-dissolving-injection',
-  'Ultherapy PRIME®': 'ultherapy-prime',
-  'Thermage FLX®': 'thermage-flx',
-  'InMode (MiniFX / BodyFX / Forma)': 'inmode-minifx',
-  'Onda Pro': 'onda-pro',
-  'Eve Titan': 'eve-titan',
-  'Potenza® RF Microneedling': 'potenza-rf',
-  'PicoSure® Pro': 'picosure-pro',
-  'XERF (Sérf)': 'xerf',
-  'Plasma': 'plasma',
-  'Medical Weight Management': 'medical-weight-management',
-  'IV Therapy': 'iv-therapy',
-  'Hair Restoration': 'hair-restoration',
-  'Joint PRP / PRF': 'joint-prp'
-}
+import { sections } from '../lib/treatments'
 
 export default function Services() {
   return (
@@ -118,46 +27,44 @@ export default function Services() {
         </Link>
       </section>
 
-      {/* Category Sections - Left Text, Right Image */}
-      {categories.map((category, idx) => {
-        // Alternate layout on desktop: odd sections (0, 2) = content left, even sections (1, 3) = content right
+      {/* Treatment type sections - alternate image side on desktop */}
+      {sections.map((section, idx) => {
         const isAlternate = idx % 2 === 1
 
         return (
-          <section key={idx} className="mx-auto max-w-6xl px-6 py-16">
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch ${isAlternate ? 'md:flex-row-reverse' : ''}`}>
-              {/* Content: Title and Service List */}
+          <section key={section.name} className="mx-auto max-w-6xl px-6 py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+              {/* Content: Title and Treatment List */}
               <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
                 <div>
                   <h2 className="text-3xl md:text-4xl font-medium text-ink mb-8">
-                    {category.name}
+                    {section.name}
                   </h2>
                 </div>
                 <div className="space-y-3">
-                  {category.services.map((service) => {
-                    const slug = serviceMap[service] || service.toLowerCase().replace(/\s+/g, '-').replace(/[®™]/g, '')
-                    return (
-                      <Link
-                        key={service}
-                        to={`/treatments/${slug}`}
-                        className="flex items-center text-ink hover:text-peach transition-colors group"
-                        style={{ textDecoration: 'none' }}
-                      >
-                        <span className="font-medium">{service}</span>
-                        <span className="ml-2 group-hover:translate-x-1 transition-transform">↷</span>
-                      </Link>
-                    )
-                  })}
+                  {section.treatments.map((t) => (
+                    <Link
+                      key={t.slug}
+                      to={`/treatments/${t.slug}`}
+                      className="flex items-center text-ink hover:text-peach transition-colors group"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <span className="font-medium">{t.title}</span>
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform">↷</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
               {/* Image */}
-              <div className={`h-96 md:h-[500px] rounded-lg overflow-hidden ${isAlternate ? 'md:order-1' : ''}`}>
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className={`h-96 md:h-[500px] rounded-lg overflow-hidden bg-cream-dark ${isAlternate ? 'md:order-1' : ''}`}>
+                {section.image && (
+                  <img
+                    src={section.image}
+                    alt={section.name}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           </section>
