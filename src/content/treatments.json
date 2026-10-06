@@ -302,11 +302,11 @@
       "title": "Co2",
       "slug": "co2",
       "type": "LASER & ENERGY",
-      "blurb": "Irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing.",
+      "blurb": "The effects of CO2 laser include improved skin texture, reduced wrinkles and scars, enhanced skin firmness, and overall skin rejuvenation.",
       "image": "",
-      "treats": "",
-      "benefit": "",
-      "howHtml": ""
+      "treats": "It treats wrinkles, fine lines, acne scars, sun damage, and uneven skin tone.",
+      "benefit": "Benefits include improved skin texture, reduced wrinkles and scars, skin tightening, and overall rejuvenation.",
+      "howHtml": "<p>CO2 laser works by emitting a concentrated beam of carbon dioxide light to vaporize the top layers of skin, promoting collagen production and skin resurfacing.</p>\n"
     },
     {
       "title": "Miim Laser",
