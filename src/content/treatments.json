@@ -171,16 +171,16 @@
     },
     {
       "title": "PRP (Platelet-Rich Plasma)",
-      "shortName": "PRP (Platelet-Rich Plasma)",
+      "shortName": "PRP",
       "slug": "prp",
       "type": "INJECTABLES & REGENERATIVE",
-      "blurb": "Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
-      "intro": "",
-      "image": "",
+      "blurb": "PRP injections are treatments where platelet-rich plasma, derived from the patient's own blood, is injected into targeted areas to promote healing, tissue regeneration, and collagen production. The effects of PRP injections include enhanced healing, tissue regeneration, improved skin texture, and increased collagen production.",
+      "intro": "PRP.jpg",
+      "image": "PRP-ba.png",
       "top": 1,
-      "treats": "",
-      "benefit": "",
-      "howHtml": ""
+      "treats": "PRP (Platelet Rich Plasma) contains a high concentration of platelets that stimulate growth factors to support the body in regenerating new cells which helps tighten skin and improves skin thickness.",
+      "benefit": "PRP Injections are an incredibly effective anti-aging treatment used to eliminate the appearance of fine lines, wrinkles, and to aid in volume loss.",
+      "howHtml": "<p>First, your licensed aesthetics provider will draw a small vial of blood to spin in the centrifuge, separating the plasma. Once collected, the PRP will be injected into the target areas of your face, neck or scalp to begin stimulating growth factors that help us build collagen and regenerate new cells.</p>\n"
     },
     {
       "title": "Cell Factor",

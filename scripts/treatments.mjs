@@ -208,6 +208,22 @@ async function build() {
   const fileName = (v) => v.split(/[\\/]/).pop().trim()
   const slugOf = (v) => slugify(v)
 
+  // Find the real file for a name typed in the sheet. Tolerates wrong capitalization
+  // and a wrong extension (".png" vs ".jpg") when only one file matches; the real
+  // name is what gets used, so the Linux (case-sensitive) build works too.
+  const resolveFile = (files, name, where) => {
+    if (!name) return ''
+    if (files.includes(name)) return name
+    const lower = name.toLowerCase()
+    const stem = (f) => f.toLowerCase().replace(/\.[^.]+$/, '')
+    const byCase = files.filter((f) => f.toLowerCase() === lower)
+    const byStem = files.filter((f) => stem(f) === stem(name))
+    const hit = byCase.length === 1 ? byCase[0] : byStem.length === 1 ? byStem[0] : ''
+    if (hit) warnings.push(`${where}: image "${name}" matched to "${hit}" — please correct the cell to "${hit}".`)
+    else warnings.push(`${where}: image "${name}" not found.`)
+    return hit
+  }
+
   const tcol = requireCols(yws, 'Treatment Types', ['name', 'short name', 'image'])
   const typeFiles = existsSync(TYPE_IMG_DIR) ? readdirSync(TYPE_IMG_DIR) : []
   const types = []
@@ -221,9 +237,7 @@ async function build() {
     const anchor = slugOf(shortName)
     if (types.some((t) => t.anchor === anchor)) errors.push(`Treatment Types row ${n}: Short Name "${shortName}" is used twice.`)
     if (!image) warnings.push(`Treatment Types row ${n} ("${name}"): no image set.`)
-    else if (!typeFiles.includes(image))
-      warnings.push(`Treatment Types row ${n} ("${name}"): image "${image}" not found in src/assets/images/treatment-type/ (names are case-sensitive).`)
-    types.push({ name, shortName, anchor, image })
+    types.push({ name, shortName, anchor, image: resolveFile(typeFiles, image, `Treatment Types row ${n} ("${name}") [src/assets/images/treatment-type/]`) })
   })
 
   const col = requireCols(tws, 'Treatments', ['title', 'short name', 'intro image', 'slug', 'treatment type', 'blurb', 'before & after image', 'what it treats', 'benefit', 'how it works', 'top treatment'])
@@ -237,18 +251,18 @@ async function build() {
     const title = get(row, 'title')
     if (!title) return
     const shortName = get(row, 'short name') || title
-    const intro = fileName(get(row, 'intro image'))
+    const where = `Treatments row ${n} ("${title}") [src/assets/images/treatments/]`
+    const intro = resolveFile(treatmentFiles, fileName(get(row, 'intro image')), where)
     const slug = slugify(get(row, 'slug') || title)
     const type = get(row, 'treatment type')
     const blurb = get(row, 'blurb').replace(/\s+/g, ' ')
-    const image = fileName(get(row, 'before & after image'))
+    const image = resolveFile(treatmentFiles, fileName(get(row, 'before & after image')), where)
     const treats = get(row, 'what it treats')
     const benefit = get(row, 'benefit')
     const how = get(row, 'how it works')
     const topRaw = get(row, 'top treatment')
     const top = topRaw ? (Number.isFinite(Number(topRaw)) ? Number(topRaw) : 99) : null
     if (topRaw && top === 99) warnings.push(`${where}: Top Treatment should be 1, 2 or 3 (got "${topRaw}").`)
-    const where = `Treatments row ${n} ("${title}")`
 
     if (slugs.has(slug)) errors.push(`${where}: duplicate slug "${slug}".`)
     slugs.add(slug)
@@ -256,10 +270,6 @@ async function build() {
       errors.push(`${where}: Treatment Type "${type}" is not on the Treatment Types sheet.`)
     const words = blurb ? blurb.split(' ').length : 0
     if (words > MAX_BLURB_WORDS) warnings.push(`${where}: blurb is ${words} words (max ${MAX_BLURB_WORDS}).`)
-    // Exact-case match: macOS ignores case but the Vercel (Linux) build does not.
-    for (const img of [intro, image].filter(Boolean))
-      if (!treatmentFiles.includes(img))
-        warnings.push(`${where}: image "${img}" not found in src/assets/images/treatments/ (names are case-sensitive).`)
 
     treatments.push({
       title,
