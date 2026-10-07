@@ -1,37 +1,58 @@
-## PAGE_TITLE
-Book a Consultation
+## LABEL
+Contact
 
-## PAGE_SUBTITLE
-Tell us a bit about what you're looking for and we'll follow up to schedule your visit.
+## TITLE
+Find Us
 
-## FORM_NAME_LABEL
-Name
+## BODY
+Your glow starts here. We're tucked into the heart of LA, close to Koreatown and Mid-Wilshire. Stop by for a consultation and see the space for yourself.
 
-## FORM_EMAIL_LABEL
-Email
+## DIRECTION_CTA
+Direction
 
-## FORM_PHONE_LABEL
-Phone
+## CARD_1_TITLE
+Open by Appointment
 
-## FORM_MESSAGE_LABEL
-What are you interested in?
+## CARD_1_BODY
+Mon–Sat, 10 am – 7 pm
+Closed Sunday
 
-## FORM_CTA
-Submit
+## CARD_2_TITLE
+Easy, Free Parking
 
-## VISIT_TITLE
-Visit Us
+## CARD_2_BODY
+Complimentary on-site parking for all Glow-getters.
 
-## VISIT_HOURS
-Mon - Fri: 9:00 AM - 6:00 PM
-Sat: 10:00 AM - 4:00 PM
-Sun: Closed
+## CARD_3_TITLE
+Get in Touch
 
-## FORM_CONSENT
-I agree to receive SMS or e-mails for the provided number/email above.
+## CARD_3_BODY
+{phone}
+{email}
 
-## FORM_SENDING
-Sending...
+## FAQ_TITLE
+Questions people actually ask
 
-## FORM_THANKS
-Thank you! We've received your message. We'll be in touch soon.
+## FAQ_1_TITLE
+Cancellation Policy
+
+## FAQ_1_BODY
+We ask for at least 24 hours' notice to cancel or reschedule. Cancellations made with less than 24 hours' notice are subject to a $75 fee. Monday appointments must be canceled by Saturday at 2 PM. By booking, you agree to this policy. Thank you for understanding.
+
+## FAQ_2_TITLE
+Appointment & Arrival
+
+## FAQ_2_BODY
+Please arrive 10–15 minutes early to check in and complete any forms. If it's your first visit, plan for a short consultation before treatment. Arriving late may shorten your session so that we can stay on schedule for the next guest.
+
+## FAQ_3_TITLE
+Refund Policy
+
+## FAQ_3_BODY
+All services and treatments are non-refundable once performed. Unopened retail products can be returned within 14 days with a receipt. Packages and prepaid services are non-refundable but can be transferred to another service of equal value.
+
+## FAQ_4_TITLE
+Payments Accepted
+
+## FAQ_4_BODY
+We accept all major credit and debit cards, Apple Pay, and cash. Financing options such as Cherry or CareCredit may be available. Ask our team for details.

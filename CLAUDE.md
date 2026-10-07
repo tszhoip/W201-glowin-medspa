@@ -66,6 +66,8 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   Props: `copy` (labels from a content file), `source` (shown in the email subject/body so each enquiry says
   where it came from), `phone` ('required' | 'optional' | false), `tinted`, `size`. Posts to `api/contact.js`,
   which emails the clinic + the visitor and records the consent wording the visitor agreed to.
+- **Contact page** (`/contact`, `src/pages/Contact.jsx`): "Find Us" hero with Google map + Direction button, three info cards, FAQ cards.
+  Copy in `src/content/contact.txt`; address/phone/email come from `global.txt`. It has no form; enquiries go through `/book-now`.
 - **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
   with a white `.panel` holding the consultation form (shared `ContactForm`, `tinted`). Copy in
   `src/content/book-now.txt`. Header / mobile menu / banner / Services "Book now" links go here; `/contact` is the
