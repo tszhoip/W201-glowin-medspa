@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { sections } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
+import { titleCase } from '../lib/format'
 
 export default function Services() {
   const { hash } = useLocation()
@@ -35,7 +36,9 @@ export default function Services() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
               {/* Title and treatment list */}
               <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
-                <h2 className="type-h1 mb-8">{section.name}</h2>
+                <h2 className="type-h1 mb-8">
+                  <span className="highlight">{titleCase(section.name)}</span>
+                </h2>
                 <div className="space-y-3">
                   {section.treatments.map((t) => (
                     <Link
