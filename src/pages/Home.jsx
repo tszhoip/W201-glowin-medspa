@@ -4,6 +4,11 @@ import heroBanner from '../assets/images/home/banner-01.png'
 import { sections, topTreatments } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
+import Highlighted from '../lib/highlight'
+import { parseContent } from '../lib/loadContent'
+import homeRaw from '../content/home.txt?raw'
+
+const c = parseContent(homeRaw)
 
 export default function Home() {
   const [activeType, setActiveType] = useState(sections[0]?.anchor)
@@ -44,6 +49,15 @@ export default function Home() {
               BOOK NOW
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Intro statement - *asterisks* in the copy become the serif highlight */}
+      <section className="min-h-[80vh]">
+        <div className="page-container pt-12 pb-16">
+          <p className="type-h1 md:w-3/4">
+            <Highlighted text={c.INTRO} />
+          </p>
         </div>
       </section>
 

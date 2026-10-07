@@ -7,6 +7,7 @@
  */
 @theme {
   --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;   /* accent serif for .highlight */
 
   /* Text */
   --color-ink: #2d2d2d;

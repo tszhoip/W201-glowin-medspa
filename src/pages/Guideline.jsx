@@ -54,6 +54,11 @@ function parseClasses(css) {
 
 const TYPE_SAMPLES = {
   'type-hero': 'Where your timeless glow begins',
+  'type-h1': (
+    <>
+      We personalize treatments that <span className="highlight">enhance—not change</span>—what makes you unique.
+    </>
+  ),
   'type-display': 'Platelet-Rich Plasma',
   'type-title': 'Page title',
   'type-heading': 'Section heading',
@@ -67,6 +72,8 @@ const TYPE_SAMPLES = {
   'type-body': 'Body copy used inside cards and short descriptions.',
   'type-label': 'Label',
 }
+// Classes that are modifiers rather than text styles; demoed inside the samples above.
+const MODIFIERS = ['highlight']
 const BUTTON_VARIANTS = [
   ['cta', 'Primary action'],
   ['light', 'On photos and tinted surfaces (shown on a dark backdrop)'],
@@ -77,6 +84,7 @@ const BUTTON_SIZES = ['sm', 'md', 'lg', 'hero']
 // Every class that has a demo on this page.
 const DEMOED = new Set([
   ...Object.keys(TYPE_SAMPLES),
+  ...MODIFIERS,
   'btn',
   ...BUTTON_VARIANTS.map(([v]) => `btn-${v}`),
   ...[...BUTTON_SIZES, 'block'].map((s) => `btn-${s}`),
