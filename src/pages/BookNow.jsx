@@ -1,7 +1,7 @@
 import { parseContent } from '../lib/loadContent'
 import raw from '../content/book-now.txt?raw'
 import bgImage from '../assets/images/book-now/background.jpg'
-import ConsultationForm from '../components/ConsultationForm'
+import ContactForm from '../components/ContactForm'
 
 const c = parseContent(raw)
 
@@ -15,7 +15,7 @@ export default function BookNow() {
         <h1 className="type-caps whitespace-pre-line">{c.TITLE}</h1>
         <p className="type-body mt-5 max-w-md">{c.BODY}</p>
         <div className="mt-8">
-          <ConsultationForm copy={c} tinted />
+          <ContactForm copy={c} source="Book Now page" tinted />
         </div>
       </div>
     </section>

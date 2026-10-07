@@ -26,3 +26,12 @@ Visit Us
 Mon - Fri: 9:00 AM - 6:00 PM
 Sat: 10:00 AM - 4:00 PM
 Sun: Closed
+
+## FORM_CONSENT
+I agree to receive SMS or e-mails for the provided number/email above.
+
+## FORM_SENDING
+Sending...
+
+## FORM_THANKS
+Thank you! We've received your message. We'll be in touch soon.

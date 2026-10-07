@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import Button from './ui/Button'
 
-// Sends submissions to Vercel API route (/api/contact)
-// Email delivered via Gmail SMTP
-export default function ContactForm({
-  nameLabel = 'Full Name',
-  emailLabel = 'Email',
-  phoneLabel = 'Phone',
-  messageLabel = 'Your Message',
-  ctaLabel = 'SEND',
-}) {
+// The site's one form. Used on the Contact page, /book-now and every treatment page.
+// Posts to /api/contact (api/contact.js), which emails the clinic and the visitor.
+//
+//   copy     labels from a content file: FORM_NAME, FORM_EMAIL, FORM_PHONE, FORM_MESSAGE,
+//            FORM_CONSENT, FORM_CTA, FORM_SENDING, FORM_THANKS
+//   source   where the enquiry came from, e.g. "Contact page" (goes in the email subject + body)
+//   phone    'required' | 'optional' | false (hide the field)
+//   tinted   fields/button sit on a white panel or card, so they use the grey tint instead of white
+//   size     'lg' tall fields + full-width submit (booking forms) | 'md' compact (Contact page)
+export default function ContactForm({ copy, source, phone = 'optional', tinted = false, size = 'lg' }) {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -19,22 +20,21 @@ export default function ContactForm({
     setErrorMsg('')
 
     const form = e.target
-    const name = form.name.value.trim()
-    const email = form.email.value.trim()
-    const phone = form.phone.value.trim()
-    const message = form.message.value.trim()
-    const consent = form.consent.checked
+    const data = new FormData(form)
+    const name = (data.get('name') || '').trim()
+    const email = (data.get('email') || '').trim()
+    const phoneValue = (data.get('phone') || '').trim()
+    const message = (data.get('message') || '').trim()
+    const consent = data.get('consent') === 'on'
 
-    // Validation
-    if (!name || !email || !phone) {
+    if (!name || !email || (phone === 'required' && !phoneValue)) {
       setStatus('error')
       setErrorMsg('Please fill in all required fields.')
       return
     }
-
     if (!consent) {
       setStatus('error')
-      setErrorMsg('Please agree to receive communication.')
+      setErrorMsg('Please tick the box to agree before sending.')
       return
     }
 
@@ -45,20 +45,21 @@ export default function ContactForm({
         body: JSON.stringify({
           name,
           email,
-          phone,
+          phone: phoneValue,
           message,
           consent,
+          consentLabel: copy.FORM_CONSENT,
+          source,
         }),
       })
+      const result = await res.json()
 
-      const data = await res.json()
-
-      if (res.ok && data.success) {
+      if (res.ok && result.success) {
         setStatus('sent')
         form.reset()
       } else {
         setStatus('error')
-        setErrorMsg(data.message || 'Something went wrong. Please try again.')
+        setErrorMsg(result.message || 'Something went wrong. Please try again.')
       }
     } catch (err) {
       setStatus('error')
@@ -68,70 +69,33 @@ export default function ContactForm({
   }
 
   if (status === 'sent') {
-    return (
-      <div className="card card-outlined text-sm">
-        Thank you! We've received your message. We'll be in touch soon.
-      </div>
-    )
+    return <div className={`card text-sm ${tinted ? 'card-outlined' : ''}`}>{copy.FORM_THANKS}</div>
   }
+
+  const large = size === 'lg'
+  const field = `field ${large ? 'field-lg' : ''} ${tinted ? 'field-tint' : ''}`
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <input
-          id="name"
-          name="name"
-          required
-          placeholder={nameLabel}
-          className="field field-tint"
-        />
-      </div>
-      <div>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          placeholder={emailLabel}
-          className="field field-tint"
-        />
-      </div>
-      <div>
-        <input
-          id="phone"
-          name="phone"
-          required
-          placeholder={phoneLabel}
-          className="field field-tint"
-        />
-      </div>
-      <div>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          placeholder={messageLabel}
-          className="field field-tint"
-        />
-      </div>
-      <div className="flex items-start gap-3">
-        <input
-          id="consent"
-          name="consent"
-          type="checkbox"
-          required
-          className="checkbox mt-0.5"
-        />
-        <label htmlFor="consent" className="text-xs text-ink-soft leading-relaxed cursor-pointer">
-          I agree to receive SMS or e-mails for the provided number/email above.
-        </label>
-      </div>
-      <Button type="submit" variant="light" disabled={status === 'sending'}>
-        {status === 'sending' ? 'Sending...' : ctaLabel}
-      </Button>
-      {status === 'error' && (
-        <p className="text-xs text-red-600">{errorMsg}</p>
+      <input name="name" required placeholder={copy.FORM_NAME} className={field} />
+      <input name="email" type="email" required placeholder={copy.FORM_EMAIL} className={field} />
+      {phone && (
+        <input name="phone" type="tel" required={phone === 'required'} placeholder={copy.FORM_PHONE} className={field} />
       )}
+      <textarea name="message" rows={large ? undefined : 4} placeholder={copy.FORM_MESSAGE} className={field} />
+      <label className="flex items-start gap-3 text-sm text-ink cursor-pointer">
+        <input type="checkbox" name="consent" required className="checkbox mt-0.5" />
+        {copy.FORM_CONSENT}
+      </label>
+      <Button
+        type="submit"
+        variant={tinted ? 'light' : 'cta'}
+        size={large ? 'block' : 'md'}
+        disabled={status === 'sending'}
+      >
+        {status === 'sending' ? copy.FORM_SENDING : copy.FORM_CTA}
+      </Button>
+      {status === 'error' && <p className="text-xs text-red-600">{errorMsg}</p>}
     </form>
   )
 }

@@ -7,6 +7,18 @@ import Section from '../components/ui/Section'
 const c = parseContent(raw)
 const g = parseContent(globalRaw)
 
+// Labels for the shared form (ContactForm), from contact.txt
+const formCopy = {
+  FORM_NAME: c.FORM_NAME_LABEL || 'Full Name',
+  FORM_EMAIL: c.FORM_EMAIL_LABEL || 'Email',
+  FORM_PHONE: c.FORM_PHONE_LABEL || 'Phone',
+  FORM_MESSAGE: c.FORM_MESSAGE_LABEL || 'What are you interested in?',
+  FORM_CONSENT: c.FORM_CONSENT || 'I agree to receive SMS or e-mails for the provided number/email above.',
+  FORM_CTA: c.FORM_CTA || 'Send Message',
+  FORM_SENDING: c.FORM_SENDING || 'Sending...',
+  FORM_THANKS: c.FORM_THANKS || "Thank you! We've received your message. We'll be in touch soon.",
+}
+
 export default function Contact() {
   return (
     <div>
@@ -22,13 +34,7 @@ export default function Contact() {
       <Section innerClassName="max-w-5xl grid md:grid-cols-2 gap-12">
         <div className="card card-outlined card-lg">
           <h2 className="type-subheading mb-6">Get in Touch</h2>
-          <ContactForm
-            nameLabel={c.FORM_NAME_LABEL || 'Full Name'}
-            emailLabel={c.FORM_EMAIL_LABEL || 'Email'}
-            phoneLabel={c.FORM_PHONE_LABEL || 'Phone'}
-            messageLabel={c.FORM_MESSAGE_LABEL || 'What are you interested in?'}
-            ctaLabel={c.FORM_CTA || 'Send Message'}
-          />
+          <ContactForm copy={formCopy} source="Contact page" phone="required" size="md" tinted />
         </div>
 
         <div className="card card-outlined card-lg h-fit">

@@ -76,6 +76,8 @@ the folder, add a `.icon-name` rule to `components.css`.
 
 ## Forms & cards
 
+There is one form component, `components/ContactForm.jsx`; configure it with props (`phone`, `tinted`, `size`, `source`, `copy`) instead of building another.
+
 - Inputs: `field` (+ `field-lg` for tall fields, `field-tint` when sitting on a card); checkbox: `checkbox`.
 - Cards: `card` (+ `card-outlined`, `card-lg`, `card-interactive`).
 

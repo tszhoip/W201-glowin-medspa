@@ -59,12 +59,15 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
 - **Treatment detail page** (`src/pages/TreatmentDetail.jsx`): hero (type label, title, blurb,
   Book Now -> #book, intro image), numbered cards (How It Works / What It Treats / Benefit,
   hidden when empty), Before & After, then the consultation form
-  (`src/components/ConsultationForm.jsx` -> `/api/contact`, records the treatment, phone
-  optional). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
+  (the shared `src/components/ContactForm.jsx`). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
   CTA peach is the `cta` token (sampled from the design screenshot).
 
+- **One form for the whole site:** `src/components/ContactForm.jsx` (Contact page, `/book-now`, every treatment page).
+  Props: `copy` (labels from a content file), `source` (shown in the email subject/body so each enquiry says
+  where it came from), `phone` ('required' | 'optional' | false), `tinted`, `size`. Posts to `api/contact.js`,
+  which emails the clinic + the visitor and records the consent wording the visitor agreed to.
 - **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
-  with a white `.panel` holding the consultation form (same `ConsultationForm`, `tinted`). Copy in
+  with a white `.panel` holding the consultation form (shared `ContactForm`, `tinted`). Copy in
   `src/content/book-now.txt`. Header / mobile menu / banner / Services "Book now" links go here; `/contact` is the
   separate contact + visit-info page.
 

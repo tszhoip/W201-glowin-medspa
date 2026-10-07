@@ -4,7 +4,7 @@ import { parseContent } from '../lib/loadContent'
 import raw from '../content/treatment-detail.txt?raw'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
-import ConsultationForm from '../components/ConsultationForm'
+import ContactForm from '../components/ContactForm'
 import NotFound from './NotFound'
 
 const c = parseContent(raw)
@@ -103,7 +103,7 @@ export default function TreatmentDetail() {
           <h2 className="type-caps">{c.BOOK_TITLE}</h2>
           <p className="type-body mt-5 max-w-md">{c.BOOK_BODY}</p>
         </div>
-        <ConsultationForm treatment={t.title} copy={c} />
+        <ContactForm copy={c} source={`Treatment page: ${t.title}`} />
       </Section>
     </div>
   )

@@ -14,10 +14,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method not allowed' })
   }
 
-  const { name, email, phone, message, consent, treatment } = req.body
+  const { name, email, phone, message, consent, consentLabel, source } = req.body
 
   // Validation
-  // Phone is optional (the treatment-page form doesn't ask for it)
+  // Phone is optional (the booking forms make it optional; the Contact page requires it client-side)
   if (!name || !email || !consent) {
     return res
       .status(400)
@@ -48,8 +48,8 @@ Your submission:
 Name: ${name}
 Email: ${email}
 Phone: ${phone || '(not provided)'}
-${treatment ? `Treatment: ${treatment}\n` : ''}Message: ${message || '(no message)'}
-Consent: Yes, I agree to receive SMS or e-mails
+Message: ${message || '(no message)'}
+Consent: Yes — ${consentLabel || 'I agree to receive SMS or e-mails'}
 Date: ${timestamp}
 
 ---
@@ -62,11 +62,12 @@ Glowin Medspa Team
     const businessEmailBody = `
 New Contact Form Submission
 
+Source: ${source || 'Website'}
 Name: ${name}
 Email: ${email}
 Phone: ${phone || '(not provided)'}
-${treatment ? `Treatment: ${treatment}\n` : ''}Message: ${message || '(no message)'}
-Consent (SMS/Email): Yes
+Message: ${message || '(no message)'}
+Consent: Yes — ${consentLabel || 'I agree to receive SMS or e-mails'}
 Date: ${timestamp}
 
 ---
@@ -85,7 +86,7 @@ From: ${email}
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
       to: process.env.GMAIL_USER,
-      subject: `New Contact Form Submission — Glowin Medspa`,
+      subject: `New enquiry (${source || 'Website'}) — Glowin Medspa`,
       text: businessEmailBody,
     })
 
