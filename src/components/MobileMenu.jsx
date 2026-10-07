@@ -52,7 +52,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
         {/* CTA Button */}
         <div className="px-4 mb-4">
-          <Button to="/contact" onClick={onClose} size="md" className="w-full py-3">
+          <Button to="/book-now" onClick={onClose} size="md" className="w-full py-3">
             Book Now
           </Button>
         </div>

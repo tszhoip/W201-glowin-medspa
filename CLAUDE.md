@@ -63,6 +63,11 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   optional). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
   CTA peach is the `cta` token (sampled from the design screenshot).
 
+- **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
+  with a white `.panel` holding the consultation form (same `ConsultationForm`, `tinted`). Copy in
+  `src/content/book-now.txt`. Header / mobile menu / banner / Services "Book now" links go here; `/contact` is the
+  separate contact + visit-info page.
+
 ## Styling
 All styling follows `src/design.md` (read it before touching UI). Tokens in `src/styles/tokens.css`,
 reusable classes in `src/styles/components.css`, shared `<Button>` / `<Section>` in

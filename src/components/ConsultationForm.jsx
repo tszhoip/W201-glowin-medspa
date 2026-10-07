@@ -2,8 +2,9 @@ import { useState } from 'react'
 import Button from './ui/Button'
 
 // Booking form on the treatment detail pages. Posts to /api/contact (same endpoint
-// as the Contact page) and records which treatment the enquiry came from.
-export default function ConsultationForm({ treatment, copy }) {
+// as the Contact page) and records which treatment the enquiry came from (if any).
+// tinted: fields and button sit on a white panel, so they use the grey tint instead of white.
+export default function ConsultationForm({ treatment, copy, tinted = false }) {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -47,19 +48,21 @@ export default function ConsultationForm({ treatment, copy }) {
   }
 
   if (status === 'sent') {
-    return <div className="card text-sm">{copy.FORM_THANKS}</div>
+    return <div className={`card text-sm ${tinted ? 'card-outlined' : ''}`}>{copy.FORM_THANKS}</div>
   }
+
+  const field = `field field-lg ${tinted ? 'field-tint' : ''}`
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input name="name" required placeholder={copy.FORM_NAME} className="field field-lg" />
-      <input name="email" type="email" required placeholder={copy.FORM_EMAIL} className="field field-lg" />
-      <textarea name="message" placeholder={copy.FORM_MESSAGE} className="field field-lg" />
+      <input name="name" required placeholder={copy.FORM_NAME} className={field} />
+      <input name="email" type="email" required placeholder={copy.FORM_EMAIL} className={field} />
+      <textarea name="message" placeholder={copy.FORM_MESSAGE} className={field} />
       <label className="flex items-center gap-3 text-sm text-ink cursor-pointer">
         <input type="checkbox" name="consent" required className="checkbox" />
         {copy.FORM_CONSENT}
       </label>
-      <Button type="submit" size="block" disabled={status === 'sending'}>
+      <Button type="submit" size="block" variant={tinted ? 'light' : 'cta'} disabled={status === 'sending'}>
         {status === 'sending' ? copy.FORM_SENDING : copy.FORM_CTA}
       </Button>
       {status === 'error' && <p className="text-xs text-red-600">{errorMsg}</p>}

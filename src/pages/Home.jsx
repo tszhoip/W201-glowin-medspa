@@ -57,7 +57,7 @@ export default function Home() {
             <h1 className="type-h1 mb-6">
               <Highlighted text={c.HERO_HEADLINE} />
             </h1>
-            <Button to="/contact" variant="light" size="sm">
+            <Button to="/book-now" variant="light" size="sm">
               BOOK NOW
             </Button>
           </div>

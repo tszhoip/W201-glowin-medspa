@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
+import BookNow from './pages/BookNow'
 import TreatmentDetail from './pages/TreatmentDetail'
 import Guideline from './pages/Guideline'
 import NotFound from './pages/NotFound'
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book-now" element={<BookNow />} />
           <Route path="/treatments/:id" element={<TreatmentDetail />} />
           <Route path="/guideline" element={<Guideline />} />
           <Route path="*" element={<NotFound />} />

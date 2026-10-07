@@ -91,7 +91,7 @@ const DEMOED = new Set([
   'field', 'field-tint', 'field-lg', 'checkbox',
   'card', 'card-outlined', 'card-lg', 'card-interactive',
   'img-frame', 'page-container', 'section-y', 'section-y-sm', 'section-rule', 'hero',
-  'nav-link', 'nav-dot', 'icon-arrow', 'link-list',
+  'nav-link', 'nav-dot', 'icon-arrow', 'link-list', 'panel',
 ])
 
 // ── Small building blocks ─────────────────────────────────
@@ -264,6 +264,15 @@ export default function Guideline() {
         <div className="mt-6 grid md:grid-cols-3 gap-4">
           <div className="img-frame aspect-[4/3] grid place-items-center p-4 text-center">
             <Tag>.img-frame — wraps every photo; this placeholder shows while an image is missing</Tag>
+          </div>
+        </div>
+      </Block>
+
+      <Block id="panels" title="Panel" note="Solid white block that sits on a photo (the booking page).">
+        <div className="relative rounded-image overflow-hidden p-10 bg-peach">
+          <div className="panel max-w-md">
+            <Tag>.panel</Tag>
+            <p className="type-body mt-2">White panel with generous padding on a photo or color.</p>
           </div>
         </div>
       </Block>

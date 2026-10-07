@@ -32,7 +32,7 @@ export default function Header() {
 
           {/* Right: Book Now + dot (16px from edge) / mobile menu button */}
           <div className="flex items-center gap-1 mr-4">
-            <Link to="/contact" className="nav-link hidden md:inline-block">
+            <Link to="/book-now" className="nav-link hidden md:inline-block">
               {g.CTA_BOOK}
             </Link>
             <div className="nav-dot hidden md:block" />

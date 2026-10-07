@@ -24,7 +24,7 @@ export default function Services() {
         <p className="type-lead max-w-2xl mb-8">
           Personalized treatments guided by clinical expertise. Explore our full menu below, or book a free consultation to build a plan around your goals.
         </p>
-        <Button to="/contact">Book a consultation</Button>
+        <Button to="/book-now">Book a consultation</Button>
       </Section>
 
       {/* Treatment type sections - alternate image side on desktop */}
