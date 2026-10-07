@@ -106,7 +106,7 @@ export default function Home() {
                   key={section.anchor}
                   ref={(el) => (itemRefs.current[section.anchor] = el)}
                   data-id={section.anchor}
-                  className={`type-feature transition-colors ${active ? 'text-peach' : 'text-ink'}`}
+                  className={`type-h1 transition-colors ${active ? 'text-peach' : 'text-ink'}`}
                 >
                   <Link to={`/services#${section.anchor}`}>
                     {section.shortName}
