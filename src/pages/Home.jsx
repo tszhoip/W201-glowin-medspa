@@ -47,7 +47,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
-            <h1 className="type-hero mb-6">Where your timeless glow begins</h1>
+            <h1 className="type-h1 mb-6">Where your timeless glow begins</h1>
             <Button to="/contact" variant="light" size="hero">
               BOOK NOW
             </Button>

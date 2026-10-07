@@ -44,7 +44,7 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 
 | Class | Use |
 |---|---|
-| `type-hero` | home hero headline (light) |
+| `type-h1` | home hero headline and statement text (light; pair with `.highlight` for serif accents) |
 | `type-display` | treatment page title |
 | `type-title` | page titles (h1) |
 | `type-heading` | section headings (h2) |

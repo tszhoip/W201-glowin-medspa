@@ -53,7 +53,6 @@ function parseClasses(css) {
 // ── Demo configuration (manual) ───────────────────────────
 
 const TYPE_SAMPLES = {
-  'type-hero': 'Where your timeless glow begins',
   'type-h1': (
     <>
       We personalize treatments that <span className="highlight">enhance—not change</span>—what makes you unique.
