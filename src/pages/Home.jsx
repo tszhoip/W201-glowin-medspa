@@ -116,9 +116,9 @@ export default function Home() {
               )
             })}
 
-            <Button to="/services" variant="neutral" size="sm" className="mt-6">
+            <Link to="/services" className="type-link mt-6 inline-block">
               See all
-            </Button>
+            </Link>
           </div>
 
           <div className="img-frame md:sticky md:top-20 aspect-[622/560]">

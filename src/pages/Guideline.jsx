@@ -70,6 +70,7 @@ const TYPE_SAMPLES = {
   'type-lead': 'Lead paragraph: personalized treatments guided by clinical expertise.',
   'type-body': 'Body copy used inside cards and short descriptions.',
   'type-label': 'Label',
+  'type-link': 'See all',
 }
 // Classes that are modifiers rather than text styles; demoed inside the samples above.
 const MODIFIERS = ['highlight']
@@ -202,7 +203,7 @@ export default function Guideline() {
             ([cls, sample]) => (
               <div key={cls} className="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 items-baseline">
                 <Tag>.{cls}</Tag>
-                <p className={cls}>{sample}</p>
+                <p className={`${cls} w-fit`}>{sample}</p>
               </div>
             )
           )}

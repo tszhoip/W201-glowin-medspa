@@ -55,6 +55,7 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 | `type-card-title`, `type-kicker` | small headings |
 | `type-lead`, `type-body` | paragraphs (grey) |
 | `type-label` | small uppercase eyebrow |
+| `type-link` | text links (underline on hover), e.g. "See all" |
 | `nav-link` | header links |
 
 ## Buttons

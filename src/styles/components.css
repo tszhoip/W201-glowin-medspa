@@ -68,6 +68,12 @@
     font-family: var(--font-sans); font-size: 14px; font-weight: 400;
     letter-spacing: 0.01em; line-height: 1.625; color: var(--color-ink-soft);
   }
+  .type-link {                               /* text link: Switzer Medium 14px, underlines on hover */
+    font-size: 14px; line-height: 1.5; font-weight: 500;
+    color: var(--color-ink); text-decoration: none; cursor: pointer;
+    text-underline-offset: 4px; text-decoration-thickness: 1px;
+  }
+  .type-link:hover, .type-link:focus-visible { text-decoration: underline; }
   .type-label {                              /* small uppercase eyebrow */
     font-size: 13px; line-height: 1.5; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--color-ink-soft);
