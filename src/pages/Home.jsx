@@ -41,13 +41,15 @@ export default function Home() {
       <section className="hero">
         <img
           src={heroBanner}
-          alt="Where your timeless glow begins"
+          alt={c.HERO_HEADLINE.replaceAll('*', '')}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
-            <h1 className="type-h1 uppercase mb-6">Where your timeless glow begins</h1>
+            <h1 className="type-h1 uppercase mb-6">
+              <Highlighted text={c.HERO_HEADLINE} />
+            </h1>
             <Button to="/contact" variant="light" size="sm">
               BOOK NOW
             </Button>
