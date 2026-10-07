@@ -10,6 +10,9 @@ import homeRaw from '../content/home.txt?raw'
 
 const c = parseContent(homeRaw)
 
+// Hidden for now. Set to true to bring the "Top Treatments" section back (data: Top Treatment column in treatments.xlsx).
+const SHOW_TOP_TREATMENTS = false
+
 export default function Home() {
   const [activeType, setActiveType] = useState(sections[0]?.anchor)
   const itemRefs = useRef({})
@@ -62,31 +65,33 @@ export default function Home() {
       </section>
 
       {/* Top Treatments - featured rows from the spreadsheet ("Top Treatment" column) */}
-      <Section innerClassName="pb-0">
-        <h2 className="type-section mb-8">Top Treatments</h2>
+      {SHOW_TOP_TREATMENTS && (
+        <Section innerClassName="pb-0">
+          <h2 className="type-section mb-8">Top Treatments</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {topTreatments.map((t) => (
-            <Link
-              key={t.slug}
-              to={`/treatments/${t.slug}`}
-              className="img-frame group relative block aspect-[417/372]"
-            >
-              {t.introImage && (
-                <img
-                  src={t.introImage}
-                  alt={t.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:opacity-90 transition-opacity"
-                />
-              )}
-              <div className="absolute inset-0 bg-black/10" />
-              <p className="type-feature absolute inset-0 flex items-center justify-center text-center text-white px-3">
-                {t.shortName}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </Section>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {topTreatments.map((t) => (
+              <Link
+                key={t.slug}
+                to={`/treatments/${t.slug}`}
+                className="img-frame group relative block aspect-[417/372]"
+              >
+                {t.introImage && (
+                  <img
+                    src={t.introImage}
+                    alt={t.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                  />
+                )}
+                <div className="absolute inset-0 bg-black/10" />
+                <p className="type-feature absolute inset-0 flex items-center justify-center text-center text-white px-3">
+                  {t.shortName}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* Treatment types - active item follows scroll; links go to /services#anchor */}
       <Section>
