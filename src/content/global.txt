@@ -29,7 +29,7 @@ Modern medspa care, rooted in clinical results.
 hello@glowinmedspa.com
 
 ## FOOTER_ADDRESS
-123 Glow Ave, Los Angeles, CA 90001
+3600 W Olympic Blvd Unit 6, Los Angeles, CA 90019
 
 ## FOOTER_HOURS
 Mon - Sat: 9:00 AM - 6:00 PM

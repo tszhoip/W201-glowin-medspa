@@ -7,8 +7,15 @@ import Section from '../components/ui/Section'
 import Highlighted from '../lib/highlight'
 import { parseContent } from '../lib/loadContent'
 import homeRaw from '../content/home.txt?raw'
+import globalRaw from '../content/global.txt?raw'
 
 const c = parseContent(homeRaw)
+const g = parseContent(globalRaw)
+
+// Address comes from global.txt (FOOTER_ADDRESS): street on line 1, city/state/zip on line 2. Also drives the map.
+const [street, ...cityParts] = g.FOOTER_ADDRESS.split(',')
+const cityLine = cityParts.join(',').trim()
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(g.FOOTER_ADDRESS)}&output=embed`
 
 // Hidden for now. Set to true to bring the "Top Treatments" section back (data: Top Treatment column in treatments.xlsx).
 const SHOW_TOP_TREATMENTS = false
@@ -158,8 +165,8 @@ export default function Home() {
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-sm text-ink-soft space-y-2">
-            <p>123 Glowin Ave, Suite 200</p>
-            <p>Los Angeles, CA 90001</p>
+            <p>{street}</p>
+            <p>{cityLine}</p>
             <p className="mt-4">
               <a href="tel:+1234567890" className="text-ink hover:text-peach transition-colors">
                 (123) 456-7890
@@ -168,7 +175,7 @@ export default function Home() {
           </div>
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-118.2437!3d34.0522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27d49b%3A0xce0d0a63ae5b0efd!2s123%20Glowin%20Ave%20Suite%20200%20Los%20Angeles%20CA%2090001!5e0!3m2!1sen!2sus!4v1234567890"
+            src={mapSrc}
             title="Map"
             width="100%"
             height="300"
