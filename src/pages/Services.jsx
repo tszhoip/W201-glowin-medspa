@@ -19,7 +19,7 @@ export default function Services() {
     <div>
       {/* Page header */}
       <Section>
-        <h1 className="type-title mb-4">Treatments</h1>
+        <h1 className="type-h1 mb-4">Treatments</h1>
         <p className="type-lead max-w-2xl mb-8">
           Personalized treatments guided by clinical expertise. Explore our full menu below, or book a free consultation to build a plan around your goals.
         </p>
@@ -35,7 +35,7 @@ export default function Services() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
               {/* Title and treatment list */}
               <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
-                <h2 className="type-heading mb-8">{section.name}</h2>
+                <h2 className="type-h1 mb-8">{section.name}</h2>
                 <div className="space-y-3">
                   {section.treatments.map((t) => (
                     <Link
