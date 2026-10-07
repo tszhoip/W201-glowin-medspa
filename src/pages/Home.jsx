@@ -66,7 +66,7 @@ export default function Home() {
             <Link
               key={t.slug}
               to={`/treatments/${t.slug}`}
-              className="group relative block overflow-hidden rounded-md bg-cream-dark"
+              className="group relative block overflow-hidden rounded-image bg-cream-dark"
               style={{ aspectRatio: '417 / 372' }}
             >
               {t.introImage && (
@@ -121,7 +121,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="md:sticky md:top-20 overflow-hidden rounded-md bg-cream-dark" style={{ aspectRatio: '622 / 560' }}>
+          <div className="md:sticky md:top-20 overflow-hidden rounded-image bg-cream-dark" style={{ aspectRatio: '622 / 560' }}>
             {sections.map((section) =>
               section.image ? (
                 <img

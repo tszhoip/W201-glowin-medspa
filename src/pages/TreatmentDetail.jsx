@@ -55,7 +55,7 @@ export default function TreatmentDetail() {
           </div>
 
           {intro && (
-            <div className="md:col-start-1 md:row-start-2 overflow-hidden rounded-md bg-cream-dark" style={{ aspectRatio: '688 / 464' }}>
+            <div className="md:col-start-1 md:row-start-2 overflow-hidden rounded-image bg-cream-dark" style={{ aspectRatio: '688 / 464' }}>
               <img src={intro} alt={t.title} className="w-full h-full object-cover" />
             </div>
           )}
@@ -92,7 +92,7 @@ export default function TreatmentDetail() {
           <div className="mx-auto max-w-6xl px-6 py-14 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-8 gap-y-6">
             <p className={label}>{c.LABEL_DOES_IT_WORK}</p>
             <figure>
-              <img src={beforeAfter} alt={`${t.title} before and after`} className="w-full h-auto rounded-md" />
+              <img src={beforeAfter} alt={`${t.title} before and after`} className="w-full h-auto rounded-image" />
               <figcaption className="mt-3 text-sm text-ink-soft">{c.BEFORE_AFTER_CAPTION}</figcaption>
             </figure>
           </div>

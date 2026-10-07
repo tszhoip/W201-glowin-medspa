@@ -68,7 +68,7 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className={`h-96 md:h-[500px] rounded-lg overflow-hidden bg-cream-dark ${isAlternate ? 'md:order-1' : ''}`}>
+              <div className={`h-96 md:h-[500px] rounded-image overflow-hidden bg-cream-dark ${isAlternate ? 'md:order-1' : ''}`}>
                 {section.image && (
                   <img
                     src={section.image}
