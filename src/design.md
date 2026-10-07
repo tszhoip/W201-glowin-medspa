@@ -61,7 +61,7 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 
 ```jsx
 <Button to="/contact">Book a consultation</Button>                 // cta, md
-<Button to="/contact" variant="light" size="hero">BOOK NOW</Button> // on photos
+<Button to="/contact" variant="light" size="sm">BOOK NOW</Button>   // on photos
 <Button to="/services" variant="neutral" size="sm">See all</Button>
 <Button size="block" type="submit">Submit</Button>                  // full-width form submit
 ```
