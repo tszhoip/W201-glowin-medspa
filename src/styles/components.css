@@ -64,7 +64,10 @@
   .type-card-title { font-size: 1.25rem; line-height: 1.4; font-weight: 500; }
   .type-kicker     { font-size: 14px; line-height: 1.5; font-weight: 500; }
   .type-lead       { font-size: 1.125rem; line-height: 1.625; color: var(--color-ink-soft); }
-  .type-body       { font-size: 15px; line-height: 1.625; color: var(--color-ink-soft); }
+  .type-body {                               /* body copy: Switzer Regular 13px, 1% tracking */
+    font-family: var(--font-sans); font-size: 13px; font-weight: 400;
+    letter-spacing: 0.01em; line-height: 1.625; color: var(--color-ink-soft);
+  }
   .type-label {                              /* small uppercase eyebrow */
     font-size: 13px; line-height: 1.5; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--color-ink-soft);
