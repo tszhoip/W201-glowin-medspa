@@ -1,0 +1,39 @@
+/*
+ * DESIGN TOKENS — the single source of truth for colors, radii and layout.
+ * Change a value here and the whole site follows. Never type a hex code or a
+ * pixel radius in a component; add or reuse a token instead.
+ * Tailwind turns every token into a utility: --color-ink-soft -> text-ink-soft,
+ * --radius-image -> rounded-image, etc.
+ */
+@theme {
+  --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
+
+  /* Text */
+  --color-ink: #2d2d2d;
+  --color-ink-soft: #6b6560;
+
+  /* Brand */
+  --color-peach: #cbae94;        /* brand tan: footer, active states, hover accents */
+  --color-peach-dark: #b89678;
+  --color-cta: #f7cba3;          /* primary call-to-action */
+  --color-cta-dark: #f1bd91;
+
+  /* Surfaces */
+  --color-page: #f5f5f5;         /* site background */
+  --color-surface: rgb(255 255 255 / 0.7);  /* cards */
+  --color-field: #ffffff;        /* form inputs */
+  --color-placeholder: #f1e9df;  /* behind images while they load / when missing */
+  --color-line: #e4e4e4;         /* hairlines, rules, outlines */
+  --color-neutral: #e6e6e6;      /* quiet buttons */
+  --color-neutral-dark: #d9d9d9;
+
+  /* Radii */
+  --radius-image: 4px;           /* every photo */
+  --radius-button: 6px;
+  --radius-field: 4px;
+  --radius-card: 6px;
+  --radius-card-lg: 16px;
+
+  /* Layout */
+  --container-page: 72rem;       /* max content width */
+}

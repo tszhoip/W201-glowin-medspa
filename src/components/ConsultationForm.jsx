@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from './ui/Button'
 
 // Booking form on the treatment detail pages. Posts to /api/contact (same endpoint
 // as the Contact page) and records which treatment the enquiry came from.
@@ -46,27 +47,21 @@ export default function ConsultationForm({ treatment, copy }) {
   }
 
   if (status === 'sent') {
-    return <div className="rounded-md bg-white p-6 text-sm text-ink">{copy.FORM_THANKS}</div>
+    return <div className="card text-sm">{copy.FORM_THANKS}</div>
   }
-
-  const field = 'w-full rounded bg-white px-4 text-ink outline-none border border-transparent focus:border-peach placeholder:text-ink-soft'
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input name="name" required placeholder={copy.FORM_NAME} className={`${field} h-[54px]`} />
-      <input name="email" type="email" required placeholder={copy.FORM_EMAIL} className={`${field} h-[54px]`} />
-      <textarea name="message" placeholder={copy.FORM_MESSAGE} className={`${field} h-36 py-4 resize-none`} />
+      <input name="name" required placeholder={copy.FORM_NAME} className="field field-lg" />
+      <input name="email" type="email" required placeholder={copy.FORM_EMAIL} className="field field-lg" />
+      <textarea name="message" placeholder={copy.FORM_MESSAGE} className="field field-lg" />
       <label className="flex items-center gap-3 text-sm text-ink cursor-pointer">
-        <input type="checkbox" name="consent" required className="w-[22px] h-[22px] rounded accent-peach cursor-pointer" />
+        <input type="checkbox" name="consent" required className="checkbox" />
         {copy.FORM_CONSENT}
       </label>
-      <button
-        type="submit"
-        disabled={status === 'sending'}
-        className="w-full h-14 rounded-md bg-cta hover:bg-cta-dark text-ink font-medium transition-colors disabled:opacity-60"
-      >
+      <Button type="submit" size="block" disabled={status === 'sending'}>
         {status === 'sending' ? copy.FORM_SENDING : copy.FORM_CTA}
-      </button>
+      </Button>
       {status === 'error' && <p className="text-xs text-red-600">{errorMsg}</p>}
     </form>
   )

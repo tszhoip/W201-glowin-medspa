@@ -1,16 +1,14 @@
-import { Link } from 'react-router-dom'
+import Button from '../components/ui/Button'
+import Section from '../components/ui/Section'
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-xl px-6 py-24 text-center">
-      <h1 className="font-serif text-3xl font-semibold">Page not found</h1>
-      <p className="mt-3 text-ink-soft">The page you're looking for doesn't exist.</p>
-      <Link
-        to="/"
-        className="mt-6 inline-block rounded-full bg-peach px-6 py-2.5 text-sm font-medium text-ink hover:bg-peach-dark transition-colors"
-      >
+    <Section innerClassName="max-w-xl py-24 text-center">
+      <h1 className="type-heading">Page not found</h1>
+      <p className="type-lead mt-3">The page you're looking for doesn't exist.</p>
+      <Button to="/" className="mt-6">
         Back home
-      </Link>
-    </div>
+      </Button>
+    </Section>
   )
 }

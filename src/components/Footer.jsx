@@ -159,8 +159,7 @@ export default function Footer() {
               <img
                 src={glowingImg}
                 alt="Glowin"
-                className="w-full h-auto"
-                style={{ minWidth: '200%' }}
+                className="w-full h-auto min-w-[200%]"
               />
             </div>
           </div>

@@ -12,69 +12,38 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200" style={{ height: '56px' }}>
+      <header className="fixed top-0 left-0 right-0 z-40 h-[var(--header-height)] bg-white border-b border-line">
         <div className="h-full flex items-center justify-between relative">
-          {/* Left: Circle (16px from edge) + Services + Contact */}
-          <div className="flex items-center" style={{ marginLeft: '16px', gap: '12px' }}>
-            <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
-            <Link
-              to="/services"
-              className="font-medium hover:text-peach transition-colors hidden md:block"
-              style={{ color: '#2D2D2D', fontSize: '14px' }}
-            >
+          {/* Left: dot (16px from edge) + Services + Contact */}
+          <div className="flex items-center gap-3 ml-4">
+            <div className="nav-dot hidden md:block" />
+            <Link to="/services" className="nav-link hidden md:block">
               {g.NAV_SERVICES}
             </Link>
-            <Link
-              to="/contact"
-              className="font-medium hover:text-peach transition-colors hidden md:block"
-              style={{ color: '#2D2D2D', fontSize: '14px' }}
-            >
+            <Link to="/contact" className="nav-link hidden md:block">
               Contact
             </Link>
           </div>
 
-          {/* Center: Logo (Home) */}
-          <Link to="/" className="flex-shrink-0 absolute left-1/2" style={{ transform: 'translateX(-50%)' }}>
-            <img
-              src={logoSvg}
-              alt="Glowin Medspa"
-              style={{ height: '29px', width: 'auto' }}
-            />
+          {/* Center: logo (home) */}
+          <Link to="/" className="flex-shrink-0 absolute left-1/2 -translate-x-1/2">
+            <img src={logoSvg} alt="Glowin Medspa" className="h-[29px] w-auto" />
           </Link>
 
-          {/* Right: Book Now + Circle (16px from edge) + Mobile Menu */}
-          <div className="flex items-center" style={{ marginRight: '16px', gap: '4px' }}>
-            {/* Desktop: Book Now */}
-            <Link
-              to="/contact"
-              className="hidden md:inline-block font-medium hover:text-peach transition-colors"
-              style={{ color: '#2D2D2D', fontSize: '14px' }}
-            >
+          {/* Right: Book Now + dot (16px from edge) / mobile menu button */}
+          <div className="flex items-center gap-1 mr-4">
+            <Link to="/contact" className="nav-link hidden md:inline-block">
               {g.CTA_BOOK}
             </Link>
+            <div className="nav-dot hidden md:block" />
 
-            {/* Right Circle */}
-            <div className="rounded-full flex-shrink-0 hidden md:block" style={{ backgroundColor: '#2D2D2D', width: '24px', height: '24px' }}></div>
-
-            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 hover:text-peach transition-colors"
-              style={{ color: '#2D2D2D' }}
+              className="nav-link md:hidden p-2"
               aria-label="Toggle menu"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>

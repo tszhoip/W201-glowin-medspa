@@ -61,11 +61,14 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   hidden when empty), Before & After, then the consultation form
   (`src/components/ConsultationForm.jsx` -> `/api/contact`, records the treatment, phone
   optional). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
-  CTA peach is `--color-cta` in `src/index.css` (sampled from the design screenshot).
+  CTA peach is the `cta` token (sampled from the design screenshot).
 
-## Palette (src/index.css @theme)
-cream `#faf6f1` · cream-dark `#f1e9df` · peach `#e8b294` · peach-dark `#d99872`
-· ink `#2b2a28` · ink-soft `#6b6560`
+## Styling
+All styling follows `src/design.md` (read it before touching UI). Tokens in `src/styles/tokens.css`,
+reusable classes in `src/styles/components.css`, shared `<Button>` / `<Section>` in
+`src/components/ui/`. No hex colors, pixel radii or inline `style={{}}` in components; hover states
+live in CSS. Live preview: `/design-showcase`. Palette: ink `#2D2D2D`, ink-soft `#6B6560`,
+peach `#CBAE94`, cta `#F7CBA3`, page `#F5F5F5`.
 
 ## Status
 

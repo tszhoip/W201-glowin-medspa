@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from './ui/Button'
 
 // Sends submissions to Vercel API route (/api/contact)
 // Email delivered via Gmail SMTP
@@ -68,7 +69,7 @@ export default function ContactForm({
 
   if (status === 'sent') {
     return (
-      <div className="rounded-2xl border border-cream-dark bg-white/60 p-6 text-sm text-ink">
+      <div className="card card-outlined text-sm">
         Thank you! We've received your message. We'll be in touch soon.
       </div>
     )
@@ -82,8 +83,7 @@ export default function ContactForm({
           name="name"
           required
           placeholder={nameLabel}
-          className="w-full rounded-lg border border-gray-200 bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
-          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px' }}
+          className="field field-tint"
         />
       </div>
       <div>
@@ -93,8 +93,7 @@ export default function ContactForm({
           type="email"
           required
           placeholder={emailLabel}
-          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
-          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
+          className="field field-tint"
         />
       </div>
       <div>
@@ -103,8 +102,7 @@ export default function ContactForm({
           name="phone"
           required
           placeholder={phoneLabel}
-          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
-          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
+          className="field field-tint"
         />
       </div>
       <div>
@@ -113,8 +111,7 @@ export default function ContactForm({
           name="message"
           rows={4}
           placeholder={messageLabel}
-          className="w-full border bg-gray-100 px-4 py-2 text-sm outline-none focus:border-peach"
-          style={{ backgroundColor: '#f5f5f5', borderColor: '#f5f5f5', borderRadius: '6px', border: '1px solid #f5f5f5' }}
+          className="field field-tint"
         />
       </div>
       <div className="flex items-start gap-3">
@@ -123,32 +120,15 @@ export default function ContactForm({
           name="consent"
           type="checkbox"
           required
-          className="mt-1 w-4 h-4 rounded border border-cream-dark accent-peach cursor-pointer"
+          className="checkbox mt-0.5"
         />
         <label htmlFor="consent" className="text-xs text-ink-soft leading-relaxed cursor-pointer">
           I agree to receive SMS or e-mails for the provided number/email above.
         </label>
       </div>
-      <button
-        type="submit"
-        disabled={status === 'sending'}
-        className="px-6 py-2.5 text-sm font-medium text-ink transition-all"
-        style={{ backgroundColor: '#f5f5f5', borderRadius: '6px' }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = 'inset 0 0 0 100px rgba(232, 178, 148, 0.5)'
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = 'none'
-        }}
-        onDisabled={(e) => {
-          if (status === 'sending') {
-            e.currentTarget.style.color = '#6b6560'
-            e.currentTarget.style.opacity = '0.6'
-          }
-        }}
-      >
+      <Button type="submit" variant="light" disabled={status === 'sending'}>
         {status === 'sending' ? 'Sending...' : ctaLabel}
-      </button>
+      </Button>
       {status === 'error' && (
         <p className="text-xs text-red-600">{errorMsg}</p>
       )}

@@ -1,31 +1,7 @@
 @import url("https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
-  --color-cream: #faf6f1;
-  --color-cream-dark: #f1e9df;
-  --color-peach: #cbae94;
-  --color-peach-dark: #b89678;
-  --radius-image: 4px; /* every photo on the site */
-  --color-cta: #f7cba3;
-  --color-cta-dark: #f1bd91;
-  --color-ink: #2b2a28;
-  --color-ink-soft: #6b6560;
-  --color-grey-light: #f5f5f5;
-  --color-grey-placeholder: #efefef;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-body {
-  background-color: #f5f5f5;
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
+/* Site styles live in src/styles/ — read src/design.md before adding any. */
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
