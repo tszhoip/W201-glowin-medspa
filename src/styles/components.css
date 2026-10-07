@@ -84,6 +84,14 @@
     .type-section { font-size: 2rem; }
   }
 
+  /* ── Icons ──────────────────────────────────────────── */
+  .icon-arrow {                              /* arrow.svg, drawn in the surrounding text color; sized by font-size */
+    display: inline-block; flex-shrink: 0; width: 1em; height: 1em;
+    background-color: currentColor;
+    -webkit-mask: url('../assets/images/icon/arrow.svg') center / contain no-repeat;
+    mask: url('../assets/images/icon/arrow.svg') center / contain no-repeat;
+  }
+
   /* ── Navigation ─────────────────────────────────────── */
   .nav-link {
     font-size: 14px; font-weight: 500; color: var(--color-ink);

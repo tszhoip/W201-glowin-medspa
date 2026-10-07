@@ -68,6 +68,12 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 ```
 Variants: `cta` (default), `light`, `neutral`. Sizes: `sm`, `md`, `lg`, `hero`, `block`.
 
+## Icons
+
+SVGs live in `src/assets/images/icon/`. Each gets a class that draws it with a CSS mask, so it follows the
+surrounding text color and `font-size` (e.g. `<span className="icon-arrow" />`). To add one: drop the SVG in
+the folder, add a `.icon-name` rule to `components.css`.
+
 ## Forms & cards
 
 - Inputs: `field` (+ `field-lg` for tall fields, `field-tint` when sitting on a card); checkbox: `checkbox`.

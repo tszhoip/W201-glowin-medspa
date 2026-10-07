@@ -91,7 +91,7 @@ const DEMOED = new Set([
   'field', 'field-tint', 'field-lg', 'checkbox',
   'card', 'card-outlined', 'card-lg', 'card-interactive',
   'img-frame', 'page-container', 'section-y', 'section-y-sm', 'section-rule', 'hero',
-  'nav-link', 'nav-dot',
+  'nav-link', 'nav-dot', 'icon-arrow',
 ])
 
 // ── Small building blocks ─────────────────────────────────
@@ -121,6 +121,7 @@ const NAV = [
   ['cards', 'Cards & images'],
   ['radii', 'Radii'],
   ['layout', 'Layout'],
+  ['icons', 'Icons'],
   ['navigation', 'Navigation'],
   ['index', 'Class index'],
 ]
@@ -296,6 +297,18 @@ export default function Guideline() {
           <div className="page-container section-y-sm text-sm text-ink-soft">
             .page-container + .section-y-sm (this box is a live example)
           </div>
+        </div>
+      </Block>
+
+      <Block id="icons" title="Icons" note="Icons are SVGs in src/assets/images/icon/, drawn with a CSS mask so they take the surrounding text color and size.">
+        <div className="flex flex-wrap items-center gap-8">
+          {[['text-base', 'text-ink'], ['text-2xl', 'text-ink'], ['text-4xl', 'text-peach']].map(([size, color]) => (
+            <div key={size} className={`flex items-center gap-2 ${size} ${color}`}>
+              <span>Label</span>
+              <span className="icon-arrow" />
+              <Tag>.icon-arrow {size}</Tag>
+            </div>
+          ))}
         </div>
       </Block>
 
