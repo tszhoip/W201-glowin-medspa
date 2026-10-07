@@ -67,7 +67,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
 All styling follows `src/design.md` (read it before touching UI). Tokens in `src/styles/tokens.css`,
 reusable classes in `src/styles/components.css`, shared `<Button>` / `<Section>` in
 `src/components/ui/`. No hex colors, pixel radii or inline `style={{}}` in components; hover states
-live in CSS. Live preview: `/design-showcase`. Palette: ink `#2D2D2D`, ink-soft `#6B6560`,
+live in CSS. Live preview: `/guideline` (`src/pages/Guideline.jsx`; auto-reads the style files; add a demo when you add a reusable style). The footer link to it is TEMP — remove before launch. Palette: ink `#2D2D2D`, ink-soft `#6B6560`,
 peach `#CBAE94`, cta `#F7CBA3`, page `#F5F5F5`.
 
 ## Status

@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import TreatmentDetail from './pages/TreatmentDetail'
-import DesignShowcase from './pages/DesignShowcase'
+import Guideline from './pages/Guideline'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/treatments/:id" element={<TreatmentDetail />} />
-          <Route path="/design-showcase" element={<DesignShowcase />} />
+          <Route path="/guideline" element={<Guideline />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

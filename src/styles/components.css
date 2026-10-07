@@ -1,6 +1,6 @@
 /*
  * REUSABLE STYLES — use these class names in JSX instead of one-off values.
- * See src/design.md for the guideline and /design-showcase for a live preview.
+ * See src/design.md for the rules and /guideline for a live preview (it reads this file).
  * Tailwind utilities (mb-6, md:grid-cols-3 ...) still win over these, so a
  * one-off tweak is always possible, but prefer extending this file.
  */

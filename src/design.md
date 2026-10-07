@@ -1,8 +1,9 @@
 # Glowin Medspa — Style Guide
 
 How the site is styled, and the rules for keeping it easy to change. A live preview of
-everything below is at **`/design-showcase`** (rendered from the real tokens and classes,
-so it cannot go stale).
+everything below is at **`/guideline`** (`src/pages/Guideline.jsx`). Colors, radii and the class index are parsed from
+`tokens.css` / `components.css`, so new tokens and classes appear there on their own; demos are
+added by hand and a "no demo yet" badge flags any class that lacks one.
 
 ## The three layers
 
@@ -21,8 +22,9 @@ React helpers: `components/ui/Button.jsx` (all buttons/CTAs) and `components/ui/
    `bg-cta`, `rounded-image`) or a component class (`type-lead`, `btn btn-cta btn-md`).
 2. **No inline `style={{…}}`** except for genuinely dynamic values. Hover/focus states belong in CSS,
    not `onMouseEnter`.
-3. **Need something new?** First check `/design-showcase`. If it's reusable, add a token or class in
-   `src/styles/` (with a one-line comment) and add it to the showcase. If it's a one-off layout tweak,
+3. **Need something new?** First check `/guideline`. If it's reusable, add a token or class in
+   `src/styles/` (with a one-line `/* comment */` on the same line — the guideline shows it) and add a
+   demo to `src/pages/Guideline.jsx` (list the class in `DEMOED`). If it's a one-off layout tweak,
    a Tailwind utility (`mt-6`, `md:grid-cols-3`) is fine — utilities always win over component classes.
 4. **Buttons are `<Button>`**, never hand-built. Sections are `<Section>`.
 5. **Every photo sits in `.img-frame`** (or uses `rounded-image`), so the 4px radius is one setting.
@@ -84,4 +86,4 @@ Breakpoint: `md` (768px) — single column below, multi-column above. Anchor lin
 
 1. Wrap blocks in `<Section>`; headings use `type-*` classes; paragraphs `type-lead` / `type-body`.
 2. Buttons via `<Button>`; photos in `.img-frame`; cards via `.card`.
-3. Run `npm run lint && npm run build`, then eyeball `/design-showcase` if you touched `src/styles/`.
+3. Run `npm run lint && npm run build`, then check `/guideline` if you touched `src/styles/`.
