@@ -98,6 +98,9 @@
     transition: color 0.2s;
   }
   .nav-link:hover { color: var(--color-peach); }
+  .link-list {                               /* vertical list of links, 9.6px apart (was 12px, 20% tighter) */
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
   .nav-dot {
     flex-shrink: 0; width: 24px; height: 24px;
     border-radius: 9999px; background: var(--color-ink);

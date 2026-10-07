@@ -39,7 +39,7 @@ export default function Services() {
                 <h2 className="type-h1 mb-8">
                   <span className="highlight">{titleCase(section.name)}</span>
                 </h2>
-                <div className="space-y-3">
+                <div className="link-list">
                   {section.treatments.map((t) => (
                     <Link
                       key={t.slug}

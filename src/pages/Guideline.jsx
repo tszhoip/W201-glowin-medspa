@@ -91,7 +91,7 @@ const DEMOED = new Set([
   'field', 'field-tint', 'field-lg', 'checkbox',
   'card', 'card-outlined', 'card-lg', 'card-interactive',
   'img-frame', 'page-container', 'section-y', 'section-y-sm', 'section-rule', 'hero',
-  'nav-link', 'nav-dot', 'icon-arrow',
+  'nav-link', 'nav-dot', 'icon-arrow', 'link-list',
 ])
 
 // ── Small building blocks ─────────────────────────────────
@@ -319,6 +319,14 @@ export default function Guideline() {
           <span className="nav-link">Contact</span>
           <span className="ml-auto nav-link">Book Now</span>
           <div className="nav-dot" />
+        </div>
+        <div className="mt-6">
+          <Tag>.link-list</Tag>
+          <div className="link-list mt-2 text-sm font-medium">
+            <span>HydraFacial</span>
+            <span>Lhala Peel</span>
+            <span>Enzyme Peel</span>
+          </div>
         </div>
       </Block>
 
