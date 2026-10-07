@@ -81,7 +81,7 @@ export default function Home() {
                 className="absolute inset-0 flex items-center justify-center text-center text-white font-normal px-3"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1 }}
               >
-                {t.title}
+                {t.shortName}
               </p>
             </Link>
           ))}
