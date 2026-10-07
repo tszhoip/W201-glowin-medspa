@@ -30,28 +30,25 @@ export default function TreatmentDetail() {
 
   return (
     <div>
-      {/* Hero: label + title block on one row, intro image underneath on the left */}
-      <Section innerClassName="pt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
-          <div>
+      {/* Hero: intro image on the left; type label, title, blurb and CTA on the right */}
+      <Section innerClassName="below-header pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 items-start">
+          <div className={intro ? 'md:order-2' : ''}>
             <Link
               to={type ? `/services#${type.anchor}` : '/services'}
               className="type-label hover:text-ink transition-colors"
             >
               {t.type}
             </Link>
-          </div>
-
-          <div className="md:row-start-1 md:col-start-2">
-            <h1 className="type-display">{t.title}</h1>
-            {t.blurb && <p className="type-lead mt-6 max-w-xl">{t.blurb}</p>}
+            <h1 className="type-display mt-3">{t.title}</h1>
+            {t.blurb && <p className="type-lead mt-5 max-w-xl">{t.blurb}</p>}
             <Button href="#book" size="lg" className="mt-6">
               {c.HERO_CTA}
             </Button>
           </div>
 
           {intro && (
-            <div className="img-frame md:col-start-1 md:row-start-2 aspect-[688/464]">
+            <div className="img-frame md:order-1 aspect-[613/671]">
               <img src={intro} alt={t.title} className="w-full h-full object-cover" />
             </div>
           )}

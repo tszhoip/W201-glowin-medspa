@@ -91,7 +91,7 @@ const DEMOED = new Set([
   'field', 'field-tint', 'field-lg', 'checkbox',
   'card', 'card-outlined', 'card-lg', 'card-interactive',
   'img-frame', 'page-container', 'section-y', 'section-y-sm', 'section-rule', 'hero',
-  'nav-link', 'nav-dot', 'icon-arrow', 'link-list', 'panel',
+  'nav-link', 'nav-dot', 'icon-arrow', 'link-list', 'panel', 'below-header',
 ])
 
 // ── Small building blocks ─────────────────────────────────
@@ -300,7 +300,7 @@ export default function Guideline() {
       <Block
         id="layout"
         title="Layout"
-        note={<><Tag>{'<Section rule size innerClassName>'}</Tag> wraps content in <Tag>.page-container</Tag> with the standard vertical rhythm: <Tag>.section-y</Tag> 64px, <Tag>.section-y-sm</Tag> 56px, <Tag>.section-rule</Tag> hairline above. Anchors land below the fixed header automatically. Breakpoint: md (768px).</>}
+        note={<><Tag>{'<Section rule size innerClassName>'}</Tag> wraps content in <Tag>.page-container</Tag> with the standard vertical rhythm: <Tag>.section-y</Tag> 64px, <Tag>.section-y-sm</Tag> 56px, <Tag>.section-rule</Tag> hairline above. <Tag>.below-header</Tag> pads the first block of a page that starts under the fixed header. Anchors land below the header automatically. Breakpoint: md (768px).</>}
       >
         <div className="rounded-card border border-line">
           <div className="page-container section-y-sm text-sm text-ink-soft">
