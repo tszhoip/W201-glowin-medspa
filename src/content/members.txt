@@ -1,0 +1,71 @@
+## TITLE
+Membership
+
+## BODY
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Choose the plan that fits your skin goals and enjoy member-only perks all year round.
+
+## TIER_1_NAME
+Essential
+
+## TIER_1_PRICE
+$99
+
+## TIER_1_PERIOD
+/ month
+
+## TIER_1_BLURB
+Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.
+
+## TIER_1_FEATURES
+Lorem ipsum dolor sit amet
+Consectetur adipiscing elit
+Sed do eiusmod tempor
+
+## TIER_1_CTA
+Join Essential
+
+## TIER_2_NAME
+Signature
+
+## TIER_2_PRICE
+$199
+
+## TIER_2_PERIOD
+/ month
+
+## TIER_2_BLURB
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+
+## TIER_2_FEATURES
+Lorem ipsum dolor sit amet
+Consectetur adipiscing elit
+Sed do eiusmod tempor
+Ut enim ad minim veniam
+
+## TIER_2_CTA
+Join Signature
+
+## TIER_3_NAME
+Elite
+
+## TIER_3_PRICE
+$349
+
+## TIER_3_PERIOD
+/ month
+
+## TIER_3_BLURB
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+
+## TIER_3_FEATURES
+Lorem ipsum dolor sit amet
+Consectetur adipiscing elit
+Sed do eiusmod tempor
+Ut enim ad minim veniam
+Quis nostrud exercitation
+
+## TIER_3_CTA
+Join Elite
+
+## NOTE
+Prices and benefits are placeholders. Memberships can be paused or cancelled anytime.

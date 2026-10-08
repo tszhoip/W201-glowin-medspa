@@ -39,6 +39,13 @@ export default function MobileMenu({ isOpen, onClose }) {
             Services
           </NavLink>
           <NavLink
+            to="/members"
+            onClick={onClose}
+            className={navLinkClass}
+          >
+            Members
+          </NavLink>
+          <NavLink
             to="/contact"
             onClick={onClose}
             className={navLinkClass}
