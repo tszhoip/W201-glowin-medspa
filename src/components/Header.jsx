@@ -21,7 +21,7 @@ export default function Header() {
               {g.NAV_SERVICES}
             </Link>
             <Link to="/members" className="nav-link hidden md:block">
-              Members
+              Membership
             </Link>
             <Link to="/contact" className="nav-link hidden md:block">
               Contact

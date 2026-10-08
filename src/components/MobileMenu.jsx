@@ -43,7 +43,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             onClick={onClose}
             className={navLinkClass}
           >
-            Members
+            Membership
           </NavLink>
           <NavLink
             to="/contact"
