@@ -43,15 +43,6 @@
   .type-heading {                            /* section headings */
     font-size: 1.875rem; line-height: 1.2; font-weight: 500;
   }
-  .type-subheading {                         /* card / panel headings */
-    font-size: 1.5rem; line-height: 1.3; font-weight: 500;
-  }
-  .type-section {                            /* light heading above a block, e.g. "Top Treatments" */
-    font-size: 1.5rem; line-height: 1.33; font-weight: 400;
-  }
-  .type-feature {                            /* big list / card titles */
-    font-size: clamp(28px, 3.5vw, 48px); line-height: 1.15; font-weight: 400;
-  }
   .type-caps {                               /* uppercase call-out heading, e.g. "Schedule a consultation" */
     font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; font-weight: 400;
     text-transform: uppercase;
@@ -84,7 +75,6 @@
   @media (min-width: 48rem) {
     .type-title   { font-size: 3rem; line-height: 1; }
     .type-heading { font-size: 2.25rem; line-height: 1.11; }
-    .type-section { font-size: 2rem; }
   }
 
   /* ── Icons ──────────────────────────────────────────── */

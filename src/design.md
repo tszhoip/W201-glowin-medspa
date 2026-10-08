@@ -44,13 +44,10 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 
 | Class | Use |
 |---|---|
-| `type-h1` | home hero headline and statement text (light; pair with `.highlight` for serif accents) |
+| `type-h1` | the main display style: hero headline, statement text, and all big headings (light; pair with `.highlight` for serif accents) |
 | `type-display` | treatment page title |
 | `type-title` | page titles (h1) |
 | `type-heading` | section headings (h2) |
-| `type-subheading` | card / panel headings |
-| `type-section` | light heading above a block ("Top Treatments") |
-| `type-feature` | big list items and card titles |
 | `type-caps` | uppercase call-out ("Schedule a consultation") |
 | `type-card-title`, `type-kicker` | small headings |
 | `type-lead`, `type-body` | paragraphs (grey) |

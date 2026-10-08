@@ -58,7 +58,7 @@ export default function Contact() {
 
       {/* FAQ */}
       <Section rule size="sm">
-        <h2 className="type-subheading font-normal mb-6">{c.FAQ_TITLE}</h2>
+        <h2 className="type-h1 mb-6">{c.FAQ_TITLE}</h2>
         <div className="space-y-3">
           {faqs.map((faq) => (
             <div key={faq.title} className="card card-outlined">

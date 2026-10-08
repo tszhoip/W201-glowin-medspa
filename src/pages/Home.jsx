@@ -76,7 +76,7 @@ export default function Home() {
       {/* Top Treatments - featured rows from the spreadsheet ("Top Treatment" column) */}
       {SHOW_TOP_TREATMENTS && (
         <Section innerClassName="pb-0">
-          <h2 className="type-section mb-8">Top Treatments</h2>
+          <h2 className="type-h1 mb-8">Top Treatments</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {topTreatments.map((t) => (
@@ -93,7 +93,7 @@ export default function Home() {
                   />
                 )}
                 <div className="absolute inset-0 bg-black/10" />
-                <p className="type-feature absolute inset-0 flex items-center justify-center text-center text-white px-3">
+                <p className="type-h1 absolute inset-0 flex items-center justify-center text-center text-white px-3">
                   {t.shortName}
                 </p>
               </Link>
