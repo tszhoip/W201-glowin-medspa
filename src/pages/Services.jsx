@@ -34,8 +34,8 @@ export default function Services() {
         return (
           <Section key={section.name} id={section.anchor}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-              {/* Title and treatment list */}
-              <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
+              {/* Title and treatment list (below the image on mobile) */}
+              <div className={`flex flex-col justify-between order-2 ${isAlternate ? 'md:order-2' : 'md:order-1'}`}>
                 <h2 className="type-h1 mb-8">
                   <span className="highlight">{titleCase(section.name)}</span>
                 </h2>
@@ -54,7 +54,7 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className={`img-frame h-96 md:h-[500px] ${isAlternate ? 'md:order-1' : ''}`}>
+              <div className={`img-frame h-96 md:h-[500px] order-1 ${isAlternate ? 'md:order-1' : 'md:order-2'}`}>
                 {section.image && (
                   <img src={section.image} alt={section.name} className="w-full h-full object-cover" />
                 )}
