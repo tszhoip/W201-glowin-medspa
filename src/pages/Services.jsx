@@ -33,7 +33,7 @@ export default function Services() {
 
         return (
           <Section key={section.name} id={section.anchor}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
               {/* Title and treatment list */}
               <div className={`flex flex-col justify-between ${isAlternate ? 'md:order-2' : ''}`}>
                 <h2 className="type-h1 mb-8">
