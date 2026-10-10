@@ -11,10 +11,6 @@ const navLinks = [
 ]
 
 const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'US State Privacy Notice', href: '#' },
-  { label: 'Terms of Use', href: '#' },
-  { label: 'Supply Chain Transparency', href: '#' },
   { label: 'Style guideline (temp)', href: '/guideline' }, // TEMP: remove before launch
 ]
 
