@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           {/* Wordmark Section: GLOWIN | Copyright + Legal | MEDSPA */}
-          <div className="flex items-flex-end justify-between pt-8 border-t border-white/30">
+          <div className="flex items-flex-end justify-between pt-8">
             {/* Left: GLOWIN Image */}
             <div className="flex-1">
               <img
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Wordmark Section - stacked on mobile */}
-          <div className="border-t border-white/30 pt-8">
+          <div className="pt-8">
             {/* Copyright at top */}
             <div className="mb-8 flex justify-between items-start text-xs opacity-90">
               <div>
