@@ -31,7 +31,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
 ## Stack & hosting
 - React 19 + Vite 8, Tailwind CSS v4 (via `@tailwindcss/vite`), react-router-dom v7
 - GitHub under **tszhoip@gmail.com**, hosted on **Vercel** (push to `main` = prod deploy)
-- Custom domain: not registered yet (planned `glowinmedspa.com`)
+- Custom domain: **https://www.glowinmedspa.com** (live on Vercel; `vercel.json` rewrites all routes to index.html)
 
 ## Architecture decisions
 - **No headless CMS.** Client requests copy changes through us. All copy lives in
@@ -69,8 +69,8 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
 - **Contact page** (`/contact`, `src/pages/Contact.jsx`): "Find Us" hero with Google map + Direction button, three info cards, FAQ cards.
   Copy in `src/content/contact.txt`; address/phone/email come from `global.txt`. It has no form; enquiries go through `/book-now`.
 - **Members page** (`/members`, `src/pages/Members.jsx`): three membership tiers (name, price, blurb, feature list, CTA to
-  `/book-now`). All copy is dummy text in `src/content/members.txt` (add/remove tiers by numbering `TIER_n_*`). Menu order:
-  Services, Members, Contact. Layout is a simple guess; the Figma pricing frame hasn't been matched yet.
+  `/book-now`). All copy is dummy text in `src/content/members.txt` (add/remove tiers by numbering `TIER_n_*`). Menu label is "Membership"; order:
+  Services, Membership, Contact. Footer nav: Home, Services, Membership, Contact. Layout is a simple guess; the Figma pricing frame hasn't been matched yet.
 - **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
   with a white `.panel` holding the consultation form (shared `ContactForm`, `tinted`). Copy in
   `src/content/book-now.txt`. Header / mobile menu / banner / Services "Book now" links go here; `/contact` is the

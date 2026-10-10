@@ -2,20 +2,12 @@ import { Link } from 'react-router-dom'
 import glowingImg from '../assets/images/footer/glowin.png'
 import medspaImg from '../assets/images/footer/medspa.png'
 
-// Hardcoded links from design
-const col1Links = [
+// Site navigation links (same pages as the header menu, plus Home)
+const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Botos', href: '/treatments/neurotoxin' },
-  { label: 'Dermal Filler', href: '/treatments/dermal-filler' },
-  { label: 'PRP Injection', href: '/treatments/prp' },
-  { label: 'Sculptra', href: '/treatments/sculptra-radiesse' },
-  { label: 'Ultherpy', href: '/treatments/ultherapy-prime' },
-]
-
-const col2Links = [
-  { label: 'Inmode', href: '/treatments/inmode-minifx' },
-  { label: 'Thermage', href: '/treatments/thermage-flx' },
-  { label: 'PRP Injections', href: '/treatments/prp' },
+  { label: 'Services', href: '/services' },
+  { label: 'Membership', href: '/members' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 const legalLinks = [
@@ -34,11 +26,11 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-8 py-16">
           {/* Link Columns Section */}
           <div className="grid grid-cols-4 gap-12 mb-16">
-            {/* Column 1: First set of treatment links */}
+            {/* Column 1: site navigation */}
             <div className="space-y-2 text-sm">
-              {col1Links.map((link, idx) => (
+              {navLinks.map((link, idx) => (
                 <Link
-                  key={`col1-${idx}`}
+                  key={`nav-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -47,23 +39,10 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Column 2: Second set of treatment links */}
-            <div className="space-y-2 text-sm">
-              {col2Links.map((link, idx) => (
-                <Link
-                  key={`col2-${idx}`}
-                  to={link.href}
-                  className="block hover:underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            {/* Spacer for layout */}
+            <div className="col-span-2"></div>
 
-            {/* Column 3: Spacer for layout */}
-            <div></div>
-
-            {/* Column 4: Legal links */}
+            {/* Legal links */}
             <div className="space-y-2 text-sm text-right">
               {legalLinks.map((link, idx) => (
                 <Link
@@ -108,9 +87,9 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-6 mb-12">
             {/* Column 1 */}
             <div className="space-y-2 text-sm">
-              {col1Links.map((link, idx) => (
+              {navLinks.map((link, idx) => (
                 <Link
-                  key={`mobile-col1-${idx}`}
+                  key={`mobile-nav-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
@@ -119,30 +98,17 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Column 2 - includes overflow from column 2 links + legal links */}
+            {/* Column 2: legal links */}
             <div className="space-y-2 text-sm">
-              {col2Links.map((link, idx) => (
+              {legalLinks.map((link, idx) => (
                 <Link
-                  key={`mobile-col2-${idx}`}
+                  key={`mobile-legal-${idx}`}
                   to={link.href}
                   className="block hover:underline"
                 >
                   {link.label}
                 </Link>
               ))}
-
-              {/* Legal links at end of column 2 */}
-              <div className="border-t border-white/30 pt-2 mt-4">
-                {legalLinks.map((link, idx) => (
-                  <Link
-                    key={`mobile-legal-${idx}`}
-                    to={link.href}
-                    className="block hover:underline"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
             </div>
           </div>
 
