@@ -167,11 +167,6 @@ export default function Home() {
           <div className="text-sm text-ink-soft space-y-2">
             <p>{street}</p>
             <p>{cityLine}</p>
-            <p className="mt-4">
-              <a href="tel:+1234567890" className="text-ink hover:text-peach transition-colors">
-                (123) 456-7890
-              </a>
-            </p>
           </div>
 
           <iframe

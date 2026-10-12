@@ -27,7 +27,6 @@ Complimentary on-site parking for all Glow-getters.
 Get in Touch
 
 ## CARD_3_BODY
-{phone}
 {email}
 
 ## FAQ_TITLE

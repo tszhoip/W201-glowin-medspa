@@ -9,11 +9,16 @@ const g = parseContent(globalRaw)
 const cards = collectGroup(c, 'CARD', ['TITLE', 'BODY'])
 const faqs = collectGroup(c, 'FAQ', ['TITLE', 'BODY'])
 
-// Address, phone and email come from global.txt (single source); {phone} / {email} in contact.txt are filled in here.
+// Address and email come from global.txt (single source); {email} in contact.txt becomes a mailto link.
 const address = g.FOOTER_ADDRESS
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`
 const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`
-const fill = (text) => text.replace('{phone}', g.FOOTER_PHONE).replace('{email}', g.FOOTER_EMAIL)
+const withEmailLink = (text) =>
+  text.split('{email}').flatMap((part, i, parts) =>
+    i < parts.length - 1
+      ? [part, <a key={i} href={`mailto:${g.FOOTER_EMAIL}`} className="type-link">{g.FOOTER_EMAIL}</a>]
+      : [part]
+  )
 
 export default function Contact() {
   return (
@@ -50,7 +55,7 @@ export default function Contact() {
             <div key={card.title} className="card text-center">
               <p className="text-2xl text-cta">{String(i + 1).padStart(2, '0')}</p>
               <h2 className="type-card-title mt-4">{card.title}</h2>
-              <p className="type-body mt-3 whitespace-pre-line">{fill(card.body)}</p>
+              <p className="type-body mt-3 whitespace-pre-line">{withEmailLink(card.body)}</p>
             </div>
           ))}
         </div>
