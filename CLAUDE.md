@@ -38,9 +38,10 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   `src/content/*.txt` — plain text under `## KEY` markers, parsed by
   `src/lib/loadContent.js` (`parseContent`, `collectGroup`). Never hardcode copy
   in components.
-- **Forms → Formspree** (not Mailchimp; Mailchimp is newsletter, not form delivery).
-  `src/components/ContactForm.jsx`. Set `FORMSPREE_FORM_ID` in `content/global.txt`.
-  May swap to Vercel serverless + Resend later.
+- **Forms → Vercel function + Gmail (not Formspree).** All forms use the shared `src/components/ContactForm.jsx`, which posts to
+  `api/contact.js` (nodemailer + Gmail SMTP). Vercel env vars: `GMAIL_USER`, `GMAIL_PASSWORD` (Google app password) and
+  `NOTIFY_EMAILS` (comma-separated recipients of the "new enquiry" email; falls back to `GMAIL_USER`). Addresses live in
+  Vercel settings, not in the repo (the repo is public).
 - **Live chat → Tawk.to** (free). `src/components/TawkChat.jsx`. Set
   `TAWK_PROPERTY_ID` / `TAWK_WIDGET_ID` in `content/global.txt`.
 - **Booking** is form-only for now. A real booking platform (Boulevard / Vagaro /

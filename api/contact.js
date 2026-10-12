@@ -9,6 +9,13 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+// Who receives the "new enquiry" email: comma-separated NOTIFY_EMAILS (set in the Vercel project settings,
+// so the addresses stay out of the public repo). Falls back to the sending Gmail account.
+const notifyTo = (process.env.NOTIFY_EMAILS || process.env.GMAIL_USER || '')
+  .split(',')
+  .map((e) => e.trim())
+  .filter(Boolean)
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Method not allowed' })
@@ -85,7 +92,8 @@ From: ${email}
     // Send notification to Glowin
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER,
+      to: notifyTo,
+      replyTo: email, // replying to the notification writes to the visitor
       subject: `New enquiry (${source || 'Website'}) — Glowin Medspa`,
       text: businessEmailBody,
     })
