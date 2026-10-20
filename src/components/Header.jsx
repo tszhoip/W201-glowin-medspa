@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import globalRaw from '../content/global.txt?raw'
 import { parseContent } from '../lib/loadContent'
 import MobileMenu from './MobileMenu'
+import { SHOW_MEMBERSHIP } from '../lib/features'
 import logoSvg from '../assets/images/home/logo.svg'
 
 const g = parseContent(globalRaw)
@@ -20,9 +21,11 @@ export default function Header() {
             <Link to="/services" className="nav-link hidden md:block">
               {g.NAV_SERVICES}
             </Link>
-            <Link to="/members" className="nav-link hidden md:block">
-              Membership
-            </Link>
+            {SHOW_MEMBERSHIP && (
+              <Link to="/members" className="nav-link hidden md:block">
+                Membership
+              </Link>
+            )}
             <Link to="/contact" className="nav-link hidden md:block">
               Contact
             </Link>

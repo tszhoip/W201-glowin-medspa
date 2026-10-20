@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import glowingImg from '../assets/images/footer/glowin.png'
 import medspaImg from '../assets/images/footer/medspa.png'
+import { SHOW_MEMBERSHIP } from '../lib/features'
 
 // Footer links + copyright sit in one row, 16px apart
 const footerLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Membership', href: '/members' },
+  ...(SHOW_MEMBERSHIP ? [{ label: 'Membership', href: '/members' }] : []),
   { label: 'Contact', href: '/contact' },
   { label: 'Style', href: '/guideline' }, // TEMP: remove before launch (the /guideline page)
 ]

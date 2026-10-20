@@ -7,6 +7,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import BookNow from './pages/BookNow'
 import Members from './pages/Members'
+import { SHOW_MEMBERSHIP } from './lib/features'
 import TreatmentDetail from './pages/TreatmentDetail'
 import Guideline from './pages/Guideline'
 import NotFound from './pages/NotFound'
@@ -21,7 +22,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book-now" element={<BookNow />} />
-          <Route path="/members" element={<Members />} />
+          {SHOW_MEMBERSHIP && <Route path="/members" element={<Members />} />}
           <Route path="/treatments/:id" element={<TreatmentDetail />} />
           <Route path="/guideline" element={<Guideline />} />
           <Route path="*" element={<NotFound />} />

@@ -69,7 +69,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   which emails the clinic + the visitor and records the consent wording the visitor agreed to.
 - **Contact page** (`/contact`, `src/pages/Contact.jsx`): "Find Us" hero with Google map + Direction button, three info cards, FAQ cards.
   Copy in `src/content/contact.txt`; address/phone/email come from `global.txt`. It has no form; enquiries go through `/book-now`.
-- **Members page** (`/members`, `src/pages/Members.jsx`): three membership tiers (name, price, blurb, feature list, CTA to
+- **Members page** — HIDDEN for now (switch `SHOW_MEMBERSHIP` in `src/lib/features.js`; `/members` shows the 404 page while off) (`/members`, `src/pages/Members.jsx`): three membership tiers (name, price, blurb, feature list, CTA to
   `/book-now`). All copy is dummy text in `src/content/members.txt` (add/remove tiers by numbering `TIER_n_*`). Menu label is "Membership"; order:
   Services, Membership, Contact. Footer: one 16px-gap row of Home, Services, Membership, Contact, Style (TEMP link to /guideline) + copyright. Layout is a simple guess; the Figma pricing frame hasn't been matched yet.
 - **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
