@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import heroBanner from '../assets/images/home/banner-01.png'
 import { sections, topTreatments } from '../lib/treatments'
 import Button from '../components/ui/Button'
@@ -22,25 +22,6 @@ const SHOW_TOP_TREATMENTS = false
 
 export default function Home() {
   const [activeType, setActiveType] = useState(sections[0]?.anchor)
-  const itemRefs = useRef({})
-
-  // Swap the image when a list item crosses the middle of the viewport.
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveType(entry.target.dataset.id)
-        })
-      },
-      { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 }
-    )
-
-    sections.forEach((section) => {
-      if (itemRefs.current[section.anchor]) observer.observe(itemRefs.current[section.anchor])
-    })
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div>
@@ -102,20 +83,21 @@ export default function Home() {
         </Section>
       )}
 
-      {/* Treatment types - active item follows scroll; links go to /services#anchor */}
+      {/* Treatment types.
+          Desktop: hovering (or tabbing to) a name shows its thumbnail; clicking goes to /services#anchor.
+          Mobile (no hover): every thumbnail is shown, each one a link to its section. */}
       <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="hidden md:grid grid-cols-2 gap-12 items-start">
           <div>
             {sections.map((section) => {
               const active = activeType === section.anchor
               return (
                 <div
                   key={section.anchor}
-                  ref={(el) => (itemRefs.current[section.anchor] = el)}
-                  data-id={section.anchor}
                   className={`type-h1 transition-colors ${active ? 'text-peach' : 'text-ink'}`}
+                  onMouseEnter={() => setActiveType(section.anchor)}
                 >
-                  <Link to={`/services#${section.anchor}`}>
+                  <Link to={`/services#${section.anchor}`} onFocus={() => setActiveType(section.anchor)}>
                     {section.shortName}
                     {active ? ' •' : ''}
                   </Link>
@@ -128,18 +110,32 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="img-frame md:sticky md:top-20 aspect-[622/560]">
+          <Link to={`/services#${activeType}`} className="img-frame block aspect-[622/560]" tabIndex={-1} aria-hidden="true">
             {sections.map((section) =>
               section.image ? (
                 <img
                   key={section.anchor}
                   src={section.image}
-                  alt={section.shortName}
+                  alt=""
                   className={`w-full h-full object-cover ${activeType === section.anchor ? 'block' : 'hidden'}`}
                 />
               ) : null
             )}
-          </div>
+          </Link>
+        </div>
+
+        <div className="md:hidden space-y-8">
+          {sections.map((section) => (
+            <Link key={section.anchor} to={`/services#${section.anchor}`} className="block">
+              <div className="img-frame aspect-[622/560]">
+                {section.image && <img src={section.image} alt="" className="w-full h-full object-cover" />}
+              </div>
+              <p className="type-h1 mt-3">{section.shortName}</p>
+            </Link>
+          ))}
+          <Link to="/services" className="type-link inline-block">
+            See all
+          </Link>
         </div>
       </Section>
 
