@@ -4,6 +4,7 @@ import { sections } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
 import { titleCase } from '../lib/format'
+import { SHOW_TREATMENT_LINKS } from '../lib/features'
 
 export default function Services() {
   const { hash } = useLocation()
@@ -40,16 +41,22 @@ export default function Services() {
                   <span className="highlight">{titleCase(section.name)}</span>
                 </h2>
                 <div className="link-list">
-                  {section.treatments.map((t) => (
-                    <Link
-                      key={t.slug}
-                      to={`/treatments/${t.slug}`}
-                      className="group flex items-center font-medium hover:text-peach transition-colors"
-                    >
-                      {t.title}
-                      <span className="icon-arrow ml-2 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" aria-hidden="true" />
-                    </Link>
-                  ))}
+                  {section.treatments.map((t) =>
+                    SHOW_TREATMENT_LINKS ? (
+                      <Link
+                        key={t.slug}
+                        to={`/treatments/${t.slug}`}
+                        className="group flex items-center font-medium hover:text-peach transition-colors"
+                      >
+                        {t.title}
+                        <span className="icon-arrow ml-2 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" aria-hidden="true" />
+                      </Link>
+                    ) : (
+                      <p key={t.slug} className="font-medium">
+                        {t.title}
+                      </p>
+                    )
+                  )}
                 </div>
               </div>
 

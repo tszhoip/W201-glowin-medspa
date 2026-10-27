@@ -57,6 +57,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   type images in `src/assets/images/treatment-type/`, before/after in
   `src/assets/images/treatments/`. `npm run treatments:seed` regenerates the starting
   file (overwrites edits!).
+- **Services page treatment links are OFF** (`SHOW_TREATMENT_LINKS` in `src/lib/features.js`): names show as plain text, only "Book a consultation" is a link. Detail pages still exist at `/treatments/:slug`.
 - **Treatment detail page** (`src/pages/TreatmentDetail.jsx`): hero (intro image on the left; type label, title, blurb,
   Book Now -> #book on the right), numbered cards (How It Works / What It Treats / Benefit,
   hidden when empty), Before & After, then the consultation form
