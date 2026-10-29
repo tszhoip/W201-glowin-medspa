@@ -1,12 +1,14 @@
 ## TITLE
-Schedule
-a consultation
+Come as you are.
 
 ## BODY
-We are looking forward to meeting you in person, hearing your aspirations, and tailoring a surgical plan especially for you. We hope our in-person consultation will answer all of your questions, provide you a sense of confidence and also further your excitement of the path you are on.
+Tell us what’s on your mind: your skin, your goals, your questions. We’ll build a plan around you, with no pressure and no hard sell.
 
 ## FORM_NAME
 First Name
+
+## FORM_LAST_NAME
+Last Name
 
 ## FORM_EMAIL
 Email
@@ -21,7 +23,7 @@ Message
 I agree to terms & conditions
 
 ## FORM_CTA
-Submit
+Book your consult
 
 ## FORM_SENDING
 Sending...
