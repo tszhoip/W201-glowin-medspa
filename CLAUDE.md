@@ -101,9 +101,11 @@ _Updated 2026-10-29._
 - ✅ Mobile hamburger menu (`MobileMenu.jsx`)
 - ✅ Favicon (`public/favicon.svg`)
 - ✅ PRP image cells fixed in the xlsx (`PRP.jpg`, `PRP-ba.png`)
+- ✅ Real form test on production `/book-now` (2026-10-29): clinic got "New enquiry", visitor got the receipt
 
 **Not done:**
-- [ ] Real form test on production `/book-now`: clinic gets "New enquiry", visitor gets the receipt
+- [ ] Emails are sent from the owner's personal Gmail (`GMAIL_USER`), so visitors see it on the receipt.
+      Switch to a clinic mailbox before handover (Vercel env vars — owner's call)
 - [ ] Remove the TEMP footer "Style" link (and `/guideline` route) before handing to the client
 - [ ] Legal pages: Privacy Policy, Terms, medical disclaimer — the form already says "I agree to the
       terms & privacy policy" but no such pages exist (needs legal business name, address, etc.)
