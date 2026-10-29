@@ -10,21 +10,21 @@ here; do not invent layouts.
 - Wireframe page node: `184:4750`
 - URL: https://www.figma.com/design/xUjXx2sd4ZrtsKMQo5sSvX/Glowin-Medspa?node-id=184-4750
 
-**Simplified Site Map (5 pages):**
+**Site map (routes in `src/App.jsx`):**
 
 | Route | Component | Notes |
 |---|---|---|
-| `/` | Home | Hero + About story + Disciplines + Services preview + Testimonials + Instagram |
-| `/services` | Services | 15-item grid (9 services + 6 machines), all linking to detail pages |
-| `/treatments/:id` | TreatmentDetail | Dynamic route for individual treatment/machine detail (lifting, laser, botox, etc.) |
-| `/contact` | Contact | Contact form + visit info |
+| `/` | Home | Hero + intro statement + treatment types (hover shows thumbnail; mobile shows all; click → `/services#anchor`) + testimonials + location/map. Top Treatments block hidden (`SHOW_TOP_TREATMENTS` in Home.jsx); Instagram hidden |
+| `/services` | Services | Sections per treatment type (Facial / Injectables / Laser / Wellness), 28 treatments from the xlsx; names are plain text while `SHOW_TREATMENT_LINKS` is off |
+| `/treatments/:id` | TreatmentDetail | One page per treatment slug; no nav entry while `SHOW_TREATMENT_LINKS` is off |
+| `/book-now` | BookNow | Photo background + consultation form |
+| `/contact` | Contact | Find Us + map + info cards + FAQ (no form) |
+| `/members` | Members | HIDDEN (`SHOW_MEMBERSHIP`); shows 404 while off |
+| `/guideline` | Guideline | TEMP style preview; remove before launch |
 | `*` | NotFound | 404 page |
 
-**Removed Pages:**
-- ❌ `/about` — Content merged into Home (story + disciplines visible above Services)
-- ❌ `/blog` — Removed entirely
-- ❌ `/location` — Removed entirely (location info in Contact page + footer)
-- ❌ `/machines` — Merged into `/services` grid (6 machines now appear alongside 9 services)
+Header menu: Services, Contact, Book Now (+ Membership when on). Mobile has a hamburger → `src/components/MobileMenu.jsx`.
+`about.txt` and `services.txt` in `src/content/` are leftovers not used by any page.
 
 Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to read frames.
 
@@ -42,8 +42,10 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   `api/contact.js` (nodemailer + Gmail SMTP). Vercel env vars: `GMAIL_USER`, `GMAIL_PASSWORD` (Google app password) and
   `NOTIFY_EMAILS` (comma-separated recipients of the "new enquiry" email; falls back to `GMAIL_USER`). Addresses live in
   Vercel settings, not in the repo (the repo is public).
-- **Live chat → Tawk.to** (free). `src/components/TawkChat.jsx`. Set
-  `TAWK_PROPERTY_ID` / `TAWK_WIDGET_ID` in `content/global.txt`.
+- **Live chat → Tawk.to** (free). `src/components/TawkChat.jsx`. IDs are set in
+  `content/global.txt` (`TAWK_PROPERTY_ID` / `TAWK_WIDGET_ID`), but the widget is
+  currently OFF: `<TawkChat />` is commented out in `src/App.jsx`. Confirm whose
+  Tawk.to account the IDs belong to before turning it on.
 - **Booking** is form-only for now. A real booking platform (Boulevard / Vagaro /
   Mindbody / Zenoti) may replace "Book Now" later.
 - **Treatments are spreadsheet-driven.** `src/content/treatments.xlsx` is the source of
@@ -64,7 +66,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   (the shared `src/components/ContactForm.jsx`). Page copy lives in `src/content/treatment-detail.txt` (placeholder text for now).
   CTA peach is the `cta` token (sampled from the design screenshot).
 
-- **One form for the whole site:** `src/components/ContactForm.jsx` (Contact page, `/book-now`, every treatment page).
+- **One form for the whole site:** `src/components/ContactForm.jsx` (`/book-now` and every treatment page).
   Props: `copy` (labels from a content file), `source` (shown in the email subject/body so each enquiry says
   where it came from), `phone` ('required' | 'optional' | false), `tinted`, `size`. Posts to `api/contact.js`,
   which emails the clinic + the visitor and records the consent wording the visitor agreed to.
@@ -72,7 +74,7 @@ Use the Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`) to re
   Copy in `src/content/contact.txt`; address/phone/email come from `global.txt`. It has no form; enquiries go through `/book-now`.
 - **Members page** — HIDDEN for now (switch `SHOW_MEMBERSHIP` in `src/lib/features.js`; `/members` shows the 404 page while off) (`/members`, `src/pages/Members.jsx`): three membership tiers (name, price, blurb, feature list, CTA to
   `/book-now`). All copy is dummy text in `src/content/members.txt` (add/remove tiers by numbering `TIER_n_*`). Menu label is "Membership"; order:
-  Services, Membership, Contact. Footer: one 16px-gap row of Home, Services, Membership, Contact, Style (TEMP link to /guideline) + copyright. Layout is a simple guess; the Figma pricing frame hasn't been matched yet.
+  Services, Membership, Contact. Footer: one 16px-gap row of Home, Services, Membership (only when on), Contact, Style (TEMP link to /guideline) + copyright. Layout is a simple guess; the Figma pricing frame hasn't been matched yet.
 - **Booking page** (`/book-now`, `src/pages/BookNow.jsx`): full-bleed photo (`assets/images/book-now/background.jpg`)
   with a white `.panel` holding the consultation form (shared `ContactForm`, `tinted`). Copy in
   `src/content/book-now.txt`. Header / mobile menu / banner / Services "Book now" links go here; `/contact` is the
@@ -87,36 +89,42 @@ peach `#CBAE94`, cta `#F7CBA3`, page `#F5F5F5`.
 
 ## Status
 
-**Completed (Latest Simplification — Aug 15, 2026):**
-- ✅ Simplified from 8 pages to 5-page lean structure
-- ✅ Merged About content into Home (story + 4 discipline cards)
-- ✅ Merged Machines into Services grid (6 machines + 9 services = 15 items)
-- ✅ Dynamic treatment routing via `/treatments/:id` (supports lifting, laser, botox, etc.)
-- ✅ Removed Blog, Location, and separate Machines pages
-- ✅ Simplified header nav to Home | Services | Book Now (removed About link)
-- ✅ Updated Footer to remove old page links
+_Updated 2026-10-29._
 
-**Previously Done:**
-- ✅ Scaffold, routing system, Header/Footer components
-- ✅ Design system: Switzer Regular (400) + 2% letter-spacing, 6-color palette
-- ✅ Hero section with real background image (banner-01.png)
-- ✅ Content management: .txt files parsed by loadContent.js
-- ✅ Forms: Formspree integration for Contact submissions
-- ✅ Live chat: Tawk.to embed
-- ✅ Social sections: Testimonials + Instagram placeholders
-- ✅ 404 page, build verified
+**Done:**
+- ✅ Live at https://www.glowinmedspa.com (GitHub → Vercel, custom domain connected)
+- ✅ Pages: Home, Services, Treatment detail, Book Now, Contact, 404 (+ hidden Members, temp Guideline)
+- ✅ Spreadsheet-driven treatments (28 treatments, 4 types)
+- ✅ Home treatment types: hover thumbnail, all thumbnails on mobile, click → `/services#anchor`
+- ✅ Services: plain-text treatment names (only "Book a consultation" links)
+- ✅ Form → `api/contact.js` (Gmail): enquiry email to `NOTIFY_EMAILS` + receipt to the visitor
+- ✅ Mobile hamburger menu (`MobileMenu.jsx`)
+- ✅ Favicon (`public/favicon.svg`)
+- ✅ PRP image cells fixed in the xlsx (`PRP.jpg`, `PRP-ba.png`)
 
-**Not done:
-- [ ] Register domain; connect Vercel
-- [ ] Push to GitHub; import to Vercel
-- [ ] Real Formspree + Tawk.to IDs
-- [ ] Legal pages: Privacy Policy, Terms, medical disclaimer (deferred — needs
-      legal business name, address, phone, whether before/after photos are used)
-- [ ] Real copy + images (current copy is placeholder)
+**Not done:**
+- [ ] Real form test on production `/book-now`: clinic gets "New enquiry", visitor gets the receipt
+- [ ] Remove the TEMP footer "Style" link (and `/guideline` route) before handing to the client
+- [ ] Legal pages: Privacy Policy, Terms, medical disclaimer — the form already says "I agree to the
+      terms & privacy policy" but no such pages exist (needs legal business name, address, etc.)
+- [ ] Confirm the "surgical plan" wording on `/book-now` with the client
+- [ ] Real copy + images (most copy is still placeholder)
+- [ ] xlsx `Instructions` sheet: remove duplicate paragraphs; image path notes still say `services-page/`
+      (type images actually live in `treatment-type/`)
+- [ ] Members page: match the Figma pricing frame before turning `SHOW_MEMBERSHIP` on
+- [ ] Tawk.to chat: confirm account, then un-comment `<TawkChat />` in `App.jsx`
 - [ ] SEO: OG tags, sitemap.xml, robots.txt, LocalBusiness/MedicalBusiness schema
 - [ ] Google Business Profile, GA4, Search Console
 - [ ] Accessibility pass (ADA — real risk for local service businesses)
-- [ ] Mobile nav (header nav is hidden below md, no hamburger yet)
+- [ ] Maybe later: real booking platform behind "Book Now"
+
+## Team & workflow
+- Two maintainers: **tszhoip** (owner; pushes straight to `main`) and **mmmhan0528** (collaborator).
+- mmmhan0528's flow: `git pull` → branch `june/<topic>` → check on localhost → push the branch →
+  check the Vercel preview → merge into `main` only after an explicit OK.
+- `treatments.xlsx` is binary and can't be merged: `git pull` first, tell the other person before editing,
+  then commit + push right away.
+- Never commit secrets (Gmail app password etc.); they live only in Vercel env vars.
 
 ## Conventions
 - Copy changes go in `src/content/*.txt`, never in JSX
