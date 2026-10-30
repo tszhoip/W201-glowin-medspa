@@ -35,7 +35,7 @@ export default function TreatmentDetail() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 items-start">
           <div className={intro ? 'md:order-2' : ''}>
             <Link
-              to={type ? `/services#${type.anchor}` : '/services'}
+              to={type ? `/treatments#${type.anchor}` : '/treatments'}
               className="type-label hover:text-ink transition-colors"
             >
               {t.type}

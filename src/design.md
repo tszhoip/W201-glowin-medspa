@@ -60,7 +60,7 @@ Font: Switzer (300/400/500), global 2% letter-spacing. Pick a class, don't size 
 ```jsx
 <Button to="/book-now">Book a consultation</Button>                // cta, md
 <Button to="/book-now" variant="light" size="sm">BOOK NOW</Button> // on photos
-<Button to="/services" variant="neutral" size="sm">See all</Button>
+<Button to="/treatments" variant="neutral" size="sm">See all</Button>
 <Button size="block" type="submit">Submit</Button>                  // full-width form submit
 ```
 Variants: `cta` (default), `light`, `neutral`. Sizes: `sm`, `md`, `lg`, `hero`, `block`.
@@ -86,7 +86,7 @@ There is one form component, `components/ContactForm.jsx`; configure it with pro
 <Section innerClassName="max-w-4xl text-center pb-0">…</Section>   // tweak the inner container
 ```
 Breakpoint: `md` (768px) — single column below, multi-column above. Anchor links (`#book`,
-`/services#laser`) land below the fixed header automatically (`scroll-padding-top`).
+`/treatments#laser`) land below the fixed header automatically (`scroll-padding-top`).
 
 ## Adding a page — checklist
 

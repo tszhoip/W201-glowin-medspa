@@ -87,7 +87,7 @@ const INSTRUCTIONS = [
   '',
   'Sheet "Treatment Types" — the sections of the Services page.',
   '  • Name: add, rename or remove rows here; the dropdown on the Treatments sheet follows. Row order = section order.',
-  '  • Short Name: label used on the Home page list and as the link anchor on the Services page, e.g. "Facial" -> /services#facial.',
+  '  • Short Name: label used on the Home page list and as the link anchor on the Services page, e.g. "Facial" -> /treatments#facial.',
   '  • Image: file name of the section image, e.g. "F.jpg". Files go in src/assets/images/treatment-type/ (used on the Home page and Services page).',
   '  • If you rename or remove a type, update the Treatment Type of the treatments that use it (the build tells you which ones are wrong).',
   '',

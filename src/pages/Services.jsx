@@ -9,7 +9,7 @@ import { SHOW_TREATMENT_LINKS } from '../lib/features'
 export default function Services() {
   const { hash } = useLocation()
 
-  // Jump to #anchor (e.g. /services#laser). Repeats once web fonts load, since they shift the layout.
+  // Jump to #anchor (e.g. /treatments#laser). Repeats once web fonts load, since they shift the layout.
   useEffect(() => {
     if (!hash) return
     const go = () => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
@@ -40,7 +40,7 @@ export default function Services() {
                 <h2 className="type-h1 mb-8">
                   <span className="highlight">{titleCase(section.name)}</span>
                 </h2>
-                <div className="link-list">
+                <div className={`link-list ${SHOW_TREATMENT_LINKS ? '' : 'link-list-plain'}`}>
                   {section.treatments.map((t) =>
                     SHOW_TREATMENT_LINKS ? (
                       <Link

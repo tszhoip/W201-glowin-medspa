@@ -84,7 +84,7 @@ export default function Home() {
       )}
 
       {/* Treatment types.
-          Desktop: hovering (or tabbing to) a name shows its thumbnail; clicking goes to /services#anchor.
+          Desktop: hovering (or tabbing to) a name shows its thumbnail; clicking goes to /treatments#anchor.
           Mobile (no hover): every thumbnail is shown, each one a link to its section. */}
       <Section>
         <div className="hidden md:grid grid-cols-2 gap-12 items-start">
@@ -97,7 +97,7 @@ export default function Home() {
                   className={`type-h1 transition-colors ${active ? 'text-peach' : 'text-ink'}`}
                   onMouseEnter={() => setActiveType(section.anchor)}
                 >
-                  <Link to={`/services#${section.anchor}`} onFocus={() => setActiveType(section.anchor)}>
+                  <Link to={`/treatments#${section.anchor}`} onFocus={() => setActiveType(section.anchor)}>
                     {section.shortName}
                     {active ? ' •' : ''}
                   </Link>
@@ -105,12 +105,12 @@ export default function Home() {
               )
             })}
 
-            <Link to="/services" className="type-link mt-6 inline-block">
+            <Link to="/treatments" className="type-link mt-6 inline-block">
               See all
             </Link>
           </div>
 
-          <Link to={`/services#${activeType}`} className="img-frame block aspect-[622/560]" tabIndex={-1} aria-hidden="true">
+          <Link to={`/treatments#${activeType}`} className="img-frame block aspect-[622/560]" tabIndex={-1} aria-hidden="true">
             {sections.map((section) =>
               section.image ? (
                 <img
@@ -126,14 +126,14 @@ export default function Home() {
 
         <div className="md:hidden space-y-8">
           {sections.map((section) => (
-            <Link key={section.anchor} to={`/services#${section.anchor}`} className="block">
+            <Link key={section.anchor} to={`/treatments#${section.anchor}`} className="block">
               <div className="img-frame aspect-[622/560]">
                 {section.image && <img src={section.image} alt="" className="w-full h-full object-cover" />}
               </div>
               <p className="type-h1 mt-3">{section.shortName}</p>
             </Link>
           ))}
-          <Link to="/services" className="type-link inline-block">
+          <Link to="/treatments" className="type-link inline-block">
             See all
           </Link>
         </div>

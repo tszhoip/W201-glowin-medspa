@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 // import TawkChat from './components/TawkChat'
@@ -12,6 +12,12 @@ import TreatmentDetail from './pages/TreatmentDetail'
 import Guideline from './pages/Guideline'
 import NotFound from './pages/NotFound'
 
+// /services was renamed to /treatments; keep old links and bookmarks working (and their #anchor)
+function OldServicesRedirect() {
+  const { hash } = useLocation()
+  return <Navigate to={`/treatments${hash}`} replace />
+}
+
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -19,7 +25,8 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/treatments" element={<Services />} />
+          <Route path="/services" element={<OldServicesRedirect />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book-now" element={<BookNow />} />
           {SHOW_MEMBERSHIP && <Route path="/members" element={<Members />} />}

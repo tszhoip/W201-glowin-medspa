@@ -94,6 +94,7 @@
   .link-list {                               /* vertical list of links, 9.6px apart (was 12px, 20% tighter) */
     display: flex; flex-direction: column; gap: 0.6rem;
   }
+  .link-list-plain { gap: 0.25rem; }         /* same list as plain text (no links): 4px apart */
   .nav-dot {
     flex-shrink: 0; width: 24px; height: 24px;
     border-radius: 9999px; background: var(--color-ink);

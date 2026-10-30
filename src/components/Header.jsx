@@ -18,7 +18,7 @@ export default function Header() {
           {/* Left: dot (16px from edge) + Services + Contact */}
           <div className="flex items-center gap-3 ml-4">
             <div className="nav-dot hidden md:block" />
-            <Link to="/services" className="nav-link hidden md:block">
+            <Link to="/treatments" className="nav-link hidden md:block">
               {g.NAV_SERVICES}
             </Link>
             {SHOW_MEMBERSHIP && (
