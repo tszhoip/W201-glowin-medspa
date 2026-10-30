@@ -12,10 +12,10 @@ export default function BookNow() {
       <img src={bgImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
 
       <div className="panel relative w-full max-w-[731px]">
-        <h1 className="type-caps whitespace-pre-line">{c.TITLE}</h1>
-        <p className="type-body mt-5 max-w-md">{c.BODY}</p>
+        <h1 className="type-caps whitespace-pre-line text-center">{c.TITLE}</h1>
+        <p className="type-body mt-5 max-w-md mx-auto text-center">{c.BODY}</p>
         <div className="mt-8">
-          <ContactForm copy={c} source="Book Now page" tinted />
+          <ContactForm copy={c} source="Book Now page" tinted narrowCta />
         </div>
       </div>
     </section>

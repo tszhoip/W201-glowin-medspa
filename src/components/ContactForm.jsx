@@ -10,7 +10,8 @@ import Button from './ui/Button'
 //   phone    'required' | 'optional' | false (hide the field)
 //   tinted   fields/button sit on a white panel or card, so they use the grey tint instead of white
 //   size     'lg' tall fields + full-width submit (booking forms) | 'md' compact (Contact page)
-export default function ContactForm({ copy, source, phone = 'optional', tinted = false, size = 'lg' }) {
+//   narrowCta  submit button is half the form width, centered (/book-now)
+export default function ContactForm({ copy, source, phone = 'optional', tinted = false, size = 'lg', narrowCta = false }) {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -29,7 +30,7 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
     const message = (data.get('message') || '').trim()
     const consent = data.get('consent') === 'on'
 
-    if (!firstName || !lastName || !email || (phone === 'required' && !phoneValue)) {
+    if (!firstName || !lastName || !email || !message || (phone === 'required' && !phoneValue)) {
       setStatus('error')
       setErrorMsg('Please fill in all required fields.')
       return
@@ -85,7 +86,7 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
       {phone && (
         <input name="phone" type="tel" required={phone === 'required'} placeholder={copy.FORM_PHONE} className={field} />
       )}
-      <textarea name="message" rows={large ? undefined : 4} placeholder={copy.FORM_MESSAGE} className={field} />
+      <textarea name="message" required rows={large ? undefined : 4} placeholder={copy.FORM_MESSAGE} className={field} />
       <label className="flex items-start gap-3 text-sm text-ink cursor-pointer">
         <input type="checkbox" name="consent" required className="checkbox mt-0.5" />
         {copy.FORM_CONSENT}
@@ -94,6 +95,7 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
         type="submit"
         variant={tinted ? 'light' : 'cta'}
         size={large ? 'block' : 'md'}
+        className={narrowCta ? 'flex w-1/2 mx-auto' : ''}
         disabled={status === 'sending'}
       >
         {status === 'sending' ? copy.FORM_SENDING : copy.FORM_CTA}

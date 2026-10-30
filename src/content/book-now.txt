@@ -5,25 +5,25 @@ Come as you are.
 Tell us what’s on your mind: your skin, your goals, your questions. We’ll build a plan around you, with no pressure and no hard sell.
 
 ## FORM_NAME
-First Name
+*First Name
 
 ## FORM_LAST_NAME
-Last Name
+*Last Name
 
 ## FORM_EMAIL
-Email
+*Email
 
 ## FORM_PHONE
 Phone (optional)
 
 ## FORM_MESSAGE
-Message
+*Message
 
 ## FORM_CONSENT
 I agree to terms & conditions
 
 ## FORM_CTA
-Book your consult
+Book Your Consult
 
 ## FORM_SENDING
 Sending...

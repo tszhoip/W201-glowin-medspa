@@ -26,19 +26,19 @@ We're looking forward to meeting you, hearing what you'd like to change, and bui
 Book Now
 
 ## FORM_NAME
-First Name
+*First Name
 
 ## FORM_LAST_NAME
-Last Name
+*Last Name
 
 ## FORM_EMAIL
-Email
+*Email
 
 ## FORM_PHONE
 Phone (optional)
 
 ## FORM_MESSAGE
-Message
+*Message
 
 ## FORM_CONSENT
 I agree to the terms & privacy policy
