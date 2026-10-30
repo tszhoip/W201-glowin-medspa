@@ -11,7 +11,7 @@ Home
 About
 
 ## NAV_SERVICES
-Services
+Treatments
 
 ## NAV_CONTACT
 Contact

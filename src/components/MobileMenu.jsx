@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import Button from './ui/Button'
 import { SHOW_MEMBERSHIP } from '../lib/features'
+import globalRaw from '../content/global.txt?raw'
+import { parseContent } from '../lib/loadContent'
+
+const g = parseContent(globalRaw)
 
 const navLinkClass = ({ isActive }) =>
   `block px-4 py-3 text-sm transition-colors ${
@@ -37,7 +41,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             onClick={onClose}
             className={navLinkClass}
           >
-            Services
+            {g.NAV_SERVICES}
           </NavLink>
           {SHOW_MEMBERSHIP && (
             <NavLink

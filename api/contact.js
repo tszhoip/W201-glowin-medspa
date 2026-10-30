@@ -25,7 +25,8 @@ export default async function handler(req, res) {
 
   // Validation
   // Phone is optional (the booking forms make it optional; the Contact page requires it client-side)
-  if (!name || !email || !consent) {
+  // Consent is only required when the form showed the checkbox (it sends consentLabel then)
+  if (!name || !email || (consentLabel && !consent)) {
     return res
       .status(400)
       .json({ success: false, message: 'Missing required fields' })
@@ -56,8 +57,7 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone || '(not provided)'}
 Message: ${message || '(no message)'}
-Consent: Yes — ${consentLabel || 'I agree to receive SMS or e-mails'}
-Date: ${timestamp}
+${consentLabel ? `Consent: Yes — ${consentLabel}\n` : ''}Date: ${timestamp}
 
 ---
 
@@ -74,8 +74,7 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone || '(not provided)'}
 Message: ${message || '(no message)'}
-Consent: Yes — ${consentLabel || 'I agree to receive SMS or e-mails'}
-Date: ${timestamp}
+${consentLabel ? `Consent: Yes — ${consentLabel}\n` : ''}Date: ${timestamp}
 
 ---
 From: ${email}

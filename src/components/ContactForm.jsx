@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Button from './ui/Button'
+import { SHOW_CONSENT } from '../lib/features'
 
 // The site's one form. Used on the Contact page, /book-now and every treatment page.
 // Posts to /api/contact (api/contact.js), which emails the clinic and the visitor.
@@ -35,7 +36,7 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
       setErrorMsg('Please fill in all required fields.')
       return
     }
-    if (!consent) {
+    if (SHOW_CONSENT && !consent) {
       setStatus('error')
       setErrorMsg('Please tick the box to agree before sending.')
       return
@@ -51,7 +52,7 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
           phone: phoneValue,
           message,
           consent,
-          consentLabel: copy.FORM_CONSENT,
+          consentLabel: SHOW_CONSENT ? copy.FORM_CONSENT : '', // empty = no consent line in the emails
           source,
         }),
       })
@@ -86,16 +87,18 @@ export default function ContactForm({ copy, source, phone = 'optional', tinted =
       {phone && (
         <input name="phone" type="tel" required={phone === 'required'} placeholder={copy.FORM_PHONE} className={field} />
       )}
-      <textarea name="message" required rows={large ? undefined : 4} placeholder={copy.FORM_MESSAGE} className={field} />
-      <label className="flex items-start gap-3 text-sm text-ink cursor-pointer">
-        <input type="checkbox" name="consent" required className="checkbox mt-0.5" />
-        {copy.FORM_CONSENT}
-      </label>
+      <textarea name="message" required rows={large ? undefined : 4} placeholder={copy.FORM_MESSAGE} className={`${field} block`} />
+      {SHOW_CONSENT && (
+        <label className="flex items-start gap-3 text-sm text-ink cursor-pointer">
+          <input type="checkbox" name="consent" required className="checkbox mt-0.5" />
+          {copy.FORM_CONSENT}
+        </label>
+      )}
       <Button
         type="submit"
         variant={tinted ? 'light' : 'cta'}
         size={large ? 'block' : 'md'}
-        className={narrowCta ? 'flex w-1/2 mx-auto' : ''}
+        className={narrowCta ? 'flex w-1/2 mx-auto mt-[50px]' : ''}
         disabled={status === 'sending'}
       >
         {status === 'sending' ? copy.FORM_SENDING : copy.FORM_CTA}
