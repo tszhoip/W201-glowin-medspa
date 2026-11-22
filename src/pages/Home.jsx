@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import heroBanner from '../assets/images/home/banner-01.png'
 import { sections, topTreatments } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
@@ -10,6 +9,13 @@ import homeRaw from '../content/home.txt?raw'
 import globalRaw from '../content/global.txt?raw'
 
 const c = parseContent(homeRaw)
+
+// Hero banner: one photo from assets/images/home/banners/ picked at random on each visit.
+// To add or remove a banner, just add or delete a .jpg in that folder.
+// Name a bright photo "...-bright.jpg" to give it a darker overlay so the white headline stays readable.
+const banners = Object.entries(import.meta.glob('../assets/images/home/banners/*.jpg', { eager: true, import: 'default' }))
+const [heroFile, heroBanner] = banners[Math.floor(Math.random() * banners.length)]
+const heroIsBright = heroFile.endsWith('-bright.jpg')
 const g = parseContent(globalRaw)
 
 // Address comes from global.txt (FOOTER_ADDRESS): street on line 1, city/state/zip on line 2. Also drives the map.
@@ -32,7 +38,7 @@ export default function Home() {
           alt={c.HERO_HEADLINE.replaceAll('*', '')}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/10" />
+        <div className={`absolute inset-0 ${heroIsBright ? 'bg-black/30' : 'bg-black/10'}`} />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-3xl">
             <h1 className="type-h1 mb-6">
@@ -73,7 +79,7 @@ export default function Home() {
                     className="absolute inset-0 w-full h-full object-cover group-hover:opacity-90 transition-opacity"
                   />
                 )}
-                <div className="absolute inset-0 bg-black/10" />
+                <div className={`absolute inset-0 ${heroIsBright ? 'bg-black/30' : 'bg-black/10'}`} />
                 <p className="type-h1 absolute inset-0 flex items-center justify-center text-center text-white px-3">
                   {t.shortName}
                 </p>
