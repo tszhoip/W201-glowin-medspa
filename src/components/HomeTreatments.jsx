@@ -71,7 +71,7 @@ export default function HomeTreatments({ copy }) {
                       <button
                         type="button"
                         onClick={() => goTo(i)}
-                        className={`type-heading font-display font-light text-left transition-colors ${open ? 'text-ink' : 'text-ink/30 hover:text-ink/60'}`}
+                        className={`type-heading font-display font-light tracking-[0] text-left transition-colors ${open ? 'text-ink' : 'text-ink/30 hover:text-ink/60'}`}
                       >
                         {item.title}
                       </button>
@@ -107,7 +107,7 @@ export default function HomeTreatments({ copy }) {
               {item.photo && <img src={item.photo} alt="" className="w-full h-full object-cover" />}
             </div>
             <p className="type-body text-ink mt-6">{i + 1}</p>
-            <h3 className="type-heading font-display font-light mt-1">{item.title}</h3>
+            <h3 className="type-heading font-display font-light tracking-[0] mt-1">{item.title}</h3>
             <Details item={item} linkLabel={copy.TREATMENTS_INTRO_LINK} />
           </div>
         ))}
