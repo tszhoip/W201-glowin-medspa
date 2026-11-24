@@ -73,3 +73,24 @@ Wellness
 
 ## TREATMENTS_INTRO_LINK
 See treatments
+
+## TESTIMONIALS_TITLE
+Your Voice Matters
+
+## TESTIMONIAL_1_QUOTE
+“Relaxed from the moment I walked in. No pressure, just honest answers.”
+
+## TESTIMONIAL_1_NAME
+Michelle W
+
+## TESTIMONIAL_2_QUOTE
+“Subtle, natural, and exactly what I asked for. I still look like me.”
+
+## TESTIMONIAL_2_NAME
+Shin K
+
+## TESTIMONIAL_3_QUOTE
+“Calm, clean and so welcoming. I felt looked after from start to finish.”
+
+## TESTIMONIAL_3_NAME
+Peter L

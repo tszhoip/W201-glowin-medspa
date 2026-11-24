@@ -6,11 +6,12 @@ import FocusImage from '../components/FocusImage'
 import bannerFocusRaw from '../assets/images/home/banners/focus.txt?raw'
 import Section from '../components/ui/Section'
 import Highlighted from '../lib/highlight'
-import { parseContent } from '../lib/loadContent'
+import { collectGroup, parseContent } from '../lib/loadContent'
 import homeRaw from '../content/home.txt?raw'
 import globalRaw from '../content/global.txt?raw'
 
 const c = parseContent(homeRaw)
+const testimonials = collectGroup(c, 'TESTIMONIAL', ['QUOTE', 'NAME'])
 
 // Hero banner: one photo from assets/images/home/banners/ picked at random on each visit.
 // To add or remove a banner, just add or delete a .jpg in that folder.
@@ -107,15 +108,14 @@ export default function Home() {
 
       {/* Your Voice Matters */}
       <Section>
-        <h2 className="type-kicker mb-10">Your Voice Matters</h2>
+        <h2 className="type-kicker mb-10">{c.TESTIMONIALS_TITLE}</h2>
 
+        {/* Quotes: TESTIMONIAL_n_QUOTE / TESTIMONIAL_n_NAME in home.txt (add or remove by numbering) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="card card-outlined card-interactive">
-              <p className="text-sm text-ink-soft leading-relaxed mb-4">
-                "Clean, modern, and welcoming—I felt cared for from start to finish."
-              </p>
-              <p className="text-xs text-ink-soft">- J. Kim</p>
+          {testimonials.map((t) => (
+            <div key={t.name + t.quote} className="card card-outlined card-interactive">
+              <p className="text-sm text-ink-soft leading-relaxed mb-4">{t.quote}</p>
+              <p className="text-xs text-ink-soft">— {t.name}</p>
             </div>
           ))}
         </div>
