@@ -82,7 +82,7 @@ export default function HomeTreatments({ copy }) {
               })}
             </ol>
 
-            <Link to={items[active]?.href || '/treatments'} className="img-frame relative block h-full max-h-[80vh] aspect-[4/5] justify-self-end" tabIndex={-1} aria-hidden="true">
+            <Link to={items[active]?.href || '/treatments'} className="img-frame relative block w-[min(100%,64vh)] aspect-[4/5] justify-self-end" tabIndex={-1} aria-hidden="true">
               {items.map((item, i) => (
                 <img
                   key={item.title}
@@ -126,8 +126,9 @@ function Details({ item, linkLabel }) {
             <li key={t.slug} className="flex gap-3">
               <span aria-hidden="true">·</span>
               {hasDetailPage(t.slug) ? (
-                <Link to={`/treatments/${t.slug}`} className="underline underline-offset-4 hover:text-peach transition-colors">
+                <Link to={`/treatments/${t.slug}`} className="group inline-flex items-center hover:text-peach transition-colors">
                   {t.title}
+                  <span className="icon-arrow size-[0.6em] -rotate-45 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               ) : (
                 t.title

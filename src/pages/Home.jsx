@@ -50,8 +50,8 @@ export default function Home() {
       </section>
 
       {/* Intro statement - *asterisks* in the copy become the serif highlight */}
-      <section className="md:min-h-[60vh]">
-        <div className="page-container pt-12 pb-[120px] md:pb-16">
+      <section>
+        <div className="page-container pt-12 pb-[28px] md:pb-16">
           <p className="type-statement md:ml-[25%]">
             <Highlighted text={c.INTRO} />
           </p>
