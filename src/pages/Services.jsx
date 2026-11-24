@@ -49,7 +49,7 @@ export default function Services() {
                         className="group flex items-center font-medium hover:text-peach transition-colors"
                       >
                         {t.title}
-                        <span className="icon-arrow ml-2 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" aria-hidden="true" />
+                        <span className="icon-arrow size-[0.6em] -rotate-45 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                       </Link>
                     ) : (
                       <p key={t.slug} className="font-medium">
