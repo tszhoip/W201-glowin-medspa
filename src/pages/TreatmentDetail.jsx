@@ -61,19 +61,20 @@ export default function TreatmentDetail() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {cards.map((card, i) => (
               <div key={card.title} className="card">
-                <p className="text-2xl text-cta">{String(i + 1).padStart(2, '0')}</p>
+                <p className="text-2xl text-peach-deep">{String(i + 1).padStart(2, '0')}</p>
                 <h2 className="type-card-title mt-5">{card.title}</h2>
                 {card.html ? (
                   <div
-                    className="type-body mt-4 space-y-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_a]:underline [&_strong]:text-ink"
+                    className="type-body type-body-tight mt-4 space-y-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_a]:underline [&_strong]:text-ink"
                     dangerouslySetInnerHTML={{ __html: card.html }}
                   />
                 ) : (
-                  <p className="type-body mt-4 whitespace-pre-line">{card.text}</p>
+                  <CardText text={card.text} />
                 )}
               </div>
             ))}
           </div>
+          {t.disclaimer && <p className="mt-6 text-xs text-ink-soft max-w-3xl">{t.disclaimer}</p>}
         </Section>
       )}
 
@@ -103,5 +104,18 @@ export default function TreatmentDetail() {
         <ContactForm copy={c} source={`Treatment page: ${t.title}`} />
       </Section>
     </div>
+  )
+}
+
+// Plain-text card body: one line = a paragraph; several lines = a bullet list.
+function CardText({ text }) {
+  const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
+  if (lines.length < 2) return <p className="type-body type-body-tight mt-4">{text}</p>
+  return (
+    <ul className="type-body type-body-tight mt-4 list-disc pl-5 space-y-1">
+      {lines.map((l) => (
+        <li key={l}>{l}</li>
+      ))}
+    </ul>
   )
 }

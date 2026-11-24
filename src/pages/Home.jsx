@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { sections, topTreatments } from '../lib/treatments'
+import { topTreatments } from '../lib/treatments'
 import Button from '../components/ui/Button'
+import HomeTreatments from '../components/HomeTreatments'
 import Section from '../components/ui/Section'
 import Highlighted from '../lib/highlight'
 import { parseContent } from '../lib/loadContent'
@@ -27,8 +27,6 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(g.FOOTER_ADDR
 const SHOW_TOP_TREATMENTS = false
 
 export default function Home() {
-  const [activeType, setActiveType] = useState(sections[0]?.anchor)
-
   return (
     <div>
       {/* Hero (sits below the fixed header) */}
@@ -44,17 +42,17 @@ export default function Home() {
             <h1 className="type-h1 mb-6">
               <Highlighted text={c.HERO_HEADLINE} />
             </h1>
-            <Button to="/book-now" variant="light" size="sm">
-              BOOK NOW
+            <Button to="/book-now" variant="light" size="xl">
+              {c.HERO_CTA}
             </Button>
           </div>
         </div>
       </section>
 
       {/* Intro statement - *asterisks* in the copy become the serif highlight */}
-      <section className="min-h-[60vh]">
-        <div className="page-container pt-12 pb-16">
-          <p className="type-h1 md:w-3/4">
+      <section className="md:min-h-[60vh]">
+        <div className="page-container pt-12 pb-[120px] md:pb-16">
+          <p className="type-statement md:ml-[25%]">
             <Highlighted text={c.INTRO} />
           </p>
         </div>
@@ -89,61 +87,7 @@ export default function Home() {
         </Section>
       )}
 
-      {/* Treatment types.
-          Desktop: hovering (or tabbing to) a name shows its thumbnail; clicking goes to /treatments#anchor.
-          Mobile (no hover): every thumbnail is shown, each one a link to its section. */}
-      <Section>
-        <div className="hidden md:grid grid-cols-2 gap-12 items-start">
-          <div>
-            {sections.map((section) => {
-              const active = activeType === section.anchor
-              return (
-                <div
-                  key={section.anchor}
-                  className={`type-h1 transition-colors ${active ? 'text-peach' : 'text-ink'}`}
-                  onMouseEnter={() => setActiveType(section.anchor)}
-                >
-                  <Link to={`/treatments#${section.anchor}`} onFocus={() => setActiveType(section.anchor)}>
-                    {section.shortName}
-                    {active ? ' •' : ''}
-                  </Link>
-                </div>
-              )
-            })}
-
-            <Link to="/treatments" className="type-link mt-6 inline-block">
-              See all
-            </Link>
-          </div>
-
-          <Link to={`/treatments#${activeType}`} className="img-frame block aspect-[622/560]" tabIndex={-1} aria-hidden="true">
-            {sections.map((section) =>
-              section.image ? (
-                <img
-                  key={section.anchor}
-                  src={section.image}
-                  alt=""
-                  className={`w-full h-full object-cover ${activeType === section.anchor ? 'block' : 'hidden'}`}
-                />
-              ) : null
-            )}
-          </Link>
-        </div>
-
-        <div className="md:hidden space-y-8">
-          {sections.map((section) => (
-            <Link key={section.anchor} to={`/treatments#${section.anchor}`} className="block">
-              <div className="img-frame aspect-[622/560]">
-                {section.image && <img src={section.image} alt="" className="w-full h-full object-cover" />}
-              </div>
-              <p className="type-h1 mt-3">{section.shortName}</p>
-            </Link>
-          ))}
-          <Link to="/treatments" className="type-link inline-block">
-            See all
-          </Link>
-        </div>
-      </Section>
+      <HomeTreatments copy={c} />
 
       {/* Your Voice Matters */}
       <Section>

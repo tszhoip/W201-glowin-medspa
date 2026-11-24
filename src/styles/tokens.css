@@ -16,6 +16,7 @@
   /* Brand */
   --color-peach: #cbae94;        /* brand tan: footer, active states, hover accents */
   --color-peach-dark: #b89678;
+  --color-peach-deep: #9a7e63;   /* card numbers 01 / 02 / 03 */
   --color-cta: #f7cba3;          /* primary call-to-action */
   --color-cta-dark: #f1bd91;
 

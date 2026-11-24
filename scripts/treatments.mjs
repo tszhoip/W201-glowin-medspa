@@ -80,7 +80,8 @@ const INSTRUCTIONS = [
   '  • Blurb: short description, 50 words max.',
   '  • Before & After Image (optional): ONE image file name showing before and after together, e.g. "hydrafacial-before-after.jpg". Files go in src/assets/images/treatments/',
   '  • What It Treats (optional): plain text. Line breaks are kept (one concern per line works well).',
-  '  • Benefit (optional): plain text. Line breaks are kept.',
+  '  • Benefit (optional): plain text. Line breaks are kept. Several lines show as a bullet list (same for What It Treats).',
+  '  • Disclaimer (optional): small print shown under the cards.',
   '  • How It Works (optional): text shown under the heading "How It Works". Markdown is supported:',
   '  • Optional sections are hidden on the page when left empty. Columns are matched by their header names, so you may reorder columns but do not rename the headers.',
   '        **bold**   *italic*   - list item (one per line)   blank line = new paragraph   [link text](https://...)',
@@ -133,6 +134,7 @@ async function seed() {
     { header: 'Benefit', key: 'benefit', width: 50 },
     { header: 'How It Works (Markdown)', key: 'how', width: 60 },
     { header: 'Top Treatment (1-3)', key: 'top', width: 20 },
+    { header: 'Disclaimer (optional, small print under the cards)', key: 'disclaimer', width: 60 },
   ]
   SEED.forEach(([title, slug, type]) => tws.addRow({ title, slug, type }))
   for (let r = 2; r <= MAX_ROWS; r++) {
@@ -261,6 +263,8 @@ async function build() {
     const treats = get(row, 'what it treats')
     const benefit = get(row, 'benefit')
     const how = get(row, 'how it works')
+    // Optional column (older copies of the sheet may not have it)
+    const disclaimer = col['disclaimer'] ? get(row, 'disclaimer') : ''
     const topRaw = get(row, 'top treatment')
     const top = topRaw ? (Number.isFinite(Number(topRaw)) ? Number(topRaw) : 99) : null
     if (topRaw && top === 99) warnings.push(`${where}: Top Treatment should be 1, 2 or 3 (got "${topRaw}").`)
@@ -283,6 +287,7 @@ async function build() {
       top,
       treats,
       benefit,
+      disclaimer,
       // Raw HTML typed into the sheet is escaped, not rendered.
       howHtml: how
         ? marked.parse(how, { async: false, renderer: Object.assign(new marked.Renderer(), { html: ({ text }) => text.replace(/</g, '&lt;') }) })

@@ -37,6 +37,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -50,6 +51,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -63,6 +65,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -76,6 +79,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -89,6 +93,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -102,6 +107,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -115,6 +121,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -128,6 +135,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -141,6 +149,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -154,6 +163,7 @@
       "top": 3,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -167,6 +177,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -180,6 +191,7 @@
       "top": 1,
       "treats": "PRP (Platelet Rich Plasma) contains a high concentration of platelets that stimulate growth factors to support the body in regenerating new cells which helps tighten skin and improves skin thickness.",
       "benefit": "PRP Injections are an incredibly effective anti-aging treatment used to eliminate the appearance of fine lines, wrinkles, and to aid in volume loss.",
+      "disclaimer": "",
       "howHtml": "<p>First, your licensed aesthetics provider will draw a small vial of blood to spin in the centrifuge, separating the plasma. Once collected, the PRP will be injected into the target areas of your face, neck or scalp to begin stimulating growth factors that help us build collagen and regenerate new cells.</p>\n"
     },
     {
@@ -193,6 +205,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -206,6 +219,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -219,6 +233,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -232,6 +247,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -245,6 +261,7 @@
       "top": 2,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -258,6 +275,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -271,6 +289,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -284,6 +303,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -297,6 +317,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -308,9 +329,10 @@
       "intro": "PicoSurePro.jpg",
       "image": "PicoSurePro-ba.jpg",
       "top": null,
-      "treats": "",
-      "benefit": "",
-      "howHtml": ""
+      "treats": "Melasma\nBrown spots and sun damage\nUneven skin tone\nWrinkles and acne scars\nEnlarged pores and rough texture\nTattoo removal",
+      "benefit": "Quick sessions, minimal downtime\nTargets pigment while protecting surrounding skin\nBrighter, clearer, more even complexion\nOne treatment for tone, texture and pores",
+      "disclaimer": "",
+      "howHtml": "<p>PicoSure Pro delivers 755nm laser energy in picoseconds (trillionths of a second). Instead of relying on heat, it uses pressure to shatter pigment into tiny particles your body clears naturally. The Platinum Focus™ lens also stimulates collagen to refine texture and fine lines.</p>\n"
     },
     {
       "title": "XERF (Sérf)",
@@ -321,9 +343,10 @@
       "intro": "XERF.jpg",
       "image": "XERF-ba.jpg",
       "top": null,
-      "treats": "",
-      "benefit": "",
-      "howHtml": ""
+      "treats": "Loose or sagging skin\nLoss of firmness and elasticity\nSoftening jawline and facial contours\nCrepey, tired-looking skin",
+      "benefit": "No needles, no numbing\nNo downtime — return to your day right away\nComfortable treatment with integrated cooling\nNatural-looking, firmer skin that builds over time",
+      "disclaimer": "",
+      "howHtml": "<p>XERF delivers focused radiofrequency energy at two frequencies, reaching multiple depths of the skin in a single pass. This gentle heat stimulates your skin to produce new collagen, firming and supporting it from the inside out. Built-in cooling keeps every pulse comfortable.</p>\n"
     },
     {
       "title": "Plasma",
@@ -336,6 +359,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -349,6 +373,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -362,6 +387,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -375,6 +401,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     },
     {
@@ -388,6 +415,7 @@
       "top": null,
       "treats": "",
       "benefit": "",
+      "disclaimer": "",
       "howHtml": ""
     }
   ]

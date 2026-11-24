@@ -4,7 +4,7 @@ import { sections } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import Section from '../components/ui/Section'
 import { titleCase } from '../lib/format'
-import { SHOW_TREATMENT_LINKS } from '../lib/features'
+import { SHOW_TREATMENT_LINKS, hasDetailPage } from '../lib/features'
 
 export default function Services() {
   const { hash } = useLocation()
@@ -42,7 +42,7 @@ export default function Services() {
                 </h2>
                 <div className={`link-list ${SHOW_TREATMENT_LINKS ? '' : 'link-list-plain'}`}>
                   {section.treatments.map((t) =>
-                    SHOW_TREATMENT_LINKS ? (
+                    hasDetailPage(t.slug) ? (
                       <Link
                         key={t.slug}
                         to={`/treatments/${t.slug}`}

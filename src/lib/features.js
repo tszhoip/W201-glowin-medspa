@@ -6,6 +6,11 @@ export const SHOW_MEMBERSHIP = false
 // While false, the names show as plain text and only the "Book a consultation" button is a link.
 export const SHOW_TREATMENT_LINKS = false
 
+// Treatment detail pages switched on one by one (slugs from treatments.xlsx) while SHOW_TREATMENT_LINKS is false.
+// Their names become links on the Treatments page and the home page; the others stay plain text.
+export const TREATMENT_PAGES_ON = ['xerf', 'picosure-pro']
+export const hasDetailPage = (slug) => SHOW_TREATMENT_LINKS || TREATMENT_PAGES_ON.includes(slug)
+
 // Forms: the "I agree to terms & conditions" checkbox. Off until the terms / privacy pages exist.
 // While false, the box is hidden and enquiries are sent without a consent line.
 export const SHOW_CONSENT = false

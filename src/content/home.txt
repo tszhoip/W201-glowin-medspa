@@ -5,7 +5,7 @@ Where your *timeless glow* begins
 Med-spa treatments tailored to you
 
 ## HERO_CTA
-Book a Consultation
+Book Your Consult
 
 ## SERVICES_TITLE
 Our Services
@@ -34,3 +34,42 @@ Rejuvenate your skin with our signature treatment combining microneedling and LE
 
 ## INTRO
 At Glowin Medspa, aesthetic excellence begins with understanding you. Blending a discerning eye, medical expertise, and science-based technique, we personalize treatments that *enhance—not change*—what makes you unique. Our goal is to *reveal the most naturally beautiful version of you.*
+
+## TREATMENTS_INTRO_1_TITLE
+Facial & Peeling
+
+## TREATMENTS_INTRO_1_TEXT
+Clear, smooth, awake. Our facials and peels reset your skin with exactly what it needs and nothing extra. A gentle place to start, if you want to look like yourself, just more rested.
+
+## TREATMENTS_INTRO_1_TYPE
+Facial
+
+## TREATMENTS_INTRO_2_TITLE
+Injectables
+
+## TREATMENTS_INTRO_2_TEXT
+Subtle by design. We soften lines and restore volume where it’s been lost, with a light hand and an eye for balance. The goal isn’t a different face. It’s yours, on a really good day.
+
+## TREATMENTS_INTRO_2_TYPE
+Injectables
+
+## TREATMENTS_INTRO_3_TITLE
+Laser
+
+## TREATMENTS_INTRO_3_TEXT
+Precision, powered by light. From uneven tone to rough texture, our lasers target specific concerns with controlled energy, so skin looks clearer, smoother and more even over time.
+
+## TREATMENTS_INTRO_3_TYPE
+Laser
+
+## TREATMENTS_INTRO_4_TITLE
+Wellness
+
+## TREATMENTS_INTRO_4_TEXT
+Glow starts from the inside. Our wellness treatments support your skin and your energy from within, because feeling well and looking well go hand in hand.
+
+## TREATMENTS_INTRO_4_TYPE
+Wellness
+
+## TREATMENTS_INTRO_LINK
+See treatments
