@@ -27,9 +27,8 @@
   }
 
   /* ── Images ─────────────────────────────────────────── */
-  .scrolly-panel {                           /* full-screen panel that stays pinned below the header while its section scrolls */
-    position: sticky; top: var(--header-height);
-    height: calc(100vh - var(--header-height));
+  .scrolly-panel {                           /* panel that stays pinned (vertically centered below the header) while its section scrolls; --scrolly-top is set by HomeTreatments */
+    position: sticky; top: var(--scrolly-top, var(--header-height));
   }
   .img-frame {                               /* wrap every photo that needs rounded corners */
     overflow: hidden;
