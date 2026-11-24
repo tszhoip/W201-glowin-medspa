@@ -1,0 +1,10 @@
+# Focus point for each banner photo: the spot that must stay in view when the photo is cropped
+# (phones show only a narrow slice of a wide photo).
+# Format: file name, then how far ACROSS (0% = left edge, 100% = right edge),
+# then how far DOWN (0% = top, 100% = bottom). Put it a little in front of the face
+# so there is some space before the profile. Photos not listed here are centered.
+# Preview one banner locally with http://localhost:5173/?banner=1 (1 = first file, 2 = second, ...).
+
+banner-00-original.jpg  41%  38%
+banner-01.jpg           34%  45%
+banner-02-bright.jpg    47%  40%

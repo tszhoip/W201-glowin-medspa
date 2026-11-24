@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { topTreatments } from '../lib/treatments'
 import Button from '../components/ui/Button'
 import HomeTreatments from '../components/HomeTreatments'
+import FocusImage from '../components/FocusImage'
+import bannerFocusRaw from '../assets/images/home/banners/focus.txt?raw'
 import Section from '../components/ui/Section'
 import Highlighted from '../lib/highlight'
 import { parseContent } from '../lib/loadContent'
@@ -13,8 +15,21 @@ const c = parseContent(homeRaw)
 // Hero banner: one photo from assets/images/home/banners/ picked at random on each visit.
 // To add or remove a banner, just add or delete a .jpg in that folder.
 // Name a bright photo "...-bright.jpg" to give it a darker overlay so the white headline stays readable.
-const banners = Object.entries(import.meta.glob('../assets/images/home/banners/*.jpg', { eager: true, import: 'default' }))
-const [heroFile, heroBanner] = banners[Math.floor(Math.random() * banners.length)]
+// Each banner's focus point (kept in view when cropped, e.g. on phones) is set in banners/focus.txt.
+const banners = Object.entries(import.meta.glob('../assets/images/home/banners/*.jpg', { eager: true, import: 'default' })).sort(
+  ([a], [b]) => a.localeCompare(b),
+)
+// Local preview only: ?banner=2 always shows the 2nd banner
+const forced = import.meta.env.DEV && Number(new URLSearchParams(window.location.search).get('banner'))
+const [heroFile, heroBanner] = banners[forced ? forced - 1 : Math.floor(Math.random() * banners.length)] || banners[0]
+const bannerFocus = Object.fromEntries(
+  bannerFocusRaw
+    .split('\n')
+    .map((line) => line.trim().split(/\s+/))
+    .filter(([name, x, y]) => name && !name.startsWith('#') && x && y)
+    .map(([name, x, y]) => [name, { x: parseFloat(x) / 100, y: parseFloat(y) / 100 }]),
+)
+const heroFocus = bannerFocus[heroFile.split('/').pop()]
 const heroIsBright = heroFile.endsWith('-bright.jpg')
 const g = parseContent(globalRaw)
 
@@ -31,10 +46,11 @@ export default function Home() {
     <div>
       {/* Hero (sits below the fixed header) */}
       <section className="hero">
-        <img
+        <FocusImage
           src={heroBanner}
+          focus={heroFocus}
           alt={c.HERO_HEADLINE.replaceAll('*', '')}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
         <div className={`absolute inset-0 ${heroIsBright ? 'bg-black/30' : 'bg-black/10'}`} />
         <div className="relative h-full flex items-center justify-center">
