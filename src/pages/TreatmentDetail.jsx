@@ -41,7 +41,7 @@ export default function TreatmentDetail() {
               {t.type}
             </Link>
             <h1 className="type-display mt-3">{t.title}</h1>
-            {t.blurb && <p className="type-lead mt-5 max-w-xl">{t.blurb}</p>}
+            {t.blurb && <p className="type-lead mt-5 max-w-xl whitespace-pre-line">{t.blurb}</p>}
             <Button href="#book" size="lg" className="mt-6">
               {c.HERO_CTA}
             </Button>

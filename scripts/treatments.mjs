@@ -255,7 +255,8 @@ async function build() {
     const intro = resolveFile(treatmentFiles, fileName(get(row, 'intro image')), where)
     const slug = slugify(get(row, 'slug') || title)
     const type = get(row, 'treatment type')
-    const blurb = get(row, 'blurb').replace(/\s+/g, ' ')
+    // Keep line breaks (shown as separate lines); tidy other whitespace
+    const blurb = get(row, 'blurb').replace(/[^\S\n]+/g, ' ').replace(/ *\n+ */g, '\n').trim()
     const image = resolveFile(treatmentFiles, fileName(get(row, 'before & after image')), where)
     const treats = get(row, 'what it treats')
     const benefit = get(row, 'benefit')
@@ -268,7 +269,7 @@ async function build() {
     slugs.add(slug)
     if (!types.some((t) => t.name === type))
       errors.push(`${where}: Treatment Type "${type}" is not on the Treatment Types sheet.`)
-    const words = blurb ? blurb.split(' ').length : 0
+    const words = blurb ? blurb.split(/\s+/).length : 0
     if (words > MAX_BLURB_WORDS) warnings.push(`${where}: blurb is ${words} words (max ${MAX_BLURB_WORDS}).`)
 
     treatments.push({
